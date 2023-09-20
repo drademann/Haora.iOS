@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9DFFAC422ABB6E7A0038559C /* HaoraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */; };
+		9DFFAC442ABB6E7A0038559C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC432ABB6E7A0038559C /* ContentView.swift */; };
+		9DFFAC462ABB6E7A0038559C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC452ABB6E7A0038559C /* Item.swift */; };
+		9DFFAC482ABB6E7B0038559C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFFAC472ABB6E7B0038559C /* Assets.xcassets */; };
+		9DFFAC4C2ABB6E7B0038559C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFFAC4B2ABB6E7B0038559C /* Preview Assets.xcassets */; };
+		9DFFAC572ABB6E7B0038559C /* HaoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC562ABB6E7B0038559C /* HaoraTests.swift */; };
+		9DFFAC612ABB6E7B0038559C /* HaoraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC602ABB6E7B0038559C /* HaoraUITests.swift */; };
+		9DFFAC632ABB6E7B0038559C /* HaoraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC622ABB6E7B0038559C /* HaoraUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9DFFAC532ABB6E7B0038559C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DFFAC362ABB6E7A0038559C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DFFAC3D2ABB6E7A0038559C;
+			remoteInfo = Haora;
+		};
+		9DFFAC5D2ABB6E7B0038559C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DFFAC362ABB6E7A0038559C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DFFAC3D2ABB6E7A0038559C;
+			remoteInfo = Haora;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9DFFAC3E2ABB6E7A0038559C /* Haora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Haora.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaoraApp.swift; sourceTree = "<group>"; };
+		9DFFAC432ABB6E7A0038559C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9DFFAC452ABB6E7A0038559C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9DFFAC472ABB6E7B0038559C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DFFAC492ABB6E7B0038559C /* Haora.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Haora.entitlements; sourceTree = "<group>"; };
+		9DFFAC4B2ABB6E7B0038559C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9DFFAC4D2ABB6E7B0038559C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DFFAC522ABB6E7B0038559C /* HaoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DFFAC562ABB6E7B0038559C /* HaoraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaoraTests.swift; sourceTree = "<group>"; };
+		9DFFAC5C2ABB6E7B0038559C /* HaoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DFFAC602ABB6E7B0038559C /* HaoraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaoraUITests.swift; sourceTree = "<group>"; };
+		9DFFAC622ABB6E7B0038559C /* HaoraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaoraUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9DFFAC6F2ABB74320038559C /* Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tests.xctestplan; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9DFFAC3B2ABB6E7A0038559C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFFAC4F2ABB6E7B0038559C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFFAC592ABB6E7B0038559C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9DFFAC352ABB6E7A0038559C = {
+			isa = PBXGroup;
+			children = (
+				9DFFAC402ABB6E7A0038559C /* Haora */,
+				9DFFAC552ABB6E7B0038559C /* HaoraTests */,
+				9DFFAC5F2ABB6E7B0038559C /* HaoraUITests */,
+				9DFFAC3F2ABB6E7A0038559C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9DFFAC3F2ABB6E7A0038559C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DFFAC3E2ABB6E7A0038559C /* Haora.app */,
+				9DFFAC522ABB6E7B0038559C /* HaoraTests.xctest */,
+				9DFFAC5C2ABB6E7B0038559C /* HaoraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9DFFAC402ABB6E7A0038559C /* Haora */ = {
+			isa = PBXGroup;
+			children = (
+				9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */,
+				9DFFAC432ABB6E7A0038559C /* ContentView.swift */,
+				9DFFAC452ABB6E7A0038559C /* Item.swift */,
+				9DFFAC472ABB6E7B0038559C /* Assets.xcassets */,
+				9DFFAC492ABB6E7B0038559C /* Haora.entitlements */,
+				9DFFAC4D2ABB6E7B0038559C /* Info.plist */,
+				9DFFAC4A2ABB6E7B0038559C /* Preview Content */,
+			);
+			path = Haora;
+			sourceTree = "<group>";
+		};
+		9DFFAC4A2ABB6E7B0038559C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9DFFAC4B2ABB6E7B0038559C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9DFFAC552ABB6E7B0038559C /* HaoraTests */ = {
+			isa = PBXGroup;
+			children = (
+				9DFFAC562ABB6E7B0038559C /* HaoraTests.swift */,
+			);
+			path = HaoraTests;
+			sourceTree = "<group>";
+		};
+		9DFFAC5F2ABB6E7B0038559C /* HaoraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9DFFAC6F2ABB74320038559C /* Tests.xctestplan */,
+				9DFFAC602ABB6E7B0038559C /* HaoraUITests.swift */,
+				9DFFAC622ABB6E7B0038559C /* HaoraUITestsLaunchTests.swift */,
+			);
+			path = HaoraUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9DFFAC3D2ABB6E7A0038559C /* Haora */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DFFAC662ABB6E7B0038559C /* Build configuration list for PBXNativeTarget "Haora" */;
+			buildPhases = (
+				9DFFAC3A2ABB6E7A0038559C /* Sources */,
+				9DFFAC3B2ABB6E7A0038559C /* Frameworks */,
+				9DFFAC3C2ABB6E7A0038559C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Haora;
+			productName = Haora;
+			productReference = 9DFFAC3E2ABB6E7A0038559C /* Haora.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9DFFAC512ABB6E7B0038559C /* HaoraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DFFAC692ABB6E7B0038559C /* Build configuration list for PBXNativeTarget "HaoraTests" */;
+			buildPhases = (
+				9DFFAC4E2ABB6E7B0038559C /* Sources */,
+				9DFFAC4F2ABB6E7B0038559C /* Frameworks */,
+				9DFFAC502ABB6E7B0038559C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DFFAC542ABB6E7B0038559C /* PBXTargetDependency */,
+			);
+			name = HaoraTests;
+			productName = HaoraTests;
+			productReference = 9DFFAC522ABB6E7B0038559C /* HaoraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9DFFAC5B2ABB6E7B0038559C /* HaoraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DFFAC6C2ABB6E7B0038559C /* Build configuration list for PBXNativeTarget "HaoraUITests" */;
+			buildPhases = (
+				9DFFAC582ABB6E7B0038559C /* Sources */,
+				9DFFAC592ABB6E7B0038559C /* Frameworks */,
+				9DFFAC5A2ABB6E7B0038559C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DFFAC5E2ABB6E7B0038559C /* PBXTargetDependency */,
+			);
+			name = HaoraUITests;
+			productName = HaoraUITests;
+			productReference = 9DFFAC5C2ABB6E7B0038559C /* HaoraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9DFFAC362ABB6E7A0038559C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					9DFFAC3D2ABB6E7A0038559C = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					9DFFAC512ABB6E7B0038559C = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 9DFFAC3D2ABB6E7A0038559C;
+					};
+					9DFFAC5B2ABB6E7B0038559C = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 9DFFAC3D2ABB6E7A0038559C;
+					};
+				};
+			};
+			buildConfigurationList = 9DFFAC392ABB6E7A0038559C /* Build configuration list for PBXProject "Haora" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9DFFAC352ABB6E7A0038559C;
+			productRefGroup = 9DFFAC3F2ABB6E7A0038559C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9DFFAC3D2ABB6E7A0038559C /* Haora */,
+				9DFFAC512ABB6E7B0038559C /* HaoraTests */,
+				9DFFAC5B2ABB6E7B0038559C /* HaoraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9DFFAC3C2ABB6E7A0038559C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFFAC4C2ABB6E7B0038559C /* Preview Assets.xcassets in Resources */,
+				9DFFAC482ABB6E7B0038559C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFFAC502ABB6E7B0038559C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFFAC5A2ABB6E7B0038559C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9DFFAC3A2ABB6E7A0038559C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFFAC442ABB6E7A0038559C /* ContentView.swift in Sources */,
+				9DFFAC462ABB6E7A0038559C /* Item.swift in Sources */,
+				9DFFAC422ABB6E7A0038559C /* HaoraApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFFAC4E2ABB6E7B0038559C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFFAC572ABB6E7B0038559C /* HaoraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFFAC582ABB6E7B0038559C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFFAC632ABB6E7B0038559C /* HaoraUITestsLaunchTests.swift in Sources */,
+				9DFFAC612ABB6E7B0038559C /* HaoraUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9DFFAC542ABB6E7B0038559C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DFFAC3D2ABB6E7A0038559C /* Haora */;
+			targetProxy = 9DFFAC532ABB6E7B0038559C /* PBXContainerItemProxy */;
+		};
+		9DFFAC5E2ABB6E7B0038559C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DFFAC3D2ABB6E7A0038559C /* Haora */;
+			targetProxy = 9DFFAC5D2ABB6E7B0038559C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9DFFAC642ABB6E7B0038559C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9DFFAC652ABB6E7B0038559C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		9DFFAC672ABB6E7B0038559C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Haora/Haora.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Haora/Preview Content\"";
+				DEVELOPMENT_TEAM = XB32M4JPGC;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Haora/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.beyondworlds.Haora;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9DFFAC682ABB6E7B0038559C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Haora/Haora.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Haora/Preview Content\"";
+				DEVELOPMENT_TEAM = XB32M4JPGC;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Haora/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.beyondworlds.Haora;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9DFFAC6A2ABB6E7B0038559C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XB32M4JPGC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.beyondworlds.HaoraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Haora.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Haora";
+			};
+			name = Debug;
+		};
+		9DFFAC6B2ABB6E7B0038559C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XB32M4JPGC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.beyondworlds.HaoraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Haora.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Haora";
+			};
+			name = Release;
+		};
+		9DFFAC6D2ABB6E7B0038559C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XB32M4JPGC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.beyondworlds.HaoraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Haora;
+			};
+			name = Debug;
+		};
+		9DFFAC6E2ABB6E7B0038559C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XB32M4JPGC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.beyondworlds.HaoraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Haora;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9DFFAC392ABB6E7A0038559C /* Build configuration list for PBXProject "Haora" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DFFAC642ABB6E7B0038559C /* Debug */,
+				9DFFAC652ABB6E7B0038559C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DFFAC662ABB6E7B0038559C /* Build configuration list for PBXNativeTarget "Haora" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DFFAC672ABB6E7B0038559C /* Debug */,
+				9DFFAC682ABB6E7B0038559C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DFFAC692ABB6E7B0038559C /* Build configuration list for PBXNativeTarget "HaoraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DFFAC6A2ABB6E7B0038559C /* Debug */,
+				9DFFAC6B2ABB6E7B0038559C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DFFAC6C2ABB6E7B0038559C /* Build configuration list for PBXNativeTarget "HaoraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DFFAC6D2ABB6E7B0038559C /* Debug */,
+				9DFFAC6E2ABB6E7B0038559C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9DFFAC362ABB6E7A0038559C /* Project object */;
+}

@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "57653852-BF2A-490C-BAA3-CD5243A1BBD8",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Haora.xcodeproj",
+        "identifier" : "9DFFAC512ABB6E7B0038559C",
+        "name" : "HaoraTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "target" : {
+        "containerPath" : "container:Haora.xcodeproj",
+        "identifier" : "9DFFAC5B2ABB6E7B0038559C",
+        "name" : "HaoraUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
