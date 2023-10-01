@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D4164702AC9A3C200E3504D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41646F2AC9A3C200E3504D /* Task.swift */; };
 		9DFFAC422ABB6E7A0038559C /* HaoraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */; };
 		9DFFAC442ABB6E7A0038559C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC432ABB6E7A0038559C /* ContentView.swift */; };
-		9DFFAC462ABB6E7A0038559C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC452ABB6E7A0038559C /* Item.swift */; };
+		9DFFAC462ABB6E7A0038559C /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC452ABB6E7A0038559C /* Day.swift */; };
 		9DFFAC482ABB6E7B0038559C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFFAC472ABB6E7B0038559C /* Assets.xcassets */; };
 		9DFFAC4C2ABB6E7B0038559C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFFAC4B2ABB6E7B0038559C /* Preview Assets.xcassets */; };
 		9DFFAC572ABB6E7B0038559C /* HaoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC562ABB6E7B0038559C /* HaoraTests.swift */; };
@@ -35,10 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D41646F2AC9A3C200E3504D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		9DFFAC3E2ABB6E7A0038559C /* Haora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Haora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaoraApp.swift; sourceTree = "<group>"; };
 		9DFFAC432ABB6E7A0038559C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		9DFFAC452ABB6E7A0038559C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9DFFAC452ABB6E7A0038559C /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		9DFFAC472ABB6E7B0038559C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DFFAC492ABB6E7B0038559C /* Haora.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Haora.entitlements; sourceTree = "<group>"; };
 		9DFFAC4B2ABB6E7B0038559C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -48,7 +50,7 @@
 		9DFFAC5C2ABB6E7B0038559C /* HaoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFFAC602ABB6E7B0038559C /* HaoraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaoraUITests.swift; sourceTree = "<group>"; };
 		9DFFAC622ABB6E7B0038559C /* HaoraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaoraUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9DFFAC6F2ABB74320038559C /* Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tests.xctestplan; sourceTree = SOURCE_ROOT; };
+		9DFFAC6F2ABB74320038559C /* Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tests.xctestplan; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D41646E2AC9A29F00E3504D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DFFAC452ABB6E7A0038559C /* Day.swift */,
+				9D41646F2AC9A3C200E3504D /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9DFFAC352ABB6E7A0038559C = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +112,7 @@
 			children = (
 				9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */,
 				9DFFAC432ABB6E7A0038559C /* ContentView.swift */,
-				9DFFAC452ABB6E7A0038559C /* Item.swift */,
+				9D41646E2AC9A29F00E3504D /* Model */,
 				9DFFAC472ABB6E7B0038559C /* Assets.xcassets */,
 				9DFFAC492ABB6E7B0038559C /* Haora.entitlements */,
 				9DFFAC4D2ABB6E7B0038559C /* Info.plist */,
@@ -266,8 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4164702AC9A3C200E3504D /* Task.swift in Sources */,
 				9DFFAC442ABB6E7A0038559C /* ContentView.swift in Sources */,
-				9DFFAC462ABB6E7A0038559C /* Item.swift in Sources */,
+				9DFFAC462ABB6E7A0038559C /* Day.swift in Sources */,
 				9DFFAC422ABB6E7A0038559C /* HaoraApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
