@@ -87,6 +87,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9D8397A12AD1586700A86CF5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9DFFAC432ABB6E7A0038559C /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9DFFAC352ABB6E7A0038559C = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */,
-				9DFFAC432ABB6E7A0038559C /* ContentView.swift */,
+				9D8397A12AD1586700A86CF5 /* Views */,
 				9D41646E2AC9A29F00E3504D /* Model */,
 				9DFFAC472ABB6E7B0038559C /* Assets.xcassets */,
 				9DFFAC492ABB6E7B0038559C /* Haora.entitlements */,
