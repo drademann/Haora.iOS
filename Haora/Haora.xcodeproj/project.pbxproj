@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D4164702AC9A3C200E3504D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41646F2AC9A3C200E3504D /* Task.swift */; };
+		9D8397A42AD158E600A86CF5 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397A32AD158E600A86CF5 /* TaskView.swift */; };
 		9DFFAC422ABB6E7A0038559C /* HaoraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */; };
 		9DFFAC442ABB6E7A0038559C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC432ABB6E7A0038559C /* ContentView.swift */; };
 		9DFFAC462ABB6E7A0038559C /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC452ABB6E7A0038559C /* Day.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		9D41646F2AC9A3C200E3504D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		9D8397A32AD158E600A86CF5 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		9DFFAC3E2ABB6E7A0038559C /* Haora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Haora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaoraApp.swift; sourceTree = "<group>"; };
 		9DFFAC432ABB6E7A0038559C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,9 +92,18 @@
 		9D8397A12AD1586700A86CF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9D8397A22AD158CB00A86CF5 /* Day */,
 				9DFFAC432ABB6E7A0038559C /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9D8397A22AD158CB00A86CF5 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				9D8397A32AD158E600A86CF5 /* TaskView.swift */,
+			);
+			path = Day;
 			sourceTree = "<group>";
 		};
 		9DFFAC352ABB6E7A0038559C = {
@@ -288,6 +299,7 @@
 				9D4164702AC9A3C200E3504D /* Task.swift in Sources */,
 				9DFFAC442ABB6E7A0038559C /* ContentView.swift in Sources */,
 				9DFFAC462ABB6E7A0038559C /* Day.swift in Sources */,
+				9D8397A42AD158E600A86CF5 /* TaskView.swift in Sources */,
 				9DFFAC422ABB6E7A0038559C /* HaoraApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
