@@ -22,7 +22,7 @@ struct DayView: View {
                     Spacer()
                     Text("11 h")
                 }
-                .padding(.top, 5)
+                .padding(.vertical)
                 .padding(.leading, 20)
                 .padding(.trailing, 40)
             }
