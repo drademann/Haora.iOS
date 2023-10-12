@@ -13,6 +13,17 @@ struct DayView: View {
                 List {
                     ForEach(0..<4) { _ in
                         NavigationLink {} label: { TaskView() }
+                            .swipeActions(edge: .leading) {
+                                Button(action: {}) {
+                                    Text("add")
+                                }
+                                .tint(.green)
+                            }
+                            .swipeActions(edge: .trailing) {
+                                Button(role: .destructive, action: {}) {
+                                    Text("delete")
+                                }
+                            }
                     }
                 }
                 .listStyle(.plain)
