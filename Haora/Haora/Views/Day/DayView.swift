@@ -7,19 +7,35 @@ struct DayView: View {
             VStack {
                 VStack {
                     Text(Date(), style: .date)
+                        .font(.largeTitle)
                     Text("Sunday")
+                        .font(.title2)
                 }
-                Divider()
                 nonEmptyList
-                Divider()
-                HStack {
-                    Text("Total")
-                    Spacer()
-                    Text("11 h")
+                summary
+                Divider().padding()
+                ZStack {
+                    HStack {
+                        Button(action: {}) {
+                            Label("previous day", systemImage: "chevron.left")
+                        }
+                        Spacer()
+                        Button(action: {}) {
+                            Label("next day", systemImage: "chevron.right")
+                                .labelStyle(TrailingImageLabelStyle())
+                        }
+                    }
+                    HStack {
+                        Spacer()
+                        Button(action: {}) {
+                            Text("today")
+                                .tint(.secondary)
+                        }
+                        Spacer()
+                    }
                 }
-                .padding(.vertical)
-                .padding(.leading, 20)
-                .padding(.trailing, 40)
+                .padding(.horizontal, 20)
+                .padding(.bottom, 20)
             }
         }
         .tabItem {
@@ -29,7 +45,7 @@ struct DayView: View {
     
     var nonEmptyList: some View {
         List {
-            ForEach(0..<4) { _ in
+            ForEach(0..<10) { _ in
                 NavigationLink {} label: { TaskView() }
                     .swipeActions(edge: .leading, allowsFullSwipe: true) {
                         Button(action: {}) {
@@ -43,8 +59,47 @@ struct DayView: View {
                         }
                     }
             }
+            .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
+        .padding(.bottom)
+    }
+    
+    var summary: some View {
+        HStack {
+            VStack {
+                HStack {
+                    Text("Summary")
+                        .font(.caption)
+                    Spacer()
+                }
+                HStack {
+                    Text("total")
+                    Spacer()
+                    Text("8 h 15 m")
+                }
+                HStack {
+                    Text("breaks")
+                    Spacer()
+                    Text("45 m")
+                }
+                HStack {
+                    Text("finished")
+                    Spacer()
+                    Button(action: {}) {
+                        Text("finish work")
+                    }
+                    Spacer()
+                    Text("not yet")
+                }
+                HStack {
+                    Text("working")
+                    Spacer()
+                    Text("7 h 30 m")
+                }
+            }
+            .padding(.horizontal, 20)
+        }
     }
     
     var emptyList: some View {

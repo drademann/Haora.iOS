@@ -12,6 +12,7 @@
 		9D8397A62AD164F900A86CF5 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397A52AD164F900A86CF5 /* DayView.swift */; };
 		9D8397AA2AD166AE00A86CF5 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397A92AD166AE00A86CF5 /* WeekView.swift */; };
 		9D8397AC2AD1671500A86CF5 /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397AB2AD1671500A86CF5 /* MonthView.swift */; };
+		9DA259002ADAB39800023815 /* TrailingImageLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA258FF2ADAB39800023815 /* TrailingImageLabelStyle.swift */; };
 		9DFFAC422ABB6E7A0038559C /* HaoraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */; };
 		9DFFAC442ABB6E7A0038559C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC432ABB6E7A0038559C /* ContentView.swift */; };
 		9DFFAC462ABB6E7A0038559C /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC452ABB6E7A0038559C /* Day.swift */; };
@@ -45,6 +46,7 @@
 		9D8397A52AD164F900A86CF5 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		9D8397A92AD166AE00A86CF5 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		9D8397AB2AD1671500A86CF5 /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
+		9DA258FF2ADAB39800023815 /* TrailingImageLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingImageLabelStyle.swift; sourceTree = "<group>"; };
 		9DFFAC3E2ABB6E7A0038559C /* Haora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Haora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaoraApp.swift; sourceTree = "<group>"; };
 		9DFFAC432ABB6E7A0038559C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				9D8397A22AD158CB00A86CF5 /* Day */,
 				9D8397A72AD1667200A86CF5 /* Week */,
 				9D8397A82AD1667E00A86CF5 /* Month */,
+				9DA259012ADABB5D00023815 /* Supporting */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,6 +132,14 @@
 				9D8397AB2AD1671500A86CF5 /* MonthView.swift */,
 			);
 			path = Month;
+			sourceTree = "<group>";
+		};
+		9DA259012ADABB5D00023815 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				9DA258FF2ADAB39800023815 /* TrailingImageLabelStyle.swift */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 		9DFFAC352ABB6E7A0038559C = {
@@ -328,6 +339,7 @@
 				9D8397AA2AD166AE00A86CF5 /* WeekView.swift in Sources */,
 				9DFFAC462ABB6E7A0038559C /* Day.swift in Sources */,
 				9D8397A42AD158E600A86CF5 /* TaskView.swift in Sources */,
+				9DA259002ADAB39800023815 /* TrailingImageLabelStyle.swift in Sources */,
 				9DFFAC422ABB6E7A0038559C /* HaoraApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
