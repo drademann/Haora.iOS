@@ -10,23 +10,7 @@ struct DayView: View {
                     Text("Sunday")
                 }
                 Divider()
-                List {
-                    ForEach(0..<4) { _ in
-                        NavigationLink {} label: { TaskView() }
-                            .swipeActions(edge: .leading) {
-                                Button(action: {}) {
-                                    Text("add")
-                                }
-                                .tint(.green)
-                            }
-                            .swipeActions(edge: .trailing) {
-                                Button(role: .destructive, action: {}) {
-                                    Text("delete")
-                                }
-                            }
-                    }
-                }
-                .listStyle(.plain)
+                nonEmptyList
                 Divider()
                 HStack {
                     Text("Total")
@@ -40,6 +24,37 @@ struct DayView: View {
         }
         .tabItem {
             Label("Day", systemImage: "1.circle")
+        }
+    }
+    
+    var nonEmptyList: some View {
+        List {
+            ForEach(0..<4) { _ in
+                NavigationLink {} label: { TaskView() }
+                    .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                        Button(action: {}) {
+                            Image(systemName: "plus")
+                        }
+                        .tint(.green)
+                    }
+                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                        Button(role: .destructive, action: {}) {
+                            Image(systemName: "minus")
+                        }
+                    }
+            }
+        }
+        .listStyle(.plain)
+    }
+    
+    var emptyList: some View {
+        VStack {
+            Spacer()
+            Button(action: {}) {
+                Label("add first task of the day", systemImage: "plus")
+                    .font(.system(size: 20))
+            }
+            Spacer()
         }
     }
 }
