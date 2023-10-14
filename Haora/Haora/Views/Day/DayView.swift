@@ -45,7 +45,7 @@ struct DayView: View {
     
     var nonEmptyList: some View {
         List {
-            ForEach(0..<10) { _ in
+            ForEach(0..<4) { _ in
                 NavigationLink {} label: { TaskView() }
                     .swipeActions(edge: .leading, allowsFullSwipe: true) {
                         Button(action: {}) {
