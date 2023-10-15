@@ -2,27 +2,47 @@ import SwiftUI
 
 struct TaskView: View {
     
+    @Binding var task: Task
+    
     var body: some View {
-        ZStack {
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Working on project Haora")
-                    Text("#Haora")
-                        .foregroundStyle(.gray)
-                }
-                Spacer()
-            }
+        VStack {
+            DatePicker("Starting Time", selection: $task.start, displayedComponents: .hourAndMinute)
             HStack {
                 Spacer()
-                VStack(alignment: .trailing) {
-                    Text("9:15 - 12:00")
-                    Text("2 h 45 m" )
-                }
+                Button(action: {}) { Text("now") }
+                    .padding(.trailing, 8)
             }
+            .padding(.bottom, 20)
+            HStack {
+                Text("Description")
+                Spacer()
+            }
+            TextField("enter text", text: $task.text, axis: .vertical)
+                .textFieldStyle(.roundedBorder)
+                .lineLimit(5, reservesSpace: true)
+                .padding(.bottom, 30)
+            HStack {
+                Text("Tags")
+                Spacer()
+                NavigationLink(destination: TagsView(task: $task)) { Text("edit") }
+                    .padding(.trailing, 8)
+            }
+            .padding(.bottom, 4)
+            HStack {
+                Text("#TEST  #GMS  #IMPORTANT  #RMS  #AIRPORT  #LUFTHANSA  #PRIMA")
+                    .foregroundStyle(.gray)
+                    .lineSpacing(5)
+                Spacer()
+            }
+            Spacer()
         }
+        .navigationTitle("Task")
+        .padding(20)
     }
 }
 
 #Preview {
-    TaskView()
+    NavigationStack {
+        TaskView(task: .constant(Task(start: Date(), text: "a test task", isPause: false)))
+    }
 }

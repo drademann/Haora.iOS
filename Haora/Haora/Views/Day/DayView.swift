@@ -3,7 +3,7 @@ import SwiftUI
 struct DayView: View {
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 VStack {
                     Text(Date(), style: .date)
@@ -46,7 +46,7 @@ struct DayView: View {
     var nonEmptyList: some View {
         List {
             ForEach(0..<4) { _ in
-                NavigationLink {} label: { TaskView() }
+                NavigationLink {} label: { TaskListItemView() }
                     .swipeActions(edge: .leading, allowsFullSwipe: true) {
                         Button(action: {}) {
                             Image(systemName: "plus")
