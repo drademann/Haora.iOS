@@ -4,14 +4,21 @@ struct TagsView: View {
 
     @Binding var task: Task
     
+    // query
+    private let allTags = ["RMS", "PriMa", "Lufthansa", "Flughafen"]
+    
     var body: some View {
         VStack {
             List {
-                ForEach(0..<4) { _ in
+                ForEach(allTags, id: \.self) { tag in
                     HStack {
-                        Text("TAG")
+                        Text("#\(tag)")
+                            .foregroundColor(.secondary)
                         Spacer()
-                        Image(systemName: "checkmark")
+                        if task.tags.contains(tag) {
+                            Image(systemName: "checkmark")
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
             }
@@ -30,6 +37,6 @@ struct TagsView: View {
 
 #Preview {
     NavigationStack {
-        TagsView(task: .constant(Task(start: Date(), text: "a test task", isPause: false)))
+        TagsView(task: .constant(Task(start: Date(), text: "a test task", isPause: false, tags: [ "PriMa" ])))
     }
 }

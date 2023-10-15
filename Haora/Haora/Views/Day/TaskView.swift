@@ -30,7 +30,7 @@ struct TaskView: View {
             .padding(.bottom, 4)
             HStack {
                 Text("#TEST  #GMS  #IMPORTANT  #RMS  #AIRPORT  #LUFTHANSA  #PRIMA")
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.secondary)
                     .lineSpacing(5)
                 Spacer()
             }
