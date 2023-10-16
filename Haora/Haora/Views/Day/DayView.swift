@@ -2,17 +2,14 @@ import SwiftUI
 
 struct DayView: View {
     
+    @State private var selectedDate: Date = Date()
+    
     var body: some View {
         NavigationStack {
             VStack {
-                VStack {
-                    Text(Date(), style: .date)
-                        .font(.largeTitle)
-                    Text("Sunday")
-                        .font(.title2)
-                }
-                nonEmptyList
-                summary
+                SelectedDateView(date: selectedDate)
+                NonEmptyList
+                Summary
                 Divider().padding()
                 ZStack {
                     HStack {
@@ -43,7 +40,7 @@ struct DayView: View {
         }
     }
     
-    var nonEmptyList: some View {
+    var NonEmptyList: some View {
         List {
             ForEach(0..<4) { _ in
                 NavigationLink {} label: { TaskListItemView() }
@@ -65,7 +62,7 @@ struct DayView: View {
         .padding(.bottom)
     }
     
-    var summary: some View {
+    var Summary: some View {
         HStack {
             VStack {
                 HStack {
@@ -102,7 +99,7 @@ struct DayView: View {
         }
     }
     
-    var emptyList: some View {
+    var EmptyList: some View {
         VStack {
             Spacer()
             Button(action: {}) {
