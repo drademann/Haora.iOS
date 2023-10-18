@@ -1,8 +1,31 @@
 import SwiftUI
+import SwiftData
 
 struct DayView: View {
     
-    @State private var selectedDate: Date = Date()
+    @State 
+    private var selectedDate: Date = Date()
+    
+    @Query
+    var selectedDays: [Day]
+    
+    var selectedDay: Day {
+        get {
+            if selectedDays.isEmpty {
+                // TODO create new day, insert and return it
+                print("should create new task here")
+                return Day(date: Date())
+            } else {
+                print("creates new task")
+                return selectedDays.first!
+            }
+        }
+    }
+    
+    init() {
+        let predicate = #Predicate<Day> { $0.date == selectedDate }
+        _selectedDays = Query(filter: predicate)
+    }
     
     var body: some View {
         NavigationStack {
@@ -42,7 +65,7 @@ struct DayView: View {
     
     var NonEmptyList: some View {
         List {
-            ForEach(0..<4) { _ in
+            ForEach(selectedDay.tasks) { _ in
                 NavigationLink {} label: { TaskListItemView() }
                     .swipeActions(edge: .leading, allowsFullSwipe: true) {
                         Button(action: {}) {
