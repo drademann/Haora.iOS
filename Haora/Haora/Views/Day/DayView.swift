@@ -4,7 +4,7 @@ import SwiftData
 struct DayView: View {
     
     @State 
-    private var selectedDate: Date = Date()
+    private var selectedDate: Date = Date().stripTime()
     
     @Query
     var selectedDays: [Day]
@@ -16,7 +16,7 @@ struct DayView: View {
                 print("should create new task here")
                 return Day(date: Date())
             } else {
-                print("creates new task")
+                print("using exitsing day, yay!")
                 return selectedDays.first!
             }
         }
@@ -135,5 +135,19 @@ struct DayView: View {
 }
 
 #Preview {
-    DayView()
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Day.self, configurations: config)
+        
+        let testDay = Day(date: Date().stripTime())
+        testDay.tasks.append(Task(text: "Test Task"))
+        container.mainContext.insert(testDay)
+        
+        return DayView()
+            .modelContainer(container)
+    }
+    catch {
+        fatalError("unable to create model container for preview")
+    }
+    
 }
