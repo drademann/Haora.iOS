@@ -27,5 +27,5 @@ struct TaskListItemView: View {
 
 #Preview {
     let date = Date()
-    return TaskListItemView(task: Task(day: Day(date: date), start: date, text: "Working on project Haora", isPause: false, tags: ["Haora"]))
+    return TaskListItemView(task: Task(start: date, text: "Working on project Haora", isPause: false, tags: ["Haora"]))
 }
