@@ -20,7 +20,11 @@ struct DayView: View {
         NavigationStack {
             VStack {
                 SelectedDateView(date: selectedDate)
-                NonEmptyList
+                if selectedDay.tasks.isEmpty {
+                    EmptyList
+                } else {
+                    NonEmptyList
+                }
                 Summary
                 Divider().padding()
                 ZStack {
@@ -54,8 +58,8 @@ struct DayView: View {
     
     var NonEmptyList: some View {
         List {
-            ForEach(selectedDay.tasks) { _ in
-                NavigationLink {} label: { TaskListItemView() }
+            ForEach(selectedDay.tasks) { task in
+                NavigationLink {} label: { TaskListItemView(task: task) }
                     .swipeActions(edge: .leading, allowsFullSwipe: true) {
                         Button(action: {}) {
                             Image(systemName: "plus")
@@ -129,7 +133,7 @@ struct DayView: View {
         let container = try ModelContainer(for: Day.self, configurations: config)
         
         let testDay = Day(date: Date().stripTime())
-        testDay.tasks.append(Task(text: "Test Task"))
+        testDay.tasks.append(Task(text: "Working on project Haora"))
         container.mainContext.insert(testDay)
         
         return DayView()

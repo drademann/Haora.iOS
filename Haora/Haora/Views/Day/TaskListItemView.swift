@@ -2,11 +2,13 @@ import SwiftUI
 
 struct TaskListItemView: View {
     
+    var task: Task
+    
     var body: some View {
         ZStack {
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Working on project Haora")
+                    Text(task.text)
                     Text("#Haora")
                         .foregroundStyle(.gray)
                 }
@@ -24,5 +26,5 @@ struct TaskListItemView: View {
 }
 
 #Preview {
-    TaskListItemView()
+    TaskListItemView(task: Task(start: Date(), text: "Working on project Haora", isPause: false, tags: ["Haora"]))
 }
