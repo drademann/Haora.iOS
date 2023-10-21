@@ -7,24 +7,13 @@ struct DayView: View {
     private var selectedDate: Date = Date().stripTime()
     
     @Query
-    var selectedDays: [Day]
+    var days: [Day]
     
     var selectedDay: Day {
         get {
-            if selectedDays.isEmpty {
-                // TODO create new day, insert and return it
-                print("should create new task here")
-                return Day(date: Date())
-            } else {
-                print("using exitsing day, yay!")
-                return selectedDays.first!
-            }
+            return if let day = days.first(where: { $0.date == selectedDate }) { day }
+            else { Day(date: Date()) }
         }
-    }
-    
-    init() {
-        let predicate = #Predicate<Day> { $0.date == selectedDate }
-        _selectedDays = Query(filter: predicate)
     }
     
     var body: some View {
