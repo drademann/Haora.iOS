@@ -42,7 +42,8 @@ struct TaskView: View {
 }
 
 #Preview {
-    NavigationStack {
-        TaskView(task: .constant(Task(start: Date(), text: "a test task", isPause: false)))
+    let date = Date()
+    return NavigationStack {
+        TaskView(task: .constant(Task(day: Day(date:date), start: date, text: "a test task", isPause: false)))
     }
 }

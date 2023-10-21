@@ -36,7 +36,8 @@ struct TagsView: View {
 }
 
 #Preview {
-    NavigationStack {
-        TagsView(task: .constant(Task(start: Date(), text: "a test task", isPause: false, tags: [ "PriMa" ])))
+    let date = Date()
+    return NavigationStack {
+        TagsView(task: .constant(Task(day: Day(date: date.stripTime()), start: Date(), text: "a test task", isPause: false, tags: [ "PriMa" ])))
     }
 }

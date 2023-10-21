@@ -133,7 +133,7 @@ struct DayView: View {
         let container = try ModelContainer(for: Day.self, configurations: config)
         
         let testDay = Day(date: Date().stripTime())
-        testDay.tasks.append(Task(text: "Working on project Haora"))
+        testDay.tasks.append(Task(day: testDay, text: "Working on project Haora"))
         container.mainContext.insert(testDay)
         
         return DayView()
