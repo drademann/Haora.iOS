@@ -9,8 +9,8 @@ final class Task {
     var isPause: Bool
     var tags: [String]
     
-    init(start: Date = Date(), text: String, isPause: Bool = false, tags: [String] = []) {
-        self.day = nil
+    init(day: Day? = nil, start: Date = Date(), text: String, isPause: Bool = false, tags: [String] = []) {
+        self.day = day
         self.start = start
         self.text = text
         self.isPause = isPause

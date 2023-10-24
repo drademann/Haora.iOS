@@ -4,7 +4,7 @@ import SwiftData
 struct DayView: View {
     
     @State 
-    private var selectedDate: Date = Date().stripTime()
+    private var selectedDate: Date = Date().withoutTime()
     
     @Query
     var days: [Day]
@@ -132,7 +132,7 @@ struct DayView: View {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
         
-        let testDay = Day(date: Date().stripTime())
+        let testDay = Day(date: Date().withoutTime())
         container.mainContext.insert(testDay)
         let testTask = Task(text: "Working on project Haora")
         testDay.tasks.append(testTask)
