@@ -36,7 +36,7 @@ struct TagsView: View {
 }
 
 #Preview {
-    return NavigationStack {
+    NavigationStack {
         TagsView(task: .constant(Task(start: Date(), text: "a test task", isPause: false, tags: [ "PriMa" ])))
     }
 }

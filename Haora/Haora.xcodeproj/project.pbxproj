@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D4164702AC9A3C200E3504D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41646F2AC9A3C200E3504D /* Task.swift */; };
+		9D51959D2AE8192C005CB038 /* TaskModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51959C2AE8192C005CB038 /* TaskModelTests.swift */; };
 		9D8397A42AD158E600A86CF5 /* TaskListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397A32AD158E600A86CF5 /* TaskListItemView.swift */; };
 		9D8397A62AD164F900A86CF5 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397A52AD164F900A86CF5 /* DayView.swift */; };
 		9D8397AA2AD166AE00A86CF5 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397A92AD166AE00A86CF5 /* WeekView.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		9D41646F2AC9A3C200E3504D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		9D51959C2AE8192C005CB038 /* TaskModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelTests.swift; sourceTree = "<group>"; };
 		9D8397A32AD158E600A86CF5 /* TaskListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListItemView.swift; sourceTree = "<group>"; };
 		9D8397A52AD164F900A86CF5 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		9D8397A92AD166AE00A86CF5 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			children = (
 				9DFFAC452ABB6E7A0038559C /* Day.swift */,
 				9D41646F2AC9A3C200E3504D /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D51959B2AE818E6005CB038 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9D51959C2AE8192C005CB038 /* TaskModelTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				9DFFAC562ABB6E7B0038559C /* HaoraTests.swift */,
+				9D51959B2AE818E6005CB038 /* Model */,
 			);
 			path = HaoraTests;
 			sourceTree = "<group>";
@@ -372,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D51959D2AE8192C005CB038 /* TaskModelTests.swift in Sources */,
 				9DFFAC572ABB6E7B0038559C /* HaoraTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
