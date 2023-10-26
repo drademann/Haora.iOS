@@ -12,4 +12,10 @@ final class Day {
         self.tasks = []
         self.finished = nil
     }
+    
+    var sortedTasks: [Task] {
+        get {
+            return tasks.sorted { $0.start < $1.start }
+        }
+    }
 }
