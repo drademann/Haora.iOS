@@ -138,7 +138,7 @@
 				9D8397A22AD158CB00A86CF5 /* Day */,
 				9D8397A72AD1667200A86CF5 /* Week */,
 				9D8397A82AD1667E00A86CF5 /* Month */,
-				9DA259012ADABB5D00023815 /* Supporting */,
+				9DA259012ADABB5D00023815 /* Support */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,20 +171,20 @@
 			path = Month;
 			sourceTree = "<group>";
 		};
-		9DA259012ADABB5D00023815 /* Supporting */ = {
+		9DA259012ADABB5D00023815 /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				9DA258FF2ADAB39800023815 /* TrailingImageLabelStyle.swift */,
 			);
-			path = Supporting;
+			path = Support;
 			sourceTree = "<group>";
 		};
-		9DAB462B2AE1879B00BE30AC /* Supporting */ = {
+		9DAB462B2AE1879B00BE30AC /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				9DAB462C2AE187F900BE30AC /* DateExtension.swift */,
 			);
-			path = Supporting;
+			path = Support;
 			sourceTree = "<group>";
 		};
 		9DFFAC352ABB6E7A0038559C = {
@@ -213,7 +213,7 @@
 				9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */,
 				9D8397A12AD1586700A86CF5 /* Views */,
 				9D41646E2AC9A29F00E3504D /* Model */,
-				9DAB462B2AE1879B00BE30AC /* Supporting */,
+				9DAB462B2AE1879B00BE30AC /* Support */,
 				9DFFAC472ABB6E7B0038559C /* Assets.xcassets */,
 				9DFFAC492ABB6E7B0038559C /* Haora.entitlements */,
 				9DFFAC4D2ABB6E7B0038559C /* Info.plist */,
