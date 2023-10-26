@@ -132,10 +132,10 @@ struct DayView: View {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
         
-        let testDay = Day(date: Date().withoutTime())
-        container.mainContext.insert(testDay)
-        let testTask = Task(text: "Working on project Haora")
-        testDay.tasks.append(testTask)
+        let day = Day(date: Date().withoutTime())
+        container.mainContext.insert(day)
+        let task = Task(text: "Working on project Haora")
+        day.tasks.append(task)
         
         return DayView()
             .modelContainer(container)
