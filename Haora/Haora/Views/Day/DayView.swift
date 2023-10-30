@@ -3,126 +3,47 @@ import SwiftData
 
 struct DayView: View {
     
-    @State 
-    private var selectedDate: Date = Date().withoutTime()
+    @State
+    private var date: Date = Date().withoutTime()
     
     @Query
     var days: [Day]
     
-    var selectedDay: Day {
-        get {
-            return if let day = days.first(where: { $0.date == selectedDate }) { day }
-            else { Day(date: Date()) }
-        }
-    }
-    
     var body: some View {
-        NavigationStack {
-            VStack {
-                SelectedDateView(date: selectedDate)
-                if selectedDay.tasks.isEmpty {
-                    EmptyList
-                } else {
-                    NonEmptyList
-                }
-                Summary
-                Divider().padding()
-                ZStack {
-                    HStack {
-                        Button(action: {}) {
-                            Label("previous day", systemImage: "chevron.left")
-                        }
-                        Spacer()
-                        Button(action: {}) {
-                            Label("next day", systemImage: "chevron.right")
-                                .labelStyle(TrailingImageLabelStyle())
-                        }
-                    }
-                    HStack {
-                        Spacer()
-                        Button(action: {}) {
-                            Text("today")
-                                .tint(.secondary)
-                        }
-                        Spacer()
-                    }
-                }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 20)
-            }
-        }
-        .tabItem {
-            Label("Day", systemImage: "1.circle")
-        }
-    }
-    
-    var NonEmptyList: some View {
-        List {
-            ForEach(selectedDay.tasks) { task in
-                NavigationLink {} label: { TaskListItemView(task: task) }
-                    .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                        Button(action: {}) {
-                            Image(systemName: "plus")
-                        }
-                        .tint(.green)
-                    }
-                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                        Button(role: .destructive, action: {}) {
-                            Image(systemName: "minus")
-                        }
-                    }
-            }
-            .listRowSeparator(.hidden)
-        }
-        .listStyle(.plain)
-        .padding(.bottom)
-    }
-    
-    var Summary: some View {
-        HStack {
-            VStack {
+        @Bindable var day = days.first { $0.date.withoutTime() == date  } ?? Day(date: date)
+        VStack {
+            Text(date, style: .date)
+                .font(.largeTitle)
+            Text("Sunday")
+                .font(.title2)
+            
+            DayTasksView(day: day)
+            
+            ZStack {
                 HStack {
-                    Text("Summary")
-                        .font(.caption)
-                    Spacer()
-                }
-                HStack {
-                    Text("total")
-                    Spacer()
-                    Text("8 h 15 m")
-                }
-                HStack {
-                    Text("breaks")
-                    Spacer()
-                    Text("45 m")
-                }
-                HStack {
-                    Text("finished")
+                    Button(action: {}) {
+                        Label("previous day", systemImage: "chevron.left")
+                    }
                     Spacer()
                     Button(action: {}) {
-                        Text("finish work")
+                        Label("next day", systemImage: "chevron.right")
+                            .labelStyle(TrailingImageLabelStyle())
                     }
-                    Spacer()
-                    Text("not yet")
                 }
                 HStack {
-                    Text("working")
                     Spacer()
-                    Text("7 h 30 m")
+                    Button(action: {}) {
+                        Text("today")
+                            .tint(.secondary)
+                    }
+                    Spacer()
                 }
             }
             .padding(.horizontal, 20)
+            .padding(.bottom, 20)
         }
-    }
-    
-    var EmptyList: some View {
-        VStack {
-            Spacer()
-            Button(action: {}) {
-                Label("add first task of the day", systemImage: "plus")
-                    .font(.system(size: 20))
-            }
-            Spacer()
+        .tabItem {
+            Label("Day", systemImage: "1.circle")
         }
     }
 }
