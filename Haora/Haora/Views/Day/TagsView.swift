@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TagsView: View {
 
-    @Binding var task: Task
+    @Bindable var task: Task
     
     // query
     private let allTags = ["RMS", "PriMa", "Lufthansa", "Flughafen"]
@@ -37,6 +37,6 @@ struct TagsView: View {
 
 #Preview {
     NavigationStack {
-        TagsView(task: .constant(Task(start: Date(), text: "a test task", isPause: false, tags: [ "PriMa" ])))
+        TagsView(task: Task(start: Date(), text: "a test task", isPause: false, tags: [ "PriMa" ]))
     }
 }

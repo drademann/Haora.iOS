@@ -1,25 +1,11 @@
 import SwiftUI
 import SwiftData
 
-struct DayTasksView: View {
+struct DaySummaryView: View {
     
     @Bindable var day: Day
     
     var body: some View {
-        
-        NavigationStack {
-            VStack {
-                if day.tasks.isEmpty {
-                    EmptyTaskListView()
-                } else {
-                    TaskListView(selectedDay: day)
-                }
-                Summary
-            }
-        }
-    }
-    
-    var Summary: some View {
         HStack {
             VStack {
                 HStack {
@@ -67,7 +53,7 @@ struct DayTasksView: View {
         let task = Task(text: "Working on project Haora")
         day.tasks.append(task)
         
-        return DayTasksView(day: day)
+        return DaySummaryView(day: day)
             .modelContainer(container)
     }
     catch {

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TaskView: View {
     
-    @Binding var task: Task
+    @Bindable var task: Task
     
     var body: some View {
         VStack {
@@ -24,7 +24,7 @@ struct TaskView: View {
             HStack {
                 Text("Tags")
                 Spacer()
-                NavigationLink(destination: TagsView(task: $task)) { Text("edit") }
+                NavigationLink(destination: TagsView(task: task)) { Text("edit") }
                     .padding(.trailing, 8)
             }
             .padding(.bottom, 4)
@@ -43,6 +43,6 @@ struct TaskView: View {
 
 #Preview {
     NavigationStack {
-        TaskView(task: .constant(Task(start: Date(), text: "a test task", isPause: false)))
+        TaskView(task: Task(start: Date(), text: "a test task", isPause: false))
     }
 }

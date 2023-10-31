@@ -17,9 +17,10 @@
 		9D559F972AEAE93000C887D2 /* TimeIntervalExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D559F962AEAE93000C887D2 /* TimeIntervalExtensionTests.swift */; };
 		9D559F992AEAEB8F00C887D2 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D559F982AEAEB8F00C887D2 /* TimeIntervalExtension.swift */; };
 		9D8397A42AD158E600A86CF5 /* TaskListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397A32AD158E600A86CF5 /* TaskListItemView.swift */; };
-		9D8397A62AD164F900A86CF5 /* DayTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397A52AD164F900A86CF5 /* DayTasksView.swift */; };
 		9D8397AA2AD166AE00A86CF5 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397A92AD166AE00A86CF5 /* WeekView.swift */; };
 		9D8397AC2AD1671500A86CF5 /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397AB2AD1671500A86CF5 /* MonthView.swift */; };
+		9D89033D2AF111620025D86C /* DaySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D89033C2AF111620025D86C /* DaySummaryView.swift */; };
+		9D89033F2AF114D80025D86C /* SelectDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D89033E2AF114D80025D86C /* SelectDateView.swift */; };
 		9DA259002ADAB39800023815 /* TrailingImageLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA258FF2ADAB39800023815 /* TrailingImageLabelStyle.swift */; };
 		9DAB462D2AE187F900BE30AC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB462C2AE187F900BE30AC /* DateExtension.swift */; };
 		9DC9FBAA2ADAEB02008D6F83 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9FBA92ADAEB02008D6F83 /* TaskView.swift */; };
@@ -65,9 +66,10 @@
 		9D559F962AEAE93000C887D2 /* TimeIntervalExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtensionTests.swift; sourceTree = "<group>"; };
 		9D559F982AEAEB8F00C887D2 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		9D8397A32AD158E600A86CF5 /* TaskListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListItemView.swift; sourceTree = "<group>"; };
-		9D8397A52AD164F900A86CF5 /* DayTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTasksView.swift; sourceTree = "<group>"; };
 		9D8397A92AD166AE00A86CF5 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		9D8397AB2AD1671500A86CF5 /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
+		9D89033C2AF111620025D86C /* DaySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySummaryView.swift; sourceTree = "<group>"; };
+		9D89033E2AF114D80025D86C /* SelectDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateView.swift; sourceTree = "<group>"; };
 		9DA258FF2ADAB39800023815 /* TrailingImageLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingImageLabelStyle.swift; sourceTree = "<group>"; };
 		9DAB462C2AE187F900BE30AC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		9DC9FBA92ADAEB02008D6F83 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
@@ -162,9 +164,10 @@
 			isa = PBXGroup;
 			children = (
 				9DD1B50B2ADD76D600B40CC9 /* DayView.swift */,
-				9D8397A52AD164F900A86CF5 /* DayTasksView.swift */,
+				9D89033E2AF114D80025D86C /* SelectDateView.swift */,
 				9DD2B5982AEF9F59004A1301 /* TaskListView.swift */,
 				9DD2B5962AEF9EEC004A1301 /* EmptyTaskListView.swift */,
+				9D89033C2AF111620025D86C /* DaySummaryView.swift */,
 				9D8397A32AD158E600A86CF5 /* TaskListItemView.swift */,
 				9DC9FBA92ADAEB02008D6F83 /* TaskView.swift */,
 				9DC9FBAB2ADBECAD008D6F83 /* TagsView.swift */,
@@ -399,9 +402,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4164702AC9A3C200E3504D /* Task.swift in Sources */,
-				9D8397A62AD164F900A86CF5 /* DayTasksView.swift in Sources */,
 				9DAB462D2AE187F900BE30AC /* DateExtension.swift in Sources */,
 				9DC9FBAC2ADBECAD008D6F83 /* TagsView.swift in Sources */,
+				9D89033F2AF114D80025D86C /* SelectDateView.swift in Sources */,
 				9D559F952AEADF1C00C887D2 /* TaskDuration.swift in Sources */,
 				9D5195A42AE84797005CB038 /* TaskNeighbour.swift in Sources */,
 				9DFFAC442ABB6E7A0038559C /* ContentView.swift in Sources */,
@@ -410,6 +413,7 @@
 				9DD2B5972AEF9EEC004A1301 /* EmptyTaskListView.swift in Sources */,
 				9D8397AC2AD1671500A86CF5 /* MonthView.swift in Sources */,
 				9DD2B5992AEF9F59004A1301 /* TaskListView.swift in Sources */,
+				9D89033D2AF111620025D86C /* DaySummaryView.swift in Sources */,
 				9D8397AA2AD166AE00A86CF5 /* WeekView.swift in Sources */,
 				9DD1B50C2ADD76D600B40CC9 /* DayView.swift in Sources */,
 				9DFFAC462ABB6E7A0038559C /* Day.swift in Sources */,

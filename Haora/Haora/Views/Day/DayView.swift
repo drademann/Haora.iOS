@@ -11,36 +11,24 @@ struct DayView: View {
     
     var body: some View {
         @Bindable var day = days.first { $0.date.withoutTime() == date  } ?? Day(date: date)
-        VStack {
-            Text(date, style: .date)
-                .font(.largeTitle)
-            Text("Sunday")
-                .font(.title2)
-            
-            DayTasksView(day: day)
-            
-            ZStack {
-                HStack {
-                    Button(action: {}) {
-                        Label("previous day", systemImage: "chevron.left")
-                    }
-                    Spacer()
-                    Button(action: {}) {
-                        Label("next day", systemImage: "chevron.right")
-                            .labelStyle(TrailingImageLabelStyle())
-                    }
+        NavigationStack {
+            VStack {
+                Text(date, style: .date)
+                    .font(.largeTitle)
+                Text("Sunday")
+                    .font(.title2)
+                
+                if day.tasks.isEmpty {
+                    EmptyTaskListView(day: day)
+                } else {
+                    TaskListView(day: day)
                 }
-                HStack {
-                    Spacer()
-                    Button(action: {}) {
-                        Text("today")
-                            .tint(.secondary)
-                    }
-                    Spacer()
-                }
+                DaySummaryView(day: day)
+                
+                SelectDateView(date: $date)
+                    .padding([.leading, .bottom, .trailing], 20)
+                    .padding(.top, 10)
             }
-            .padding(.horizontal, 20)
-            .padding(.bottom, 20)
         }
         .tabItem {
             Label("Day", systemImage: "1.circle")
@@ -58,8 +46,10 @@ struct DayView: View {
         let task = Task(text: "Working on project Haora")
         day.tasks.append(task)
         
-        return DayView()
-            .modelContainer(container)
+        return TabView {
+            DayView()
+                .modelContainer(container)
+        }
     }
     catch {
         fatalError("unable to create model container for preview")
