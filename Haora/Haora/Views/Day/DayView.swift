@@ -2,6 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct DayView: View {
+    @Environment(\.modelContext) var modelContext
     
     @State
     private var date: Date = Date().withoutTime()
@@ -10,7 +11,7 @@ struct DayView: View {
     var days: [Day]
     
     var body: some View {
-        @Bindable var day = days.first { $0.date.withoutTime() == date  } ?? Day(date: date)
+        @Bindable var day = selectedDay()
         NavigationStack {
             VStack {
                 Text(date, style: .date)
@@ -34,6 +35,20 @@ struct DayView: View {
             Label("Day", systemImage: "1.circle")
         }
     }
+}
+
+extension DayView {
+    
+    private func selectedDay() -> Day {
+        days.first { Calendar.current.isDate($0.date, inSameDayAs: date) } ?? createNewDay()
+    }
+    
+    private func createNewDay() -> Day {
+        let newDay = Day(date: date.withoutTime())
+        modelContext.insert(newDay)
+        return newDay
+    }
+    
 }
 
 #Preview {
