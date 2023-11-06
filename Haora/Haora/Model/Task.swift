@@ -1,6 +1,8 @@
 import Foundation
 import SwiftData
 
+// MARK: - Data
+
 @Model
 final class Task {
     var day: Day?
@@ -15,5 +17,31 @@ final class Task {
         self.text = text
         self.isPause = isPause
         self.tags = tags
+    }
+}
+
+// MARK: - Neighbours
+
+extension Task {
+    
+    func successor() -> Task? {
+        let tasks = day!.sortedTasks
+        if let index = tasks.firstIndex(of: self) {
+            let successorIndex = tasks.index(after: index)
+            if successorIndex < tasks.endIndex {
+                return tasks[successorIndex]
+            }
+        }
+        return nil
+    }
+}
+
+// MARK: - Duration
+
+extension Task {
+    
+    func duration(to other: Task?) -> TimeInterval? {
+        guard let other = other else { return nil }
+        return DateInterval(start: self.start, end: other.start).duration
     }
 }
