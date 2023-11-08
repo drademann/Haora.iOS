@@ -44,4 +44,8 @@ extension Task {
         guard let other = other else { return nil }
         return DateInterval(start: self.start, end: other.start).duration
     }
+    
+    func duration(to date: Date = Date()) -> TimeInterval {
+        return DateInterval(start: self.start, end: date).duration
+    }
 }

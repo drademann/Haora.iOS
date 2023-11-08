@@ -19,4 +19,12 @@ final class TaskDurationTests: XCTestCase {
         
         XCTAssertEqual(duration, 2 * 60 * 60) // seconds
     }
+    
+    func testDuration_givenAnotherDate_shouldReturnDuration() {
+        let task = Task(start: Date().at(8, 00), text: "Task")
+        
+        let duration = task.duration(to: Date().at(9, 30))
+        
+        XCTAssertEqual(duration, 90 * 60)
+    }
 }
