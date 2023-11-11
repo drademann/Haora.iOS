@@ -31,21 +31,7 @@ struct TaskListItemView: View {
 }
 
 #Preview {
-    do {
-        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
-        
-        let day = Day(date: Date().withoutTime())
-        container.mainContext.insert(day)
-        let task = Task(start: Date().at(9, 15), text: "Working on project Haora", isPause: false, tags: ["Haora"])
-        day.tasks.append(task)
-        let next = Task(start: Date().at(12, 00), text: "Sleeping", isPause: true, tags: [])
-        day.tasks.append(next)
-        
-        return TaskListItemView(task: task)
-            .modelContainer(container)
-    }
-    catch {
-        fatalError("unable to create model container for preview")
-    }
+    let preview = previewDayModel()
+    return TaskListItemView(task: preview.task)
+        .modelContainer(preview.container)
 }
