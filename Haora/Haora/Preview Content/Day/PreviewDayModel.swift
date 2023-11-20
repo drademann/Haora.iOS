@@ -4,7 +4,7 @@ import SwiftData
 @MainActor func previewDayModel() -> PreviewDayModel {
     do {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
+        let container = try ModelContainer(for: Day.self, Task.self, Tag.self, configurations: config)
         
         let day = Day(date: Date().withoutTime())
         container.mainContext.insert(day)

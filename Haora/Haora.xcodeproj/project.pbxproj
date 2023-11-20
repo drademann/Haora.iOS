@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D300E842B0B5920002D7836 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D300E832B0B5920002D7836 /* Tag.swift */; };
 		9D4164702AC9A3C200E3504D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41646F2AC9A3C200E3504D /* Task.swift */; };
 		9D51959D2AE8192C005CB038 /* TaskModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51959C2AE8192C005CB038 /* TaskModelTests.swift */; };
 		9D51959F2AE83BF5005CB038 /* TaskNeighbourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51959E2AE83BF5005CB038 /* TaskNeighbourTests.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D300E832B0B5920002D7836 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		9D41646F2AC9A3C200E3504D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		9D51959C2AE8192C005CB038 /* TaskModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelTests.swift; sourceTree = "<group>"; };
 		9D51959E2AE83BF5005CB038 /* TaskNeighbourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNeighbourTests.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				9DFFAC452ABB6E7A0038559C /* Day.swift */,
+				9D300E832B0B5920002D7836 /* Tag.swift */,
 				9D41646F2AC9A3C200E3504D /* Task.swift */,
 			);
 			path = Model;
@@ -417,6 +420,7 @@
 				9D8397AC2AD1671500A86CF5 /* MonthView.swift in Sources */,
 				9DD2B5992AEF9F59004A1301 /* TaskListView.swift in Sources */,
 				9D89033D2AF111620025D86C /* DaySummaryView.swift in Sources */,
+				9D300E842B0B5920002D7836 /* Tag.swift in Sources */,
 				9D8397AA2AD166AE00A86CF5 /* WeekView.swift in Sources */,
 				9DD1B50C2ADD76D600B40CC9 /* DayView.swift in Sources */,
 				9DFFAC462ABB6E7A0038559C /* Day.swift in Sources */,

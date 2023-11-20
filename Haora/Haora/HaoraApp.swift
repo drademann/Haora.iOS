@@ -6,7 +6,8 @@ struct HaoraApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Day.self,
-            Task.self
+            Task.self,
+            Tag.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
