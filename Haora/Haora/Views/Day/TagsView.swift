@@ -1,21 +1,22 @@
 import SwiftUI
+import SwiftData
 
 struct TagsView: View {
 
     @Bindable var task: Task
     
-    // query
-    private let allTags = ["RMS", "PriMa", "Lufthansa", "Flughafen"]
+    @Query
+    var tags: [Tag]
     
     var body: some View {
         VStack {
             List {
-                ForEach(allTags, id: \.self) { tag in
+                ForEach(tags) { tag in
                     HStack {
-                        Text("#\(tag)")
+                        Text("#\(tag.name)")
                             .foregroundColor(.secondary)
                         Spacer()
-                        if task.tags.map(\.name).contains(tag) {
+                        if task.tags.contains(tag) {
                             Image(systemName: "checkmark")
                                 .foregroundColor(.secondary)
                         }
