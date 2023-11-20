@@ -15,7 +15,7 @@ struct TagsView: View {
                         Text("#\(tag)")
                             .foregroundColor(.secondary)
                         Spacer()
-                        if task.tags.contains(tag) {
+                        if task.tags.map(\.name).contains(tag) {
                             Image(systemName: "checkmark")
                                 .foregroundColor(.secondary)
                         }
@@ -36,7 +36,9 @@ struct TagsView: View {
 }
 
 #Preview {
-    NavigationStack {
-        TagsView(task: Task(start: Date(), text: "a test task", isPause: false, tags: [ "PriMa" ]))
+    let preview = previewDayModel()
+    return NavigationStack {
+        TagsView(task: Task(start: Date(), text: "a test task", isPause: false, tags: []))
+            .modelContainer(preview.container)
     }
 }

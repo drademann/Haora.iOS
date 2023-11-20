@@ -122,8 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				9DFFAC452ABB6E7A0038559C /* Day.swift */,
-				9D300E832B0B5920002D7836 /* Tag.swift */,
 				9D41646F2AC9A3C200E3504D /* Task.swift */,
+				9D300E832B0B5920002D7836 /* Tag.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

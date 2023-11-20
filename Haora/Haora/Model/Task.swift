@@ -9,9 +9,9 @@ final class Task {
     var start: Date
     var text: String
     var isPause: Bool
-    var tags: [String]
+    var tags: [Tag] = []
     
-    init(day: Day? = nil, start: Date = Date(), text: String, isPause: Bool = false, tags: [String] = []) {
+    init(day: Day? = nil, start: Date = Date(), text: String, isPause: Bool = false, tags: [Tag] = []) {
         self.day = day
         self.start = start
         self.text = text
