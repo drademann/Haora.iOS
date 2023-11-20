@@ -5,7 +5,7 @@ struct TagsView: View {
 
     @Bindable var task: Task
     
-    @Query
+    @Query(sort: \Tag.name)
     var tags: [Tag]
     
     var body: some View {
@@ -38,8 +38,9 @@ struct TagsView: View {
 
 #Preview {
     let preview = previewDayModel()
+    preview.task.tags.append(preview.tag1)
     return NavigationStack {
-        TagsView(task: Task(start: Date(), text: "a test task", isPause: false, tags: []))
+        TagsView(task: preview.task)
             .modelContainer(preview.container)
     }
 }
