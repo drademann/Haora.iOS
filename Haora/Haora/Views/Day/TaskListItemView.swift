@@ -32,6 +32,6 @@ struct TaskListItemView: View {
 
 #Preview {
     let preview = previewDayModel()
-    return TaskListItemView(task: preview.task)
+    return TaskListItemView(task: preview.task1)
         .modelContainer(preview.container)
 }

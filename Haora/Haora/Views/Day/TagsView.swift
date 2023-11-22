@@ -38,9 +38,9 @@ struct TagsView: View {
 
 #Preview {
     let preview = previewDayModel()
-    preview.task.tags.append(preview.tag1)
+    preview.task1.tags.append(preview.tag1)
     return NavigationStack {
-        TagsView(task: preview.task)
+        TagsView(task: preview.task1)
             .modelContainer(preview.container)
     }
 }
