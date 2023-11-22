@@ -10,7 +10,7 @@ struct TaskListItemView: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(task.text)
-                    Text("#Haora")
+                    Text(formatted(task.tags))
                         .foregroundStyle(.gray)
                 }
                 Spacer()

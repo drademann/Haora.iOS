@@ -18,6 +18,8 @@ import SwiftData
         container.mainContext.insert(tag1)
         container.mainContext.insert(tag2)
         
+        task1.tags.append(tag1)
+        
         return PreviewDayModel(container: container, day: day, task1: task1, task2: task2, tag1: tag1, tag2: tag2)
     }
     catch {

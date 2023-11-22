@@ -10,3 +10,13 @@ final class Tag {
         self.name = name
     }
 }
+
+// MARK: - Output
+
+enum TagFormatStyle {
+    case spaceSeparated
+}
+
+func formatted(_ tags: [Tag], style: TagFormatStyle = .spaceSeparated) -> String {
+    return tags.map { "#\($0.name)" }.joined(separator: " ")
+}
