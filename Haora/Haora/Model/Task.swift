@@ -40,9 +40,9 @@ extension Task {
 
 extension Task {
     
-    func duration(to other: Task?) -> TimeInterval? {
-        guard let other = other else { return nil }
-        return DateInterval(start: self.start, end: other.start).duration
+    func duration(to next: Task?) -> TimeInterval? {
+        guard let next = next else { return nil }
+        return DateInterval(start: self.start, end: next.start).duration
     }
     
     func duration(to date: Date = Date()) -> TimeInterval {

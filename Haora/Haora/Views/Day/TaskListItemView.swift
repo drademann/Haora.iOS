@@ -18,15 +18,24 @@ struct TaskListItemView: View {
             HStack {
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text("9:15 - 12:00")
-                    Text(duration.asString())
+                    Text("\(start) - \(end)")
+                    Text(duration)
                 }
             }
         }
     }
     
-    var duration: TimeInterval { get {
-        return task.duration(to: task.successor()) ?? 0.0
+    private var start: String { get {
+        return task.start.asTimeString()
+    }}
+    
+    private var end: String { get {
+        return task.successor()?.start.asTimeString() ?? "now"
+    }}
+    
+    private var duration: String { get {
+        return task.duration(to: task.successor())?.asString()
+            ?? task.duration(to: Date()).asString()
     }}
 }
 
