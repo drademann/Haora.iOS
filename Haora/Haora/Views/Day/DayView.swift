@@ -16,7 +16,7 @@ struct DayView: View {
             VStack {
                 Text(date, style: .date)
                     .font(.largeTitle)
-                Text(weekday(of: date))
+                Text(date.asWeekdayString())
                     .font(.title2)
                 
                 if day.tasks.isEmpty {
@@ -35,16 +35,6 @@ struct DayView: View {
             Label("Day", systemImage: "1.circle")
         }
     }
-}
-
-extension DayView {
-    
-    private func weekday(of date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE"
-        return formatter.string(from: date)
-    }
-    
 }
 
 extension DayView {
