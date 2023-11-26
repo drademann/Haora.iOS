@@ -20,5 +20,15 @@ extension Date {
 // MARK: - Output
 
 extension Date {
+
+    static let DateTimeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "H:mm"
+        return formatter
+    }()
+    
+    func asTimeString() -> String {
+        return Self.DateTimeFormatter.string(from: self)
+    }
     
 }

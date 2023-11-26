@@ -23,4 +23,20 @@ final class DateExtensionTests: XCTestCase {
         XCTAssertEqual(components.minute, 0)
         XCTAssertEqual(components.second, 0)
     }
+    
+    func testAsTimeString_shouldFormatTimeComponentsOfDateAsString() {
+        let date = Date().at(15, 15)
+        
+        let timeString = date.asTimeString()
+        
+        XCTAssertEqual(timeString, "15:15")
+    }
+    
+    func testAsTimeString_shouldFormatOneDigitHoursAndMinutes() {
+        let date = Date().at(9, 01)
+        
+        let timeString = date.asTimeString()
+        
+        XCTAssertEqual(timeString, "9:01")
+    }
 }
