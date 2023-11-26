@@ -139,13 +139,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		9D5195A02AE8438F005CB038 /* Supporting */ = {
+		9D5195A02AE8438F005CB038 /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				9D5195A12AE843BF005CB038 /* DateExtensionTests.swift */,
 				9D559F962AEAE93000C887D2 /* TimeIntervalExtensionTests.swift */,
 			);
-			path = Supporting;
+			path = Support;
 			sourceTree = "<group>";
 		};
 		9D8397A12AD1586700A86CF5 /* Views */ = {
@@ -283,7 +283,7 @@
 			children = (
 				9DFFAC562ABB6E7B0038559C /* HaoraTests.swift */,
 				9D51959B2AE818E6005CB038 /* Model */,
-				9D5195A02AE8438F005CB038 /* Supporting */,
+				9D5195A02AE8438F005CB038 /* Support */,
 			);
 			path = HaoraTests;
 			sourceTree = "<group>";

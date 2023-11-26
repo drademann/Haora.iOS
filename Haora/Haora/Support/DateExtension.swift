@@ -1,5 +1,7 @@
 import Foundation
 
+// MARK: - Instantiation
+
 extension Date {
 
     func at(_ hour: Int, _ minute: Int) -> Date {
@@ -13,4 +15,10 @@ extension Date {
         let components = Calendar.current.dateComponents([.year, .month, .day], from: self)
         return Calendar.current.date(from: components)!
     }
+}
+
+// MARK: - Output
+
+extension Date {
+    
 }

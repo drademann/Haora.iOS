@@ -19,7 +19,7 @@ struct TaskListItemView: View {
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("9:15 - 12:00")
-                    Text(duration.formatted())
+                    Text(duration.asString())
                 }
             }
         }

@@ -2,7 +2,7 @@ import Foundation
 
 extension TimeInterval {
     
-    func formatted() -> String {
+    func asString() -> String {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .short
         formatter.allowedUnits = [.hour, .minute ]
