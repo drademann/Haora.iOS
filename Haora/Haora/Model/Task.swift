@@ -40,12 +40,12 @@ extension Task {
 
 extension Task {
   
-  func duration(to next: Task?) -> TimeInterval? {
-    guard let next = next else { return nil }
-    return DateInterval(start: self.start, end: next.start).duration
+  func duration(to next: Task?, currentDate: Date = Date.now) -> TimeInterval? {
+    guard let next = next else { return duration(to: currentDate) }
+    return duration(to: next.start)
   }
   
-  func duration(to date: Date = Date()) -> TimeInterval {
+  func duration(to date: Date) -> TimeInterval {
     return DateInterval(start: self.start, end: date).duration
   }
 }

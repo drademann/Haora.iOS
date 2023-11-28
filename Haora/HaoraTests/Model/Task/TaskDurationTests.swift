@@ -3,12 +3,12 @@ import XCTest
 
 final class TaskDurationTests: XCTestCase {
   
-  func testDuration_givenNextTaskIsNil_shouldReturnNil() {
+  func testDuration_givenNextTaskIsNil_shouldReturnDurationToNow() {
     let task = Task(start: Date().at(8, 00), text: "Task")
     
-    let duration = task.duration(to: nil)
+    let duration = task.duration(to: nil, currentDate: Date().at(10, 00))
     
-    XCTAssertNil(duration)
+    XCTAssertEqual(duration, 2 * 60 * 60)
   }
   
   func testDuration_givenNextTask_shouldReturnDurationBetween() {
