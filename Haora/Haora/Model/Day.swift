@@ -19,3 +19,14 @@ final class Day {
     }
   }
 }
+
+// MARK: - Duration
+
+extension Day {
+    
+    func duration(currentDate: Date = Date.now) -> TimeInterval {
+        guard let start = sortedTasks.first?.start else { return 0 }
+        let end = self.finished ?? currentDate
+        return DateInterval(start: start, end: end).duration
+    }
+}

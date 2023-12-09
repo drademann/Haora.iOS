@@ -28,6 +28,7 @@
 		9DD1B50C2ADD76D600B40CC9 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1B50B2ADD76D600B40CC9 /* DayView.swift */; };
 		9DD2B5972AEF9EEC004A1301 /* EmptyTaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2B5962AEF9EEC004A1301 /* EmptyTaskListView.swift */; };
 		9DD2B5992AEF9F59004A1301 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2B5982AEF9F59004A1301 /* TaskListView.swift */; };
+		9DD8637C2B24A8BC002F0DB8 /* DayDurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD8637B2B24A8BC002F0DB8 /* DayDurationTests.swift */; };
 		9DE68CEB2AFF83B40075968F /* PreviewDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE68CEA2AFF83B40075968F /* PreviewDayModel.swift */; };
 		9DFFAC422ABB6E7A0038559C /* HaoraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */; };
 		9DFFAC442ABB6E7A0038559C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFAC432ABB6E7A0038559C /* ContentView.swift */; };
@@ -78,6 +79,7 @@
 		9DD1B50B2ADD76D600B40CC9 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		9DD2B5962AEF9EEC004A1301 /* EmptyTaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTaskListView.swift; sourceTree = "<group>"; };
 		9DD2B5982AEF9F59004A1301 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		9DD8637B2B24A8BC002F0DB8 /* DayDurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDurationTests.swift; sourceTree = "<group>"; };
 		9DE68CEA2AFF83B40075968F /* PreviewDayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDayModel.swift; sourceTree = "<group>"; };
 		9DFFAC3E2ABB6E7A0038559C /* Haora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Haora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFFAC412ABB6E7A0038559C /* HaoraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaoraApp.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		9D51959B2AE818E6005CB038 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9DD8637A2B24A8AB002F0DB8 /* Day */,
 				9DB4961A2B0E5B9900B18693 /* Task */,
 				9DB4961B2B0E5BA100B18693 /* Tag */,
 			);
@@ -224,6 +227,14 @@
 				9DB4961C2B0E5BC000B18693 /* TagTests.swift */,
 			);
 			path = Tag;
+			sourceTree = "<group>";
+		};
+		9DD8637A2B24A8AB002F0DB8 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				9DD8637B2B24A8BC002F0DB8 /* DayDurationTests.swift */,
+			);
+			path = Day;
 			sourceTree = "<group>";
 		};
 		9DE68CEC2AFF87DD0075968F /* Day */ = {
@@ -454,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD8637C2B24A8BC002F0DB8 /* DayDurationTests.swift in Sources */,
 				9D559F972AEAE93000C887D2 /* TimeIntervalExtensionTests.swift in Sources */,
 				9DB4961D2B0E5BC000B18693 /* TagTests.swift in Sources */,
 				9D51959F2AE83BF5005CB038 /* TaskNeighbourTests.swift in Sources */,

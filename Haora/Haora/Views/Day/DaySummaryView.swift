@@ -2,49 +2,63 @@ import SwiftUI
 import SwiftData
 
 struct DaySummaryView: View {
-  
-  @Bindable var day: Day
-  
-  var body: some View {
-    HStack {
-      VStack {
+    
+    @Bindable var day: Day
+    
+    var body: some View {
         HStack {
-          Text("Summary")
-            .font(.caption)
-          Spacer()
+            VStack {
+                HStack {
+                    Text("Summary")
+                        .font(.caption)
+                    Spacer()
+                }
+                HStack {
+                    Text("total")
+                    Spacer()
+                    Text(day.duration().asString())
+                }
+                HStack {
+                    Text("breaks")
+                    Spacer()
+                    Text("45 m")
+                }
+                HStack {
+                    Text("finished")
+                    Spacer()
+                    Button(action: {}) {
+                        Text("finish work")
+                    }
+                    Spacer()
+                    Text("not yet")
+                }
+                HStack {
+                    Text("working")
+                    Spacer()
+                    Text("7 h 30 m")
+                }
+            }
+            .padding(.horizontal, 20)
         }
-        HStack {
-          Text("total")
-          Spacer()
-          Text("8 h 15 m")
-        }
-        HStack {
-          Text("breaks")
-          Spacer()
-          Text("45 m")
-        }
-        HStack {
-          Text("finished")
-          Spacer()
-          Button(action: {}) {
-            Text("finish work")
-          }
-          Spacer()
-          Text("not yet")
-        }
-        HStack {
-          Text("working")
-          Spacer()
-          Text("7 h 30 m")
-        }
-      }
-      .padding(.horizontal, 20)
     }
-  }
 }
 
-#Preview {
-  let preview = previewDayModel()
-  return DaySummaryView(day: preview.day)
-    .modelContainer(preview.container)
+#Preview("open end") {
+    let preview = previewDayModel()
+    return DaySummaryView(day: preview.day)
+        .modelContainer(preview.container)
+}
+
+#Preview("finished") {
+    let preview = previewDayModel()
+    preview.day.finished = Date().at(16, 00)
+    return DaySummaryView(day: preview.day)
+        .modelContainer(preview.container)
+}
+
+#Preview("no tasks") {
+    let preview = previewDayModel()
+    preview.day.tasks = []
+    return DaySummaryView(day: preview.day)
+        .modelContainer(preview.container)
 }
