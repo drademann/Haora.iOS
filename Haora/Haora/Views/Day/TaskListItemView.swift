@@ -10,6 +10,7 @@ struct TaskListItemView: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(task.text)
+                        .foregroundStyle(taskTextForegroundStyle)
                     Text(formatted(task.tags))
                         .foregroundStyle(.gray)
                 }
@@ -24,6 +25,10 @@ struct TaskListItemView: View {
             }
         }
     }
+    
+    private var taskTextForegroundStyle: Color { get {
+        return if task.isBreak { .green } else { .primary }
+    }}
     
     private var start: String { get {
         return task.start.asTimeString()
@@ -43,6 +48,8 @@ struct TaskListItemView: View {
     let preview = previewDayModel()
     return VStack {
         TaskListItemView(task: preview.task1)
+            .modelContainer(preview.container)
+        TaskListItemView(task: preview.pause)
             .modelContainer(preview.container)
         TaskListItemView(task: preview.task2)
             .modelContainer(preview.container)

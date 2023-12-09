@@ -22,7 +22,7 @@ import SwiftData
         
         task1.tags.append(tag1)
         
-        return PreviewDayModel(container: container, day: day, task1: task1, task2: task2, tag1: tag1, tag2: tag2)
+        return PreviewDayModel(container: container, day: day, task1: task1, pause: pause, task2: task2, tag1: tag1, tag2: tag2)
     }
     catch {
         fatalError("unable to create model container for preview due to \(error)")
@@ -33,6 +33,7 @@ struct PreviewDayModel {
     let container: ModelContainer
     let day: Day
     let task1: Task
+    let pause: Task
     let task2: Task
     let tag1: Tag
     let tag2: Tag
