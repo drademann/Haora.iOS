@@ -10,7 +10,9 @@ import SwiftData
         container.mainContext.insert(day)
         let task1 = Task(start: Date().at(10, 00), text: "Working on project Haora")
         day.tasks.append(task1)
-        let task2 = Task(start: Date().at(12, 00), text: "Cooking")
+        let pause = Task(start: Date().at(12, 00), text: "Lunch", isBreak: true)
+        day.tasks.append(pause)
+        let task2 = Task(start: Date().at(12, 45), text: "Cooking lesson")
         day.tasks.append(task2)
         
         let tag1 = Tag("Haora")

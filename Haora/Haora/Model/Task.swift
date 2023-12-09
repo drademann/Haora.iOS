@@ -8,14 +8,14 @@ final class Task {
   var day: Day?
   var start: Date
   var text: String
-  var isPause: Bool
+  var isBreak: Bool
   var tags: [Tag] = []
   
-  init(day: Day? = nil, start: Date = Date(), text: String, isPause: Bool = false, tags: [Tag] = []) {
+  init(day: Day? = nil, start: Date = Date(), text: String, isBreak: Bool = false, tags: [Tag] = []) {
     self.day = day
     self.start = start
     self.text = text
-    self.isPause = isPause
+    self.isBreak = isBreak
     self.tags = tags
   }
 }

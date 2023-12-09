@@ -43,6 +43,6 @@ struct TaskView: View {
 
 #Preview {
     NavigationStack {
-        TaskView(task: Task(start: Date(), text: "a test task", isPause: false))
+        TaskView(task: Task(start: Date(), text: "a test task", isBreak: false))
     }
 }

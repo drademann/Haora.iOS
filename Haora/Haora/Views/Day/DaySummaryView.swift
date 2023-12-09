@@ -21,7 +21,7 @@ struct DaySummaryView: View {
                 HStack {
                     Text("breaks")
                     Spacer()
-                    Text("45 m")
+                    Text(day.durationBreaks().asString())
                 }
                 HStack {
                     Text("finished")

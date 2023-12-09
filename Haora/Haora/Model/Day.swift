@@ -29,4 +29,13 @@ extension Day {
         let end = self.finished ?? currentDate
         return DateInterval(start: start, end: end).duration
     }
+    
+    func durationBreaks(currentDate: Date = Date.now) -> TimeInterval {
+        return sortedTasks
+            .filter { $0.isBreak }
+            .reduce(0) { sum, task in
+                let next = task.successor()?.start ?? currentDate
+                return sum + task.duration(to: next)
+            }
+    }
 }
