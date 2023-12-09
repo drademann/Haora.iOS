@@ -35,7 +35,7 @@ struct DaySummaryView: View {
                 HStack {
                     Text("working")
                     Spacer()
-                    Text("7 h 30 m")
+                    Text(day.durationWorking().asString())
                 }
             }
             .padding(.horizontal, 20)

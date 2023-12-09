@@ -38,4 +38,8 @@ extension Day {
                 return sum + task.duration(to: next)
             }
     }
+    
+    func durationWorking(currentDate: Date = Date.now) -> TimeInterval {
+        return duration(currentDate: currentDate) - durationBreaks(currentDate: currentDate)
+    }
 }

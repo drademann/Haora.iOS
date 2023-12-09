@@ -41,7 +41,7 @@ final class DayDurationTests: XCTestCase {
         day.tasks.append(task1)
         let task2 = Task(start: Date().at(12, 00), text: "Task 2")
         day.tasks.append(task2)
-    
+        
         let testNow = Date().at(15, 30)
         
         let duration = day.duration(currentDate: testNow)
@@ -117,5 +117,37 @@ final class DayDurationTests: XCTestCase {
         let durationPause = day.durationBreaks(currentDate: testNow)
         
         XCTAssertEqual(durationPause, 2.75 * 60 * 60, "total duration of pauses should be 2 hours and 45 minutes")
+    }
+    
+    // MARK: - working time
+    
+    func testDurationWorking_givenNoTasks_shouldReturnZero() {
+        let day = Day(date: Date().withoutTime())
+        
+        XCTAssertEqual(day.durationWorking(), 0)
+    }
+    
+    func testDurationWorking_shouldReturnResult_ofTotalMinusBreaks() throws {
+        let config = ModelConfiguration(for: Day.self, Task.self, isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
+        
+        let day = Day(date: Date().withoutTime())
+        container.mainContext.insert(day)
+        let task1 = Task(start: Date().at(10, 00), text: "Task 1")
+        day.tasks.append(task1)
+        let pause1 = Task(start: Date().at(12, 00), text: "Pause 1", isBreak: true)
+        day.tasks.append(pause1)
+        let task2 = Task(start: Date().at(12, 45), text: "Task 2")
+        day.tasks.append(task2)
+        let pause2 = Task(start: Date().at(15, 00), text: "Pause 2", isBreak: true)
+        day.tasks.append(pause2)
+        let task3 = Task(start: Date().at(15, 15), text: "Task 3")
+        day.tasks.append(task3)
+        
+        day.finished = Date().at(17, 00)
+        
+        let durationWorking = day.durationWorking()
+        
+        XCTAssertEqual(durationWorking, 6 * 60 * 60, "total duration of working time should be 6 hour")
     }
 }
