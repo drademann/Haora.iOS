@@ -39,8 +39,7 @@ struct TaskListItemView: View {
     }}
     
     private var duration: String { get {
-        return task.duration(to: task.successor())?.asString()
-        ?? task.duration(to: Date()).asString()
+        return task.duration(to: task.successor()).asString()
     }}
 }
 
