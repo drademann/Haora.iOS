@@ -16,7 +16,7 @@ struct TaskListView: View {
                         .tint(.green)
                     }
                     .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                        Button(role: .destructive, action: {}) {
+                        Button(role: .destructive, action: { delete(task) }) {
                             Image(systemName: "minus")
                         }
                     }
@@ -30,6 +30,10 @@ struct TaskListView: View {
     private var sortedTasks: [Task] { get {
         return day.tasks.sorted { $0.start < $1.start }
     }}
+    
+    private func delete(_ task: Task) {
+        day.tasks.removeAll { $0 == task }
+    }
 }
 
 #Preview {

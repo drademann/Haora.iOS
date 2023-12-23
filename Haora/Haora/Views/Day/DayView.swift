@@ -7,12 +7,14 @@ struct DayView: View {
     @State
     private var date: Date = Date().withoutTime()
     
+    @State private var path = NavigationPath()
+    
     @Query
     var days: [Day]
     
     var body: some View {
         @Bindable var day = selectedDay()
-        NavigationStack {
+        NavigationStack(path: $path) {
             VStack {
                 Text(date, style: .date)
                     .font(.largeTitle)
@@ -20,7 +22,7 @@ struct DayView: View {
                     .font(.title2)
                 
                 if day.tasks.isEmpty {
-                    EmptyTaskListView(day: day)
+                    EmptyTaskListView(day: day, path: $path)
                 } else {
                     TaskListView(day: day)
                 }
@@ -30,6 +32,7 @@ struct DayView: View {
                     .padding([.leading, .bottom, .trailing], 20)
                     .padding(.top, 10)
             }
+            .navigationDestination(for: Task.self) { task in TaskView(task: task) }
         }
         .tabItem {
             Label("Day", systemImage: "1.circle")
