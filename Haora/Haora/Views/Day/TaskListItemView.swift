@@ -11,8 +11,9 @@ struct TaskListItemView: View {
                 VStack(alignment: .leading) {
                     Text(task.text)
                         .foregroundStyle(taskTextForegroundStyle)
-                    Text(formatted(task.tags))
-                        .foregroundStyle(.gray)
+                        .font(.headline)
+                    Text(asString(task.tags))
+                        .font(.footnote)
                 }
                 Spacer()
             }
@@ -20,14 +21,16 @@ struct TaskListItemView: View {
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("\(start) - \(end)")
+                        .font(.headline)
                     Text(duration)
+                        .font(.headline)
                 }
             }
         }
     }
     
     private var taskTextForegroundStyle: Color { get {
-        return if task.isBreak { .green } else { .primary }
+        return if task.isBreak { .secondary } else { .primary }
     }}
     
     private var start: String { get {

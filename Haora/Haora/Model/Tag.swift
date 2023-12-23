@@ -17,6 +17,6 @@ enum TagFormatStyle {
   case spaceSeparated
 }
 
-func formatted(_ tags: [Tag], style: TagFormatStyle = .spaceSeparated) -> String {
+func asString(_ tags: [Tag], style: TagFormatStyle = .spaceSeparated) -> String {
   return tags.map { "#\($0.name)" }.joined(separator: " ")
 }
