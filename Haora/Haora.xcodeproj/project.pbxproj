@@ -23,6 +23,7 @@
 		9DA259002ADAB39800023815 /* TrailingImageLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA258FF2ADAB39800023815 /* TrailingImageLabelStyle.swift */; };
 		9DAB462D2AE187F900BE30AC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB462C2AE187F900BE30AC /* DateExtension.swift */; };
 		9DB4961D2B0E5BC000B18693 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4961C2B0E5BC000B18693 /* TagTests.swift */; };
+		9DB4E8362B38A7330028F88A /* TagListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4E8352B38A7330028F88A /* TagListItemView.swift */; };
 		9DC9FBAA2ADAEB02008D6F83 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9FBA92ADAEB02008D6F83 /* TaskView.swift */; };
 		9DC9FBAC2ADBECAD008D6F83 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9FBAB2ADBECAD008D6F83 /* TagListView.swift */; };
 		9DD1B50C2ADD76D600B40CC9 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1B50B2ADD76D600B40CC9 /* DayView.swift */; };
@@ -73,6 +74,7 @@
 		9DA258FF2ADAB39800023815 /* TrailingImageLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingImageLabelStyle.swift; sourceTree = "<group>"; };
 		9DAB462C2AE187F900BE30AC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		9DB4961C2B0E5BC000B18693 /* TagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
+		9DB4E8352B38A7330028F88A /* TagListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListItemView.swift; sourceTree = "<group>"; };
 		9DC9FBA92ADAEB02008D6F83 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		9DC9FBAB2ADBECAD008D6F83 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		9DD1B50B2ADD76D600B40CC9 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				9D8397A32AD158E600A86CF5 /* TaskListItemView.swift */,
 				9DC9FBA92ADAEB02008D6F83 /* TaskView.swift */,
 				9DC9FBAB2ADBECAD008D6F83 /* TagListView.swift */,
+				9DB4E8352B38A7330028F88A /* TagListItemView.swift */,
 			);
 			path = Day;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				9DD2B5992AEF9F59004A1301 /* TaskListView.swift in Sources */,
 				9D89033D2AF111620025D86C /* DaySummaryView.swift in Sources */,
 				9D300E842B0B5920002D7836 /* Tag.swift in Sources */,
+				9DB4E8362B38A7330028F88A /* TagListItemView.swift in Sources */,
 				9D8397AA2AD166AE00A86CF5 /* WeekView.swift in Sources */,
 				9DD1B50C2ADD76D600B40CC9 /* DayView.swift in Sources */,
 				9DFFAC462ABB6E7A0038559C /* Day.swift in Sources */,
