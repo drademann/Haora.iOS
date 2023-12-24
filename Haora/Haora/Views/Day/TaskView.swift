@@ -24,7 +24,7 @@ struct TaskView: View {
             HStack {
                 Text("Tags")
                 Spacer()
-                NavigationLink(destination: TagsView(task: task)) { Text("edit") }
+                NavigationLink(destination: TagListView(task: task)) { Text("edit") }
                     .padding(.trailing, 8)
             }
             .padding(.bottom, 4)

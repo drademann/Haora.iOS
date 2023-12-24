@@ -24,7 +24,7 @@
 		9DAB462D2AE187F900BE30AC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB462C2AE187F900BE30AC /* DateExtension.swift */; };
 		9DB4961D2B0E5BC000B18693 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4961C2B0E5BC000B18693 /* TagTests.swift */; };
 		9DC9FBAA2ADAEB02008D6F83 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9FBA92ADAEB02008D6F83 /* TaskView.swift */; };
-		9DC9FBAC2ADBECAD008D6F83 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9FBAB2ADBECAD008D6F83 /* TagsView.swift */; };
+		9DC9FBAC2ADBECAD008D6F83 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9FBAB2ADBECAD008D6F83 /* TagListView.swift */; };
 		9DD1B50C2ADD76D600B40CC9 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1B50B2ADD76D600B40CC9 /* DayView.swift */; };
 		9DD2B5992AEF9F59004A1301 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2B5982AEF9F59004A1301 /* TaskListView.swift */; };
 		9DD8637C2B24A8BC002F0DB8 /* DayDurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD8637B2B24A8BC002F0DB8 /* DayDurationTests.swift */; };
@@ -74,7 +74,7 @@
 		9DAB462C2AE187F900BE30AC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		9DB4961C2B0E5BC000B18693 /* TagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
 		9DC9FBA92ADAEB02008D6F83 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
-		9DC9FBAB2ADBECAD008D6F83 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		9DC9FBAB2ADBECAD008D6F83 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		9DD1B50B2ADD76D600B40CC9 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		9DD2B5982AEF9F59004A1301 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		9DD8637B2B24A8BC002F0DB8 /* DayDurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDurationTests.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 				9D89033C2AF111620025D86C /* DaySummaryView.swift */,
 				9D8397A32AD158E600A86CF5 /* TaskListItemView.swift */,
 				9DC9FBA92ADAEB02008D6F83 /* TaskView.swift */,
-				9DC9FBAB2ADBECAD008D6F83 /* TagsView.swift */,
+				9DC9FBAB2ADBECAD008D6F83 /* TagListView.swift */,
 			);
 			path = Day;
 			sourceTree = "<group>";
@@ -438,7 +438,7 @@
 			files = (
 				9D4164702AC9A3C200E3504D /* Task.swift in Sources */,
 				9DAB462D2AE187F900BE30AC /* DateExtension.swift in Sources */,
-				9DC9FBAC2ADBECAD008D6F83 /* TagsView.swift in Sources */,
+				9DC9FBAC2ADBECAD008D6F83 /* TagListView.swift in Sources */,
 				9D89033F2AF114D80025D86C /* SelectDateView.swift in Sources */,
 				9DFFAC442ABB6E7A0038559C /* ContentView.swift in Sources */,
 				9D559F992AEAEB8F00C887D2 /* TimeIntervalExtension.swift in Sources */,

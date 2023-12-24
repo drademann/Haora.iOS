@@ -1,7 +1,7 @@
 import SwiftUI
 import SwiftData
 
-struct TagsView: View {
+struct TagListView: View {
     
     @Bindable var task: Task
     
@@ -39,7 +39,7 @@ struct TagsView: View {
 #Preview {
     let preview = previewDayModel()
     return NavigationStack {
-        TagsView(task: preview.task1)
+        TagListView(task: preview.task1)
             .modelContainer(preview.container)
     }
 }
