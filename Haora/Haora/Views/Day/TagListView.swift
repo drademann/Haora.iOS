@@ -13,8 +13,7 @@ struct TagListView: View {
             List {
                 ForEach(tags) { tag in
                     HStack {
-                        Text("#\(tag.name)")
-                            .foregroundColor(.secondary)
+                        TagListItemView(tag: tag)
                         Spacer()
                         if task.tags.contains(tag) {
                             Image(systemName: "checkmark")

@@ -4,12 +4,31 @@ struct TagListItemView: View {
     
     @Bindable var tag: Tag
     
+    @State private var isEditing = false
+    
+    enum FocusedField { case name }
+    @FocusState private var focusedField: FocusedField?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if isEditing {
+            TextField("tag name", text: $tag.name)
+                .focused($focusedField, equals: .name)
+                .onAppear { focusedField = .name }
+                .onSubmit { isEditing = false }
+        } else {
+            Text("#\(tag.name)")
+                .swipeActions(edge: .leading) {
+                    Button("Edit", action: { isEditing = true })
+                        .tint(.blue)
+                }
+        }
     }
 }
 
 #Preview {
     let tag = Tag("Haora")
-    return TagListItemView(tag: tag)
+    return List {
+        TagListItemView(tag: tag)
+    }
+    .listStyle(.plain)
 }
