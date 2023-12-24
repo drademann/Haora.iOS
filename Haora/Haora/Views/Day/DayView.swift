@@ -4,9 +4,7 @@ import SwiftData
 struct DayView: View {
     @Environment(\.modelContext) var modelContext
     
-    @State
-    private var date: Date = Date().withoutTime()
-    
+    @State private var date: Date = Date().withoutTime()
     @State private var path = NavigationPath()
     
     @Query
@@ -22,10 +20,21 @@ struct DayView: View {
                     .font(.title2)
                 
                 if day.tasks.isEmpty {
-                    EmptyTaskListView(day: day, path: $path)
+                    VStack {
+                        Spacer()
+                        Text("no tasks yet")
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                    }
                 } else {
                     TaskListView(day: day)
                 }
+                HStack {
+                    Spacer()
+                    Button(action: { createTask(for: day) }) { Label("new task", systemImage: "plus") }
+                        .padding(.trailing, 4)
+                }
+                .padding(.trailing)
                 DaySummaryView(day: day)
                 
                 SelectDateView(date: $date)
@@ -43,15 +52,20 @@ struct DayView: View {
 extension DayView {
     
     private func selectedDay() -> Day {
-        days.first { Calendar.current.isDate($0.date, inSameDayAs: date) } ?? createNewDay()
+        days.first { Calendar.current.isDate($0.date, inSameDayAs: date) } ?? createDay()
     }
     
-    private func createNewDay() -> Day {
+    private func createDay() -> Day {
         let newDay = Day(date: date.withoutTime())
         modelContext.insert(newDay)
         return newDay
     }
     
+    private func createTask(for day: Day) {
+        let task = Task(start: Date.now, text: "New")
+        day.tasks.append(task)
+        path.append(task)
+    }
 }
 
 #Preview {

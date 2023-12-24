@@ -8,17 +8,9 @@ struct TaskListView: View {
     var body: some View {
         List {
             ForEach(sortedTasks) { task in
-                NavigationLink { TaskView(task: task) } label: { TaskListItemView(task: task) }
-                    .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                        Button(action: {}) {
-                            Image(systemName: "plus")
-                        }
-                        .tint(.green)
-                    }
-                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                        Button(role: .destructive, action: { delete(task) }) {
-                            Image(systemName: "minus")
-                        }
+                NavigationLink(value: task, label: { TaskListItemView(task: task) })
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        Button("Delete", role: .destructive, action: { delete(task) })
                     }
             }
             .listRowSeparator(.hidden)

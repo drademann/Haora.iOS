@@ -29,7 +29,7 @@ struct TagsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem {
-                Button("add", systemImage: "plus") { }
+                Button(action: {}) { Image(systemName: "plus") }
             }
         }
         .padding()
