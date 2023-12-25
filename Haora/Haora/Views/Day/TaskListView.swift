@@ -7,7 +7,7 @@ struct TaskListView: View {
     
     var body: some View {
         if day.tasks.isEmpty {
-            EmptyListView()
+            EmptyList
         } else {
             TaskList
         }
@@ -34,11 +34,8 @@ struct TaskListView: View {
     private func delete(_ task: Task) {
         day.tasks.removeAll { $0 == task }
     }
-}
-
-struct EmptyListView: View {
     
-    var body: some View {
+    private var EmptyList: some View {
         VStack {
             Spacer()
             Text("no tasks yet")
