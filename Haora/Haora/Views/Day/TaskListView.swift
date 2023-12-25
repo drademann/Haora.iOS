@@ -6,6 +6,14 @@ struct TaskListView: View {
     @Bindable var day: Day
     
     var body: some View {
+        if day.tasks.isEmpty {
+            EmptyListView()
+        } else {
+            TaskList
+        }
+    }
+    
+    private var TaskList: some View {
         List {
             ForEach(sortedTasks) { task in
                 NavigationLink(value: task, label: { TaskListItemView(task: task) })
@@ -28,8 +36,29 @@ struct TaskListView: View {
     }
 }
 
-#Preview {
+struct EmptyListView: View {
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            Text("no tasks yet")
+                .foregroundStyle(.secondary)
+            Spacer()
+        }
+    }
+}
+
+#Preview("with tasks") {
     let preview = previewDayModel()
+    return NavigationStack {
+        TaskListView(day: preview.day)
+            .modelContainer(preview.container)
+    }
+}
+
+#Preview("empty") {
+    let preview = previewDayModel()
+    preview.day.tasks.removeAll()
     return NavigationStack {
         TaskListView(day: preview.day)
             .modelContainer(preview.container)

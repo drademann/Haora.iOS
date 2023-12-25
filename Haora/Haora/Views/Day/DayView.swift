@@ -19,16 +19,8 @@ struct DayView: View {
                 Text(date.asWeekdayString())
                     .font(.title2)
                 
-                if day.tasks.isEmpty {
-                    VStack {
-                        Spacer()
-                        Text("no tasks yet")
-                            .foregroundStyle(.secondary)
-                        Spacer()
-                    }
-                } else {
-                    TaskListView(day: day)
-                }
+                TaskListView(day: day)
+                
                 HStack {
                     Spacer()
                     Button(action: { createTask(for: day) }) { Label("new task", systemImage: "plus") }
