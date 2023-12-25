@@ -12,7 +12,14 @@ struct ContentView: View {
     }
 }
 
-#Preview {
+#Preview("with tasks") {
     ContentView()
         .modelContainer(previewDayModel().container)
+}
+
+#Preview("no tasks") {
+    let preview = previewDayModel()
+    preview.day.tasks = []
+    return ContentView()
+        .modelContainer(preview.container)
 }

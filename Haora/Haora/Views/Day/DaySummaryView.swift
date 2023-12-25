@@ -13,32 +13,58 @@ struct DaySummaryView: View {
                         .font(.caption)
                     Spacer()
                 }
-                HStack {
-                    Text("total")
-                    Spacer()
-                    Text(day.duration().asString())
-                }
-                HStack {
-                    Text("breaks")
-                    Spacer()
-                    Text(day.durationBreaks().asString())
-                }
-                HStack {
-                    Text("finished")
-                    Spacer()
-                    Button(action: {}) {
-                        Text("finish work")
-                    }
-                    Spacer()
-                    Text("not yet")
-                }
-                HStack {
-                    Text("working")
-                    Spacer()
-                    Text(day.durationWorking().asString())
-                }
+                TotalView
+                BreaksView
+                FinishedView
+                WorkingView
             }
             .padding(.horizontal, 20)
+        }
+    }
+    
+    private var TotalView: some View {
+        HStack {
+            Text("total")
+            Spacer()
+            Text(day.duration().asString())
+        }
+    }
+    
+    private var BreaksView: some View {
+        HStack {
+            Text("breaks")
+            Spacer()
+            Text(day.durationBreaks().asString())
+        }
+    }
+    
+    private var FinishedView: some View {
+        HStack {
+            Text("finished")
+            Spacer()
+            if !day.tasks.isEmpty {
+                if day.finished == nil {
+                    Button(action: {}) { Text("finish work") }
+                } else {
+                    Button(action: {}) { Text("reopen day") }
+                }
+            }
+            Spacer()
+            if day.tasks.isEmpty {
+                Text("no tasks to be finished")
+            } else if day.finished == nil {
+                Text("not yet")
+            } else {
+                Text(day.finished!.asTimeString())
+            }
+        }
+    }
+    
+    private var WorkingView: some View {
+        HStack {
+            Text("working")
+            Spacer()
+            Text(day.durationWorking().asString())
         }
     }
 }

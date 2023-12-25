@@ -25,9 +25,12 @@ struct DayView: View {
                     Spacer()
                     Button(action: { createTask(for: day) }) { Label("new task", systemImage: "plus") }
                         .padding(.trailing, 4)
+                    // TODO move "+ new task" to central position when task list is empty
                 }
                 .padding(.trailing)
-                DaySummaryView(day: day)
+                if !day.tasks.isEmpty {
+                    DaySummaryView(day: day)
+                }
                 
                 SelectDateView(date: $date)
                     .padding([.leading, .bottom, .trailing], 20)
@@ -60,8 +63,17 @@ extension DayView {
     }
 }
 
-#Preview {
+#Preview("with tasks") {
     let preview = previewDayModel()
+    return TabView {
+        DayView()
+            .modelContainer(preview.container)
+    }
+}
+
+#Preview("no tasks") {
+    let preview = previewDayModel()
+    preview.day.tasks = []
     return TabView {
         DayView()
             .modelContainer(preview.container)
