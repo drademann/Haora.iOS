@@ -168,8 +168,8 @@
 			children = (
 				9DD1B50B2ADD76D600B40CC9 /* DayView.swift */,
 				9D89033E2AF114D80025D86C /* SelectDateView.swift */,
-				9DD2B5982AEF9F59004A1301 /* TaskListView.swift */,
 				9D89033C2AF111620025D86C /* DaySummaryView.swift */,
+				9DD2B5982AEF9F59004A1301 /* TaskListView.swift */,
 				9D8397A32AD158E600A86CF5 /* TaskListItemView.swift */,
 				9DC9FBA92ADAEB02008D6F83 /* TaskView.swift */,
 				9DC9FBAB2ADBECAD008D6F83 /* TagListView.swift */,

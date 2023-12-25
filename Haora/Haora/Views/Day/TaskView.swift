@@ -4,6 +4,9 @@ struct TaskView: View {
     
     @Bindable var task: Task
     
+    enum FocusedField { case text }
+    @FocusState private var focusedField: FocusedField?
+    
     var body: some View {
         VStack {
             DatePicker("Starting Time", selection: $task.start, displayedComponents: .hourAndMinute)
@@ -19,6 +22,7 @@ struct TaskView: View {
             }
             TextField("enter text", text: $task.text, axis: .vertical)
                 .textFieldStyle(.roundedBorder)
+                .focused($focusedField, equals: .text)
                 .lineLimit(5, reservesSpace: true)
                 .padding(.bottom, 30)
             HStack {
@@ -37,6 +41,7 @@ struct TaskView: View {
             Spacer()
         }
         .navigationTitle("Task")
+        .onAppear { focusedField = .text }
         .padding(20)
     }
 }
