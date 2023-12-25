@@ -9,7 +9,7 @@ final class TaskNeighbourTests: XCTestCase {
     let config = ModelConfiguration(for: Day.self, Task.self, isStoredInMemoryOnly: true)
     let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
     
-    let day = Day(date: Date().withoutTime())
+    let day = Day(date: today())
     container.mainContext.insert(day)
     let task1 = Task(start: Date().at(10, 00), text: "Task 1")
     day.tasks.append(task1)
@@ -25,7 +25,7 @@ final class TaskNeighbourTests: XCTestCase {
     let config = ModelConfiguration(for: Day.self, Task.self, isStoredInMemoryOnly: true)
     let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
     
-    let day = Day(date: Date().withoutTime())
+    let day = Day(date: today())
     container.mainContext.insert(day)
     let task1 = Task(start: Date().at(10, 00), text: "Task 1")
     day.tasks.append(task1)

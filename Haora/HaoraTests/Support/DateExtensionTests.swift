@@ -16,7 +16,7 @@ final class DateExtensionTests: XCTestCase {
   func testWithoutTime_shouldEraseTimeComponents() {
     guard let date = ISO8601DateFormatter().date(from: "2023-11-26T10:15:00Z") else { return XCTFail("could not parse date") }
     
-    let dateWithoutTime = date.withoutTime()
+    let dateWithoutTime = date.asDay()
     
     let components = Calendar.current.dateComponents([.hour, .minute, .second], from: dateWithoutTime)
     XCTAssertEqual(components.hour, 0)

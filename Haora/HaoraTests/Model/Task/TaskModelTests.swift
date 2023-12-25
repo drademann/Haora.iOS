@@ -8,7 +8,7 @@ final class TaskModelTests: XCTestCase {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
     
-    let day = Day(date: Date().withoutTime())
+    let day = Day(date: today())
     container.mainContext.insert(day)
     let task = Task(text: "Working on project Haora")
     

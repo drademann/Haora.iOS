@@ -18,7 +18,7 @@ struct SelectDateView: View {
             }
             HStack {
                 Spacer()
-                Button(action: today) {
+                Button(action: { switchDay(to: .today) }) {
                     Text("today")
                         .tint(.secondary)
                 }
@@ -28,31 +28,23 @@ struct SelectDateView: View {
     }
     
     enum Direction {
-        case next
         case previous
-    }
-    
-    private func today() {
-        self.date = Date().withoutTime()
+        case today
+        case next
     }
     
     private func switchDay(to direction: Direction) {
-        let day = daysToSwitch(into: direction)
-        let components = DateComponents(day: day)
-        guard let changedDay = Calendar.current.date(byAdding: components, to: self.date) else {
-            fatalError("unable to switch from \(date) by \(day) day")
-        }
-        self.date = changedDay.withoutTime()
-    }
-    
-    private func daysToSwitch(into direction: Direction) -> Int {
-        return switch (direction) {
-            case .next: 1
-            case .previous: -1
+        switch (direction) {
+            case .previous:
+                self.date = self.date.previousDay()
+            case .today:
+                self.date = today()
+            case .next:
+                self.date = self.date.nextDay()
         }
     }
 }
 
 #Preview {
-    SelectDateView(date: .constant(Date().withoutTime()))
+    SelectDateView(date: .constant(today()))
 }

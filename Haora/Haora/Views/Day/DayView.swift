@@ -4,7 +4,7 @@ import SwiftData
 struct DayView: View {
     @Environment(\.modelContext) var modelContext
     
-    @State private var date: Date = Date().withoutTime()
+    @State private var date: Date = today()
     @State private var path = NavigationPath()
     
     @Query
@@ -48,13 +48,13 @@ extension DayView {
     }
     
     private func createDay() -> Day {
-        let newDay = Day(date: date.withoutTime())
+        let newDay = Day(date: date.asDay())
         modelContext.insert(newDay)
         return newDay
     }
     
     private func createTask(for day: Day) {
-        let task = Task(start: Date.now, text: "New")
+        let task = Task(start: date, text: "") // FIXME select an appropriate time at the currently selected date
         day.tasks.append(task)
         path.append(task)
     }

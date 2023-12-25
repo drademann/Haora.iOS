@@ -8,7 +8,7 @@ final class DayDurationTests: XCTestCase {
     // MARK: - total time
     
     func testTotal_givenNoTasks_shouldReturnZero() {
-        let day = Day(date: Date().withoutTime())
+        let day = Day(date: today())
         
         XCTAssertEqual(day.duration(), 0)
     }
@@ -17,7 +17,7 @@ final class DayDurationTests: XCTestCase {
         let config = ModelConfiguration(for: Day.self, Task.self, isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
         
-        let day = Day(date: Date().withoutTime())
+        let day = Day(date: today())
         container.mainContext.insert(day)
         let task1 = Task(start: Date().at(10, 00), text: "Task 1")
         day.tasks.append(task1)
@@ -35,7 +35,7 @@ final class DayDurationTests: XCTestCase {
         let config = ModelConfiguration(for: Day.self, Task.self, isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
         
-        let day = Day(date: Date().withoutTime())
+        let day = Day(date: today())
         container.mainContext.insert(day)
         let task1 = Task(start: Date().at(10, 00), text: "Task 1")
         day.tasks.append(task1)
@@ -52,7 +52,7 @@ final class DayDurationTests: XCTestCase {
     // MARK: - total pause time
     
     func testTotalPause_givenNoTasks_shouldReturnZero() {
-        let day = Day(date: Date().withoutTime())
+        let day = Day(date: today())
         
         XCTAssertEqual(day.durationBreaks(), 0)
     }
@@ -61,7 +61,7 @@ final class DayDurationTests: XCTestCase {
         let config = ModelConfiguration(for: Day.self, Task.self, isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
         
-        let day = Day(date: Date().withoutTime())
+        let day = Day(date: today())
         container.mainContext.insert(day)
         let task1 = Task(start: Date().at(10, 00), text: "Task 1")
         day.tasks.append(task1)
@@ -79,7 +79,7 @@ final class DayDurationTests: XCTestCase {
         let config = ModelConfiguration(for: Day.self, Task.self, isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
         
-        let day = Day(date: Date().withoutTime())
+        let day = Day(date: today())
         container.mainContext.insert(day)
         let task1 = Task(start: Date().at(10, 00), text: "Task 1")
         day.tasks.append(task1)
@@ -101,7 +101,7 @@ final class DayDurationTests: XCTestCase {
         let config = ModelConfiguration(for: Day.self, Task.self, isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
         
-        let day = Day(date: Date().withoutTime())
+        let day = Day(date: today())
         container.mainContext.insert(day)
         let task1 = Task(start: Date().at(10, 00), text: "Task 1")
         day.tasks.append(task1)
@@ -122,7 +122,7 @@ final class DayDurationTests: XCTestCase {
     // MARK: - working time
     
     func testDurationWorking_givenNoTasks_shouldReturnZero() {
-        let day = Day(date: Date().withoutTime())
+        let day = Day(date: today())
         
         XCTAssertEqual(day.durationWorking(), 0)
     }
@@ -131,7 +131,7 @@ final class DayDurationTests: XCTestCase {
         let config = ModelConfiguration(for: Day.self, Task.self, isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
         
-        let day = Day(date: Date().withoutTime())
+        let day = Day(date: today())
         container.mainContext.insert(day)
         let task1 = Task(start: Date().at(10, 00), text: "Task 1")
         day.tasks.append(task1)
