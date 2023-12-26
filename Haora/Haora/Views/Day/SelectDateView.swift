@@ -20,8 +20,8 @@ struct SelectDateView: View {
                 Spacer()
                 Button(action: { switchDay(to: .today) }) {
                     Text("today")
-                        .tint(.secondary)
                 }
+                .disabled(Calendar.current.isDate(date, inSameDayAs: today()))
                 Spacer()
             }
         }
