@@ -12,7 +12,7 @@ struct TaskView: View {
             DatePicker("Starting Time", selection: $task.start, displayedComponents: .hourAndMinute)
             HStack {
                 Spacer()
-                Button(action: {}) { Text("now") }
+                Button(action: { task.start = now() }) { Text("now") }
                     .padding(.trailing, 8)
             }
             .padding(.bottom, 20)

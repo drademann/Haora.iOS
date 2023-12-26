@@ -1,7 +1,7 @@
 import Foundation
 
 func now() -> Date {
-    guard let now = Calendar.current.date(bySetting: .second, value: 0, of: Date.now) else {
+    guard let now = Calendar.current.nextDate(after: Date.now, matching: DateComponents(second: 0), matchingPolicy: .nextTime, direction: .backward) else {
         fatalError("unable to create 'now' date with seconds set to zero")
     }
     return now
