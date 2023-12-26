@@ -33,7 +33,7 @@ struct TaskView: View {
             }
             .padding(.bottom, 4)
             HStack {
-                Text("#TEST  #GMS  #IMPORTANT  #RMS  #AIRPORT  #LUFTHANSA  #PRIMA")
+                Text(asString(task.tags))
                     .foregroundStyle(.secondary)
                     .lineSpacing(5)
                 Spacer()
@@ -47,7 +47,9 @@ struct TaskView: View {
 }
 
 #Preview {
-    NavigationStack {
-        TaskView(task: Task(start: Date(), text: "a test task", isBreak: false))
+    let preview = previewDayModel()
+    preview.task1.tags.append(contentsOf: [Tag("Swift"), Tag("Apple")])
+    return NavigationStack {
+        TaskView(task: preview.task1)
     }
 }

@@ -18,5 +18,5 @@ enum TagFormatStyle {
 }
 
 func asString(_ tags: [Tag], style: TagFormatStyle = .spaceSeparated) -> String {
-  return tags.map { "#\($0.name)" }.joined(separator: " ")
+    return tags.sorted(by: { $0.name < $1.name }).map { "#\($0.name)" }.joined(separator: " ")
 }
