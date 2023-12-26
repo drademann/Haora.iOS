@@ -21,13 +21,22 @@ struct DayView: View {
                 
                 TaskListView(day: day)
                 
-                HStack {
-                    Spacer()
-                    Button(action: { createTask(for: day) }) { Label("new task", systemImage: "plus") }
-                        .padding(.trailing, 4)
-                    // TODO move "+ new task" to central position when task list is empty
+                let CreateTaskButton = Button(action: { createTask(for: day) }) { Label("new task", systemImage: "plus") }
+                if day.tasks.isEmpty {
+                    HStack {
+                        Spacer()
+                        CreateTaskButton
+                        Spacer()
+                    }
+                    .padding(.bottom, 20)
+                } else {
+                    HStack {
+                        Spacer()
+                        CreateTaskButton
+                            .padding(.trailing, 4)
+                    }
+                    .padding(.trailing)
                 }
-                .padding(.trailing)
                 if !day.tasks.isEmpty {
                     DaySummaryView(day: day)
                 }
