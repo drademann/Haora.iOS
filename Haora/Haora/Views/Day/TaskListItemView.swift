@@ -20,7 +20,7 @@ struct TaskListItemView: View {
             HStack {
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text("\(start) - \(end)")
+                    Text(start)
                         .font(.headline)
                     Text(duration)
                         .font(.headline)
@@ -36,11 +36,7 @@ struct TaskListItemView: View {
     private var start: String { get {
         return task.start.asTimeString()
     }}
-    
-    private var end: String { get {
-        return task.successor()?.start.asTimeString() ?? "now"
-    }}
-    
+        
     private var duration: String { get {
         return task.duration(to: task.successor()).asString()
     }}
