@@ -29,17 +29,20 @@ extension Date {
     }
     
     func previousDay() -> Date {
-        guard let previous = Calendar.current.date(byAdding: DateComponents(day: -1), to: self) else {
-            fatalError("unable to get from \(self) to previous day")
-        }
+        let previous = self + DateComponents(day: -1)
         return previous.asDay()
     }
     
     func nextDay() -> Date {
-        guard let next = Calendar.current.date(byAdding: DateComponents(day: 1), to: self) else {
-            fatalError("unable to get from \(self) to next day")
-        }
+        let next = self + DateComponents(day: 1)
         return next.asDay()
+    }
+    
+    static func +(date: Date, components: DateComponents) -> Date {
+        guard let result = Calendar.current.date(byAdding: components, to: date) else {
+            fatalError("unable to add \(components) to \(date)")
+        }
+        return result
     }
 }
 

@@ -4,9 +4,7 @@ import SwiftData
 
 @MainActor
 final class DayDurationTests: XCTestCase {
-    
-    // MARK: - total time
-    
+        
     func testTotal_givenNoTasks_shouldReturnZero() {
         let day = Day(date: today())
         
@@ -44,12 +42,10 @@ final class DayDurationTests: XCTestCase {
         
         let testNow = Date().at(15, 30)
         
-        let duration = day.duration(currentDate: testNow)
+        let duration = day.duration(now: testNow)
         
         XCTAssertEqual(duration, 5.5 * 60 * 60, "duration should be 10:00 to 15:30 = 5.5 hours as TimeInterval (seconds)")
     }
-    
-    // MARK: - total pause time
     
     func testTotalPause_givenNoTasks_shouldReturnZero() {
         let day = Day(date: today())
@@ -114,7 +110,7 @@ final class DayDurationTests: XCTestCase {
         
         let testNow = Date().at(17, 00)
         
-        let durationPause = day.durationBreaks(currentDate: testNow)
+        let durationPause = day.durationBreaks(now: testNow)
         
         XCTAssertEqual(durationPause, 2.75 * 60 * 60, "total duration of pauses should be 2 hours and 45 minutes")
     }

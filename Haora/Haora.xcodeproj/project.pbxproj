@@ -17,6 +17,7 @@
 		9D559F992AEAEB8F00C887D2 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D559F982AEAEB8F00C887D2 /* TimeIntervalExtension.swift */; };
 		9D70807D2B3AE76F009D63D0 /* NowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70807C2B3AE76F009D63D0 /* NowTests.swift */; };
 		9D70807F2B3C33FA009D63D0 /* FinishTimePopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70807E2B3C33FA009D63D0 /* FinishTimePopoverView.swift */; };
+		9D7080812B3CDE18009D63D0 /* DayInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7080802B3CDE18009D63D0 /* DayInitTests.swift */; };
 		9D8397A42AD158E600A86CF5 /* TaskListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397A32AD158E600A86CF5 /* TaskListItemView.swift */; };
 		9D8397AA2AD166AE00A86CF5 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397A92AD166AE00A86CF5 /* WeekView.swift */; };
 		9D8397AC2AD1671500A86CF5 /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8397AB2AD1671500A86CF5 /* MonthView.swift */; };
@@ -70,6 +71,7 @@
 		9D559F982AEAEB8F00C887D2 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		9D70807C2B3AE76F009D63D0 /* NowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowTests.swift; sourceTree = "<group>"; };
 		9D70807E2B3C33FA009D63D0 /* FinishTimePopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishTimePopoverView.swift; sourceTree = "<group>"; };
+		9D7080802B3CDE18009D63D0 /* DayInitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInitTests.swift; sourceTree = "<group>"; };
 		9D8397A32AD158E600A86CF5 /* TaskListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListItemView.swift; sourceTree = "<group>"; };
 		9D8397A92AD166AE00A86CF5 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		9D8397AB2AD1671500A86CF5 /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		9DD8637A2B24A8AB002F0DB8 /* Day */ = {
 			isa = PBXGroup;
 			children = (
+				9D7080802B3CDE18009D63D0 /* DayInitTests.swift */,
 				9DD8637B2B24A8BC002F0DB8 /* DayDurationTests.swift */,
 			);
 			path = Day;
@@ -478,6 +481,7 @@
 				9D51959F2AE83BF5005CB038 /* TaskNeighbourTests.swift in Sources */,
 				9D70807D2B3AE76F009D63D0 /* NowTests.swift in Sources */,
 				9D5195A22AE843BF005CB038 /* DateExtensionTests.swift in Sources */,
+				9D7080812B3CDE18009D63D0 /* DayInitTests.swift in Sources */,
 				9D51959D2AE8192C005CB038 /* TaskModelTests.swift in Sources */,
 				9DFFAC572ABB6E7B0038559C /* HaoraTests.swift in Sources */,
 				9D559F932AEADDB100C887D2 /* TaskDurationTests.swift in Sources */,

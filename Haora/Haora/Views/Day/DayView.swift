@@ -66,7 +66,7 @@ extension DayView {
     }
     
     private func createTask(for day: Day) {
-        let task = Task(start: date, text: "") // FIXME select an appropriate time at the currently selected date
+        let task = Task(start: day.proposeNextTaskTime(), text: "")
         day.tasks.append(task)
         path.append(task)
     }
