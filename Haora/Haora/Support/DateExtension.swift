@@ -1,10 +1,7 @@
 import Foundation
 
 func now() -> Date {
-    guard let now = Calendar.current.nextDate(after: Date.now, matching: DateComponents(second: 0), matchingPolicy: .nextTime, direction: .backward) else {
-        fatalError("unable to create 'now' date with seconds set to zero")
-    }
-    return now
+    return Date.now.asTime()
 }
 
 func today() -> Date {
@@ -20,6 +17,13 @@ extension Date {
         return dateWithTime
     }
      
+    func asTime() -> Date {
+        guard let truncated = Calendar.current.nextDate(after: self, matching: DateComponents(second: 0), matchingPolicy: .nextTime, direction: .backward) else {
+            fatalError("unable to create date truncated to minutes")
+        }
+        return truncated
+    }
+    
     func asDay() -> Date {
         Calendar.current.startOfDay(for: self)
     }
@@ -41,7 +45,7 @@ extension Date {
 
 extension Date {
     
-    static let DateTimeFormatter: DateFormatter = {
+    private static let TimeFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .none
         formatter.timeStyle = .short
@@ -49,7 +53,12 @@ extension Date {
     }()
     
     func asTimeString() -> String {
-        return Self.DateTimeFormatter.string(from: self)
+        let timeString = Self.TimeFormatter.string(from: self)
+        return if timeString.hasPrefix("0") {
+            String(timeString.dropFirst())
+        } else {
+            timeString
+        }
     }
     
     static let WeekdayFormatter: DateFormatter = {
