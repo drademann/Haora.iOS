@@ -45,7 +45,7 @@ struct TaskListView: View {
     }
 }
 
-#Preview("with tasks") {
+#Preview("a. with tasks") {
     let preview = previewDayModel()
     return NavigationStack {
         TaskListView(day: preview.day)
@@ -53,7 +53,7 @@ struct TaskListView: View {
     }
 }
 
-#Preview("empty") {
+#Preview("b. empty") {
     let preview = previewDayModel()
     preview.day.tasks.removeAll()
     return NavigationStack {

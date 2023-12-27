@@ -69,20 +69,20 @@ struct DaySummaryView: View {
     }
 }
 
-#Preview("open end") {
+#Preview("a. open end") {
     let preview = previewDayModel()
     return DaySummaryView(day: preview.day)
         .modelContainer(preview.container)
 }
 
-#Preview("finished") {
+#Preview("b. finished") {
     let preview = previewDayModel()
     preview.day.finished = Date().at(16, 00)
     return DaySummaryView(day: preview.day)
         .modelContainer(preview.container)
 }
 
-#Preview("no tasks") {
+#Preview("c. no tasks") {
     let preview = previewDayModel()
     preview.day.tasks = []
     return DaySummaryView(day: preview.day)

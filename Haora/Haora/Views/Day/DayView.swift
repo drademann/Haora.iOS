@@ -72,7 +72,7 @@ extension DayView {
     }
 }
 
-#Preview("with tasks") {
+#Preview("a. with tasks") {
     let preview = previewDayModel()
     return TabView {
         DayView()
@@ -80,7 +80,7 @@ extension DayView {
     }
 }
 
-#Preview("no tasks") {
+#Preview("b. no tasks") {
     let preview = previewDayModel()
     preview.day.tasks = []
     return TabView {
