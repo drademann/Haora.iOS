@@ -5,6 +5,8 @@ struct DaySummaryView: View {
     
     @Bindable var day: Day
     
+    @State private var showFinishTimePopover = false
+    
     var body: some View {
         HStack {
             VStack {
@@ -43,11 +45,17 @@ struct DaySummaryView: View {
             Text("finished")
             Spacer()
             if !day.tasks.isEmpty {
-                if day.finished == nil {
-                    Button(action: {}) { Text("finish work") }
+                let button = if day.finished == nil {
+                    Button(action: { showFinishTimePopover = true }) { Text("finish work") }
                 } else {
-                    Button(action: {}) { Text("reopen day") }
+                    Button(action: { showFinishTimePopover = true }) { Text("reopen day") }
                 }
+                button
+                    .popover(isPresented: $showFinishTimePopover, attachmentAnchor: .point(.top), arrowEdge: .bottom) {
+                        FinishTimePopoverView(finished: $day.finished)
+                            .presentationDetents([.height(120)])
+                            .padding()
+                    }
             }
             Spacer()
             if day.tasks.isEmpty {
