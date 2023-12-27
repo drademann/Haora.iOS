@@ -43,7 +43,8 @@ extension Date {
     
     static let DateTimeFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "H:mm"
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
         return formatter
     }()
     
