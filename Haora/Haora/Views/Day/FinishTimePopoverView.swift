@@ -25,6 +25,9 @@ struct FinishTimePopoverView: View {
             .padding([.top, .leading, .trailing])
         }
     }
+}
+
+extension FinishTimePopoverView {
     
     private func setOpen() {
         finished = nil

@@ -26,6 +26,9 @@ struct SelectDateView: View {
             }
         }
     }
+}
+
+extension SelectDateView {
     
     enum Direction {
         case previous

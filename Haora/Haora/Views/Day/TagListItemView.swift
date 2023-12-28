@@ -4,21 +4,19 @@ struct TagListItemView: View {
     
     @Bindable var tag: Tag
     
-    @State private var isEditing = false
-    
     enum FocusedField { case name }
     @FocusState private var focusedField: FocusedField?
     
     var body: some View {
-        if isEditing {
+        if tag.isEditing {
             TextField("tag name", text: $tag.name)
                 .focused($focusedField, equals: .name)
                 .onAppear { focusedField = .name }
-                .onSubmit { isEditing = false }
+                .onSubmit { tag.isEditing = false }
         } else {
             Text("#\(tag.name)")
                 .swipeActions(edge: .leading) {
-                    Button("Edit", action: { isEditing = true })
+                    Button("Edit", action: { tag.isEditing = true })
                         .tint(.blue)
                 }
         }

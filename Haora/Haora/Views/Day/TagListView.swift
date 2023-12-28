@@ -2,6 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct TagListView: View {
+    @Environment(\.modelContext) var modelContext
     
     @Bindable var task: Task
     
@@ -14,6 +15,9 @@ struct TagListView: View {
                 ForEach(tags) { tag in
                     HStack {
                         TagListItemView(tag: tag)
+                            .swipeActions(edge: .trailing) {
+                                Button("Delete", role: .destructive, action: { delete(tag) })
+                            }
                         Spacer()
                         if task.tags.contains(tag) {
                             Image(systemName: "checkmark")
@@ -28,10 +32,24 @@ struct TagListView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem {
-                Button(action: {}) { Image(systemName: "plus") }
+                Button(action: createTag) { Image(systemName: "plus") }
             }
         }
         .padding()
+    }
+}
+
+extension TagListView {
+    
+    private func createTag() {
+        let tag = Tag("")
+        tag.isEditing = true
+        modelContext.insert(tag)
+        print(tag.isEditing)
+    }
+    
+    private func delete(_ tag: Tag) {
+        modelContext.delete(tag)
     }
 }
 

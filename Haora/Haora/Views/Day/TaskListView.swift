@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import OSLog
 
 struct TaskListView: View {
     
@@ -27,14 +28,6 @@ struct TaskListView: View {
         .padding(.bottom)
     }
     
-    private var sortedTasks: [Task] { get {
-        return day.tasks.sorted { $0.start < $1.start }
-    }}
-    
-    private func delete(_ task: Task) {
-        day.tasks.removeAll { $0 == task }
-    }
-    
     private var EmptyList: some View {
         VStack {
             Spacer()
@@ -42,6 +35,18 @@ struct TaskListView: View {
                 .foregroundStyle(.secondary)
             Spacer()
         }
+    }
+}
+
+extension TaskListView {
+    
+    private var sortedTasks: [Task] { get {
+        return day.tasks.sorted { $0.start < $1.start }
+    }}
+    
+    private func delete(_ task: Task) {
+        guard let indexToDelete = day.tasks.firstIndex(of: task) else { return }
+        day.tasks.remove(at: indexToDelete)
     }
 }
 

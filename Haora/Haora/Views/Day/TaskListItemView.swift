@@ -28,6 +28,9 @@ struct TaskListItemView: View {
             }
         }
     }
+}
+
+extension TaskListItemView {
     
     private var taskTextForegroundStyle: Color { get {
         return if task.isBreak { .secondary } else { .primary }
@@ -36,7 +39,7 @@ struct TaskListItemView: View {
     private var start: String { get {
         return task.start.asTimeString()
     }}
-        
+    
     private var duration: String { get {
         return task.duration(to: task.successor()).asString()
     }}
