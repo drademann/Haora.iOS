@@ -20,8 +20,6 @@ final class Task {
     }
 }
 
-// MARK: - Neighbours
-
 extension Task {
     
     func successor() -> Task? {
@@ -35,9 +33,19 @@ extension Task {
         }
         return nil
     }
+    
+    func predecessor() -> Task? {
+        guard let day = day else { return nil }
+        let tasks = day.sortedTasks
+        if let index = tasks.firstIndex(of: self) {
+            let predecessorIndex = tasks.index(before: index)
+            if predecessorIndex >= tasks.startIndex {
+                return tasks[predecessorIndex]
+            }
+        }
+        return nil
+    }
 }
-
-// MARK: - Duration
 
 extension Task {
     
