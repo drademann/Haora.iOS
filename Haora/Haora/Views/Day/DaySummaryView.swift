@@ -52,7 +52,7 @@ struct DaySummaryView: View {
                 }
                 button
                     .popover(isPresented: $showFinishTimePopover, attachmentAnchor: .point(.top), arrowEdge: .bottom) {
-                        FinishTimePopoverView(finished: $day.finished)
+                        FinishTimePopoverView(day: day)
                             .presentationDetents([.height(120)])
                             .padding()
                     }

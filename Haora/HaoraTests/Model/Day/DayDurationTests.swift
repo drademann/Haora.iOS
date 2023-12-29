@@ -115,8 +115,6 @@ final class DayDurationTests: XCTestCase {
         XCTAssertEqual(durationPause, 2.75 * 60 * 60, "total duration of pauses should be 2 hours and 45 minutes")
     }
     
-    // MARK: - working time
-    
     func testDurationWorking_givenNoTasks_shouldReturnZero() {
         let day = Day(date: today())
         

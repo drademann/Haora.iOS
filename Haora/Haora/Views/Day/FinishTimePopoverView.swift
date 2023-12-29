@@ -3,13 +3,13 @@ import SwiftUI
 struct FinishTimePopoverView: View {
     @Environment(\.dismiss) var dismiss
     
-    @Binding var finished: Date?
+    @Bindable var day: Day
     
     @State private var selectedDate: Date
     
-    init(finished: Binding<Date?>) {
-        self._finished = finished
-        self._selectedDate = State<Date>.init(initialValue: finished.wrappedValue ?? now()) // FIXME needs a proposed time instead of 'now()'
+    init(day: Day) {
+        self.day = day
+        self._selectedDate = State<Date>.init(initialValue: day.finished ?? day.proposeFinishTime())
     }
     
     var body: some View {
@@ -19,6 +19,7 @@ struct FinishTimePopoverView: View {
                 Button(action: setOpen ) { Text("open") }
                 Spacer()
                 Button(action: setNow) { Text("now") }
+                    .disabled(!day.isToday)
                 Spacer()
                 Button(action: setSelected) { Text("set") }
             }
@@ -30,22 +31,22 @@ struct FinishTimePopoverView: View {
 extension FinishTimePopoverView {
     
     private func setOpen() {
-        finished = nil
+        day.finished = nil
         dismiss()
     }
     
     private func setNow() {
-        finished = now()
+        day.finished = now()
         dismiss()
     }
     
     private func setSelected() {
-        finished = selectedDate
+        day.finished = selectedDate
         dismiss()
     }
 }
 
 #Preview {
     let preview = previewDayModel()
-    return FinishTimePopoverView(finished: .constant(preview.day.finished))
+    return FinishTimePopoverView(day: preview.day)
 }

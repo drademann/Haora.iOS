@@ -17,17 +17,19 @@ final class Day {
 extension Day {
     
     var sortedTasks: [Task] {
-        get {
-            return tasks.sorted { $0.start < $1.start }
-        }
+        tasks.sorted { $0.start < $1.start }
     }
     
     var firstTask: Task? {
-        return sortedTasks.first
+        sortedTasks.first
     }
     
     var lastTask: Task? {
-        return sortedTasks.last
+        sortedTasks.last
+    }
+    
+    var isToday: Bool {
+        Calendar.current.isDateInToday(date)
     }
 }
 
@@ -35,7 +37,7 @@ extension Day {
     
     func proposeNextTaskTime(now: Date = now()) -> Date {
         if Calendar.current.isDate(self.date, inSameDayAs: now) {
-            return proposeNextTaskTimeForToday(now)
+            return proposeTimeForToday(now)
         }
         if let last = lastTask {
             return last.start + DateComponents(minute: 15)
@@ -43,11 +45,17 @@ extension Day {
         return self.date.at(9, 00)
     }
     
-    private func proposeNextTaskTimeForToday(_ now: Date) -> Date {
-        if let last = lastTask {
-            if last.start > now {
-                return last.start + DateComponents(minute: 15)
-            }
+    func proposeFinishTime(now: Date = now()) -> Date {
+        if tasks.isEmpty { fatalError("without a starting task there shall be no finish time") }
+        if Calendar.current.isDate(self.date, inSameDayAs: now) {
+            return proposeTimeForToday(now)
+        }
+        return lastTask!.start + DateComponents(minute: 15)
+    }
+    
+    private func proposeTimeForToday(_ now: Date) -> Date {
+        if let last = lastTask, last.start > now {
+            return lastTask!.start + DateComponents(minute: 15)
         }
         return now
     }
