@@ -66,7 +66,11 @@ extension Day {
     func duration(now: Date = now()) -> TimeInterval {
         guard let start = firstTask?.start else { return 0 }
         let end = self.finished ?? now
-        return DateInterval(start: start, end: end).duration
+        if (start > end) {
+            return 0
+        } else {
+            return DateInterval(start: start, end: end).duration
+        }
     }
     
     func durationBreaks(now: Date = now()) -> TimeInterval {

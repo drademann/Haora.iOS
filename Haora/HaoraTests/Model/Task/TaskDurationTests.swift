@@ -13,6 +13,14 @@ final class TaskDurationTests: XCTestCase {
         XCTAssertEqual(duration, 2 * 60 * 60, "duration should be 2 hours")
     }
     
+    func testDuration_givenNextTaskIsNil_andTaskStartGreaterNow_shouldReturnZero() {
+        let task = Task(start: Date().at(12, 00), text: "Task")
+        
+        let duration = task.duration(to: nil, currentDate: Date().at(10, 00))
+        
+        XCTAssertEqual(duration, 0, "duration should be zero cause starting in future")
+    }
+    
     func testDuration_givenNextTask_shouldReturnDurationBetween() {
         let task = Task(start: Date().at(8, 00), text: "Task 1")
         let nextTask = Task(start: Date().at(10, 00), text: "Task 2")

@@ -45,19 +45,13 @@ struct DaySummaryView: View {
             Text("finished")
             Spacer()
             if !day.tasks.isEmpty {
-                let button = if day.finished == nil {
-                    Button(action: { showFinishTimePopover = true }) { Text("finish work") }
-                } else {
-                    Button(action: { showFinishTimePopover = true }) { Text("reopen day") }
-                }
-                button
+                Button(action: { showFinishTimePopover = true }) { Text("set").padding(.trailing) }
                     .popover(isPresented: $showFinishTimePopover, attachmentAnchor: .point(.top), arrowEdge: .bottom) {
                         FinishTimePopoverView(day: day)
-                            .presentationDetents([.height(120)])
+                            .presentationDetents([.height(200)])
                             .padding()
                     }
             }
-            Spacer()
             if day.tasks.isEmpty {
                 Text("no tasks to be finished")
             } else if day.finished == nil {

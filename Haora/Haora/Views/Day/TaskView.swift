@@ -9,14 +9,14 @@ struct TaskView: View {
     
     var body: some View {
         VStack {
-            DatePicker("Starting Time", selection: $task.start, displayedComponents: .hourAndMinute)
-            // TODO use 5 minites steps
             HStack {
+                Text("Starting")
                 Spacer()
                 Button(action: { task.start = now() }) { Text("now") }
                     .padding(.trailing, 8)
+                Spacer()
+                TimePicker(date: $task.start)
             }
-            .padding(.bottom, 20)
             HStack {
                 Text("Description")
                 Spacer()

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D1872312B3EBA5100E9CBEA /* DayFinishTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1872302B3EBA5100E9CBEA /* DayFinishTimeTests.swift */; };
+		9D1872332B3F242300E9CBEA /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1872322B3F242300E9CBEA /* TimePicker.swift */; };
 		9D300E842B0B5920002D7836 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D300E832B0B5920002D7836 /* Tag.swift */; };
 		9D4164702AC9A3C200E3504D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41646F2AC9A3C200E3504D /* Task.swift */; };
 		9D51959D2AE8192C005CB038 /* TaskModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51959C2AE8192C005CB038 /* TaskModelTests.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		9D1872302B3EBA5100E9CBEA /* DayFinishTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFinishTimeTests.swift; sourceTree = "<group>"; };
+		9D1872322B3F242300E9CBEA /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		9D300E832B0B5920002D7836 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		9D41646F2AC9A3C200E3504D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		9D51959C2AE8192C005CB038 /* TaskModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelTests.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		9DA259012ADABB5D00023815 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				9D1872322B3F242300E9CBEA /* TimePicker.swift */,
 				9DA258FF2ADAB39800023815 /* TrailingImageLabelStyle.swift */,
 			);
 			path = Support;
@@ -460,6 +463,7 @@
 				9DC9FBAA2ADAEB02008D6F83 /* TaskView.swift in Sources */,
 				9D8397AC2AD1671500A86CF5 /* MonthView.swift in Sources */,
 				9DD2B5992AEF9F59004A1301 /* TaskListView.swift in Sources */,
+				9D1872332B3F242300E9CBEA /* TimePicker.swift in Sources */,
 				9D89033D2AF111620025D86C /* DaySummaryView.swift in Sources */,
 				9D300E842B0B5920002D7836 /* Tag.swift in Sources */,
 				9DB4E8362B38A7330028F88A /* TagListItemView.swift in Sources */,

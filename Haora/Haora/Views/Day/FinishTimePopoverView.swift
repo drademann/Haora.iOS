@@ -14,7 +14,11 @@ struct FinishTimePopoverView: View {
     
     var body: some View {
         VStack {
-            DatePicker("finishing day at", selection: $selectedDate, displayedComponents: .hourAndMinute)
+            HStack {
+                Text("finishing day at")
+                Spacer()
+                TimePicker(date: $selectedDate)
+            }
             HStack {
                 Button(action: setOpen ) { Text("open") }
                 Spacer()

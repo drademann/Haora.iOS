@@ -47,6 +47,22 @@ final class DayDurationTests: XCTestCase {
         XCTAssertEqual(duration, 5.5 * 60 * 60, "duration should be 10:00 to 15:30 = 5.5 hours as TimeInterval (seconds)")
     }
     
+    func testTotal_givenDayIsNotFinished_andFirstTasksStartGreaterNow_shouldReturnZero() throws {
+        let config = ModelConfiguration(for: Day.self, Task.self, isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
+        
+        let day = Day(date: today())
+        container.mainContext.insert(day)
+        let task1 = Task(start: Date().at(18, 00), text: "Task")
+        day.tasks.append(task1)
+        
+        let testNow = Date().at(15, 30)
+        
+        let duration = day.duration(now: testNow)
+        
+        XCTAssertEqual(duration, 0, "duration is zero cause first task starts in future")
+    }
+    
     func testTotalPause_givenNoTasks_shouldReturnZero() {
         let day = Day(date: today())
         
