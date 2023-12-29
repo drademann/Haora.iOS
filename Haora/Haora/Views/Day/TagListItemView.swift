@@ -15,10 +15,6 @@ struct TagListItemView: View {
                 .onSubmit { tag.isEditing = false }
         } else {
             Text("#\(tag.name)")
-                .swipeActions(edge: .leading) {
-                    Button("Edit", action: { tag.isEditing = true })
-                        .tint(.blue)
-                }
         }
     }
 }

@@ -1,6 +1,8 @@
 import XCTest
+import SwiftData
 @testable import Haora
 
+@MainActor
 final class TaskDurationTests: XCTestCase {
     
     func testDuration_givenNextTaskIsNil_shouldReturnDurationToNow() {
@@ -34,5 +36,22 @@ final class TaskDurationTests: XCTestCase {
         let duration = task.duration(to: Date().at(11, 00))
         
         XCTAssertEqual(duration, 0, "should not crash nor return a negative duration")
+    }
+    
+    func testDuration_givenTaskIsLast_andDayIsFinished_shouldReturnDurationToFinishTime() throws {
+        let config = ModelConfiguration(for: Day.self, Task.self, isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Day.self, Task.self, configurations: config)
+        
+        let day = Day(date: today())
+        day.finished = today().at(17, 00)
+        container.mainContext.insert(day)
+        let task1 = Task(start: Date().at(10, 00), text: "Task 1")
+        day.tasks.append(task1)
+        let task2 = Task(start: Date().at(12, 00), text: "Task 2")
+        day.tasks.append(task2)
+        
+        let duration = task2.duration(to: task2.successor())
+        
+        XCTAssertEqual(duration, 5 * 60 * 60, "should return 5 hours, 12:00 to 17:00")
     }
 }

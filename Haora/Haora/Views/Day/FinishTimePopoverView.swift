@@ -9,7 +9,7 @@ struct FinishTimePopoverView: View {
     
     init(finished: Binding<Date?>) {
         self._finished = finished
-        self._selectedDate = State<Date>.init(initialValue: finished.wrappedValue ?? now())
+        self._selectedDate = State<Date>.init(initialValue: finished.wrappedValue ?? now()) // FIXME needs a proposed time instead of 'now()'
     }
     
     var body: some View {

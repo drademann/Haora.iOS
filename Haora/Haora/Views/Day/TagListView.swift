@@ -15,6 +15,10 @@ struct TagListView: View {
                 ForEach(tags) { tag in
                     HStack {
                         TagListItemView(tag: tag)
+                            .swipeActions(edge: .leading) {
+                                Button("Edit", action: { tag.isEditing = true })
+                                    .tint(.blue)
+                            }
                             .swipeActions(edge: .trailing) {
                                 Button("Delete", role: .destructive, action: { delete(tag) })
                             }
@@ -23,6 +27,10 @@ struct TagListView: View {
                             Image(systemName: "checkmark")
                                 .foregroundColor(.secondary)
                         }
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        toggle(tag)
                     }
                 }
             }
@@ -50,6 +58,15 @@ extension TagListView {
     
     private func delete(_ tag: Tag) {
         modelContext.delete(tag)
+    }
+    
+    private func toggle(_ tag: Tag) {
+        if task.tags.contains(tag) {
+            guard let indexToDelete = task.tags.firstIndex(of: tag) else { return }
+            task.tags.remove(at: indexToDelete)
+        } else {
+            task.tags.append(tag)
+        }
     }
 }
 
