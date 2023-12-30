@@ -21,3 +21,15 @@ struct HaoraApp: App {
         .modelContainer(sharedModelContainer)
     }
 }
+
+private struct TimeKey: EnvironmentKey {
+    static let defaultValue: Time = Time()
+}
+    
+extension EnvironmentValues {
+    
+    var time: Time {
+        get { self[TimeKey.self] }
+        set { self[TimeKey.self] = newValue }
+    }
+}

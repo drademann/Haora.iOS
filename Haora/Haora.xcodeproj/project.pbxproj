@@ -10,6 +10,8 @@
 		9D1872312B3EBA5100E9CBEA /* DayFinishTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1872302B3EBA5100E9CBEA /* DayFinishTimeTests.swift */; };
 		9D1872332B3F242300E9CBEA /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1872322B3F242300E9CBEA /* TimePicker.swift */; };
 		9D300E842B0B5920002D7836 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D300E832B0B5920002D7836 /* Tag.swift */; };
+		9D41332E2B405AC400A5090C /* TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41332D2B405AC400A5090C /* TimeTests.swift */; };
+		9D4133302B405B3500A5090C /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41332F2B405B3500A5090C /* Time.swift */; };
 		9D4164702AC9A3C200E3504D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41646F2AC9A3C200E3504D /* Task.swift */; };
 		9D51959D2AE8192C005CB038 /* TaskModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51959C2AE8192C005CB038 /* TaskModelTests.swift */; };
 		9D51959F2AE83BF5005CB038 /* TaskNeighbourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51959E2AE83BF5005CB038 /* TaskNeighbourTests.swift */; };
@@ -66,6 +68,8 @@
 		9D1872302B3EBA5100E9CBEA /* DayFinishTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFinishTimeTests.swift; sourceTree = "<group>"; };
 		9D1872322B3F242300E9CBEA /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		9D300E832B0B5920002D7836 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		9D41332D2B405AC400A5090C /* TimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTests.swift; sourceTree = "<group>"; };
+		9D41332F2B405B3500A5090C /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		9D41646F2AC9A3C200E3504D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		9D51959C2AE8192C005CB038 /* TaskModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelTests.swift; sourceTree = "<group>"; };
 		9D51959E2AE83BF5005CB038 /* TaskNeighbourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNeighbourTests.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				9D70807C2B3AE76F009D63D0 /* NowTests.swift */,
 				9D5195A12AE843BF005CB038 /* DateExtensionTests.swift */,
 				9D559F962AEAE93000C887D2 /* TimeIntervalExtensionTests.swift */,
+				9D41332D2B405AC400A5090C /* TimeTests.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			children = (
 				9DAB462C2AE187F900BE30AC /* DateExtension.swift */,
 				9D559F982AEAEB8F00C887D2 /* TimeIntervalExtension.swift */,
+				9D41332F2B405B3500A5090C /* Time.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -455,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4164702AC9A3C200E3504D /* Task.swift in Sources */,
+				9D4133302B405B3500A5090C /* Time.swift in Sources */,
 				9DAB462D2AE187F900BE30AC /* DateExtension.swift in Sources */,
 				9DC9FBAC2ADBECAD008D6F83 /* TagListView.swift in Sources */,
 				9D89033F2AF114D80025D86C /* SelectDateView.swift in Sources */,
@@ -485,6 +492,7 @@
 				9DD8637C2B24A8BC002F0DB8 /* DayDurationTests.swift in Sources */,
 				9D559F972AEAE93000C887D2 /* TimeIntervalExtensionTests.swift in Sources */,
 				9DB4961D2B0E5BC000B18693 /* TagTests.swift in Sources */,
+				9D41332E2B405AC400A5090C /* TimeTests.swift in Sources */,
 				9D51959F2AE83BF5005CB038 /* TaskNeighbourTests.swift in Sources */,
 				9D1872312B3EBA5100E9CBEA /* DayFinishTimeTests.swift in Sources */,
 				9D70807D2B3AE76F009D63D0 /* NowTests.swift in Sources */,

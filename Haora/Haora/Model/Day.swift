@@ -35,7 +35,8 @@ extension Day {
 
 extension Day {
     
-    func proposeNextTaskTime(now: Date = now()) -> Date {
+    func proposeNextTaskStart(by time: Time) -> Date {
+        let now = time.now()
         if Calendar.current.isDate(self.date, inSameDayAs: now) {
             return proposeTimeForToday(now)
         }
@@ -45,8 +46,9 @@ extension Day {
         return self.date.at(9, 00)
     }
     
-    func proposeFinishTime(now: Date = now()) -> Date {
+    func proposeFinish(by time: Time) -> Date {
         if tasks.isEmpty { fatalError("without a starting task there shall be no finish time") }
+        let now = time.now()
         if Calendar.current.isDate(self.date, inSameDayAs: now) {
             return proposeTimeForToday(now)
         }
@@ -63,9 +65,9 @@ extension Day {
 
 extension Day {
     
-    func duration(now: Date = now()) -> TimeInterval {
+    func duration(by time: Time) -> TimeInterval {
         guard let start = firstTask?.start else { return 0 }
-        let end = self.finished ?? now
+        let end = self.finished ?? time.now()
         if (start > end) {
             return 0
         } else {
@@ -73,16 +75,16 @@ extension Day {
         }
     }
     
-    func durationBreaks(now: Date = now()) -> TimeInterval {
+    func durationBreaks(by time: Time) -> TimeInterval {
         return sortedTasks
             .filter { $0.isBreak }
             .reduce(0) { sum, task in
-                let next = task.successor()?.start ?? now
+                let next = task.successor()?.start ?? time.now()
                 return sum + task.duration(to: next)
             }
     }
     
-    func durationWorking(now: Date = now()) -> TimeInterval {
-        return duration(now: now) - durationBreaks(now: now)
+    func durationWorking(by time: Time) -> TimeInterval {
+        return duration(by: time) - durationBreaks(by: time)
     }
 }

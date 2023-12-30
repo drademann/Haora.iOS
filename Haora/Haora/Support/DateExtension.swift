@@ -1,25 +1,5 @@
 import Foundation
 
-fileprivate let minutes = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]
-
-func now() -> Date {
-    let date = Date.now.asTime()
-    let dateMinutes = Calendar.current.component(.minute, from: date)
-    guard let closestMinute = Dictionary(grouping: minutes, by: { abs($0 - dateMinutes) })
-        .sorted(by: { $0.key < $1.key })
-        .first?.value.first else {
-        fatalError("no nearest minute found for \(date)")
-    }
-    var components = Calendar.current.dateComponents([.day, .month, .year, .hour], from: date)
-    components.minute = closestMinute
-    guard let now = Calendar.current.date(from: components) else { fatalError("unable to construct date from \(components)") }
-    return now
-}
-
-func today() -> Date {
-    return Date.now.asDay()
-}
-
 extension Date {
     
     func at(_ hour: Int, _ minute: Int) -> Date {
@@ -60,6 +40,13 @@ extension Date {
 
 extension Date {
     
+    var hour: Int { Calendar.current.component(.hour, from: self) }
+    var minute: Int { Calendar.current.component(.minute, from: self) }
+    
+}
+
+extension Date {
+    
     private static let TimeFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .none
@@ -85,5 +72,4 @@ extension Date {
     func asWeekdayString() -> String {
         return Self.WeekdayFormatter.string(from: self)
     }
-    
 }

@@ -3,8 +3,10 @@ import XCTest
 
 final class NowTests: XCTestCase {
     
+    private let time = TestTime()
+    
     func testNow_shouldReturnCurrentTimestamp_withSecondsSetToZero() {
-        let now = now()
+        let now = time.now()
         
         let components = Calendar.current.dateComponents([.second], from: now)
         XCTAssertEqual(components.second, 0, "now() should set seconds to zero")

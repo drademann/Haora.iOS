@@ -5,6 +5,9 @@ import SwiftData
 @MainActor
 final class TaskNeighbourTests: XCTestCase {
     
+    private let time = TestTime()
+    private func today() -> Date { time.today() }
+    
     func testSuccessor_givenNoSuccessor_shouldReturnNil() throws {
         let config = ModelConfiguration(for: Day.self, Task.self, isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Day.self, Task.self, configurations: config)

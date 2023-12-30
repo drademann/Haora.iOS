@@ -2,11 +2,12 @@ import Foundation
 import SwiftData
 
 @MainActor func previewDayModel() -> PreviewDayModel {
+    let time = Time()
     do {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Day.self, Task.self, Tag.self, configurations: config)
         
-        let day = Day(date: today())
+        let day = Day(date: time.today())
         container.mainContext.insert(day)
         let task1 = Task(start: Date().at(9, 15), text: "Working on project Haora")
         day.tasks.append(task1)

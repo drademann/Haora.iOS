@@ -1,16 +1,12 @@
 import SwiftUI
 
 struct FinishTimePopoverView: View {
+    @Environment(\.time) var time
     @Environment(\.dismiss) var dismiss
     
     @Bindable var day: Day
     
-    @State private var selectedDate: Date
-    
-    init(day: Day) {
-        self.day = day
-        self._selectedDate = State<Date>.init(initialValue: day.finished ?? day.proposeFinishTime())
-    }
+    @State private var selectedDate: Date = Date.now
     
     var body: some View {
         VStack {
@@ -29,6 +25,9 @@ struct FinishTimePopoverView: View {
             }
             .padding([.top, .leading, .trailing])
         }
+        .onAppear {
+            selectedDate = day.finished ?? day.proposeFinish(by: time)
+        }
     }
 }
 
@@ -40,7 +39,7 @@ extension FinishTimePopoverView {
     }
     
     private func setNow() {
-        day.finished = now()
+        day.finished = time.now()
         dismiss()
     }
     

@@ -53,7 +53,6 @@ extension TagListView {
         let tag = Tag("")
         tag.isEditing = true
         modelContext.insert(tag)
-        print(tag.isEditing)
     }
     
     private func delete(_ tag: Tag) {

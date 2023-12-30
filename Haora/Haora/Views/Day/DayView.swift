@@ -3,8 +3,9 @@ import SwiftData
 
 struct DayView: View {
     @Environment(\.modelContext) var modelContext
+    @Environment(\.time) var time
     
-    @State private var date: Date = today()
+    @State private var date: Date = Date()
     @State private var path = NavigationPath()
     
     @Query
@@ -50,6 +51,9 @@ struct DayView: View {
         .tabItem {
             Label("Day", systemImage: "1.circle")
         }
+        .onAppear {
+            self.date = time.now()
+        }
     }
 }
 
@@ -66,7 +70,7 @@ extension DayView {
     }
     
     private func createTask(for day: Day) {
-        let task = Task(start: day.proposeNextTaskTime(), text: "")
+        let task = Task(start: day.proposeNextTaskStart(by: time), text: "")
         day.tasks.append(task)
         path.append(task)
     }

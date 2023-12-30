@@ -5,6 +5,9 @@ import SwiftData
 @MainActor
 final class TaskDurationTests: XCTestCase {
     
+    private let time = TestTime(now: Date.now.at(12, 00))
+    private func today() -> Date { time.today() }
+    
     func testDuration_givenNextTaskIsNil_shouldReturnDurationToNow() {
         let task = Task(start: Date().at(8, 00), text: "Task")
         

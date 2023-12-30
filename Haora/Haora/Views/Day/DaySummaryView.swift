@@ -2,6 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct DaySummaryView: View {
+    @Environment(\.time) var time
     
     @Bindable var day: Day
     
@@ -28,7 +29,7 @@ struct DaySummaryView: View {
         HStack {
             Text("total")
             Spacer()
-            Text(day.duration().asString())
+            Text(day.duration(by: time).asString())
         }
     }
     
@@ -36,7 +37,7 @@ struct DaySummaryView: View {
         HStack {
             Text("breaks")
             Spacer()
-            Text(day.durationBreaks().asString())
+            Text(day.durationBreaks(by: time).asString())
         }
     }
     
@@ -66,7 +67,7 @@ struct DaySummaryView: View {
         HStack {
             Text("working")
             Spacer()
-            Text(day.durationWorking().asString())
+            Text(day.durationWorking(by: time).asString())
         }
     }
 }

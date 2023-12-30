@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SelectDateView: View {
+    @Environment(\.time) var time
     
     @Binding var date: Date
     
@@ -41,7 +42,7 @@ extension SelectDateView {
             case .previous:
                 self.date = self.date.previousDay()
             case .today:
-                self.date = today()
+                self.date = time.today()
             case .next:
                 self.date = self.date.nextDay()
         }
@@ -49,5 +50,6 @@ extension SelectDateView {
 }
 
 #Preview {
-    SelectDateView(date: .constant(today()))
+    let time = Time()
+    return SelectDateView(date: .constant(time.today()))
 }

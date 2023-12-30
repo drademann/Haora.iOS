@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct TaskView: View {
+    @Environment(\.time) var time
     
     @Bindable var task: Task
     
@@ -12,7 +13,7 @@ struct TaskView: View {
             HStack {
                 Text("Starting")
                 Spacer()
-                Button(action: { task.start = now() }) { Text("now") }
+                Button(action: { task.start = time.now() }) { Text("now") }
                     .padding(.trailing, 8)
                 Spacer()
                 TimePicker(date: $task.start)
