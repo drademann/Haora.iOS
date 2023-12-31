@@ -5,7 +5,7 @@ struct DayView: View {
     @Environment(\.modelContext) var modelContext
     @Environment(\.time) var time
     
-    @State private var date: Date = Date()
+    @SceneStorage("net.beyondworlds.Haora.selectedDate") private var date: Date = Date()
     @State private var path = NavigationPath()
     
     @Query
@@ -50,9 +50,6 @@ struct DayView: View {
         }
         .tabItem {
             Label("Day", systemImage: "1.circle")
-        }
-        .onAppear {
-            self.date = time.now()
         }
     }
 }
