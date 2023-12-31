@@ -5,7 +5,7 @@ struct TaskView: View {
     
     @Bindable var task: Task
     
-    enum FocusedField { case text }
+    enum FocusedField { case time, text }
     @FocusState private var focusedField: FocusedField?
     
     var body: some View {
@@ -18,6 +18,7 @@ struct TaskView: View {
                         .padding(.trailing, 8)
                     Spacer()
                     TimePicker(date: $task.start)
+                        .focused($focusedField, equals: .time)
                 }
                 Toggle("is break", isOn: $task.isBreak)
             }
@@ -35,7 +36,7 @@ struct TaskView: View {
             }
         }
         .navigationTitle("Task")
-        .onAppear { focusedField = .text }
+        .onAppear { focusedField = .time }
     }
 }
 
