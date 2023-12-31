@@ -8,15 +8,16 @@ struct SelectDateView: View {
     var body: some View {
         VStack {
             Text(date, style: .date)
+                .font(.headline)
                 .padding(.bottom, 4)
             ZStack {
                 HStack {
                     Button(action: { date = time.switchDay(of: date, to: .previous) }) {
-                        Label("previous day", systemImage: "chevron.left")
+                        Label("previous day", systemImage: "chevron.left").padding(.leading)
                     }
                     Spacer()
                     Button(action: { date = time.switchDay(of: date, to: .next) }) {
-                        Label("next day", systemImage: "chevron.right")
+                        Label("next day", systemImage: "chevron.right").padding(.trailing)
                             .labelStyle(TrailingImageLabelStyle())
                     }
                 }
@@ -30,10 +31,15 @@ struct SelectDateView: View {
                 }
             }
             Text(date.asWeekdayString())
+                .font(.headline)
                 .padding(.top, 4)
         }
         .padding([.top, .bottom])
-        .contentShape(Rectangle())
+        .contentShape(RoundedRectangle(cornerRadius: 10))
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color(red: 0.95, green: 0.95, blue: 0.95))
+        )
         .gesture(switchDayGesture)
     }
     

@@ -30,7 +30,7 @@ struct DayView: View {
                     DaySummaryView(day: day)
                 }
                 SelectDateView(date: $date)
-                    .padding([.leading, .bottom, .trailing], 20)
+                    .padding()
             }
         }
         .tabItem {
