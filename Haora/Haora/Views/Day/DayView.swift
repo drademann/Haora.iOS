@@ -15,41 +15,35 @@ struct DayView: View {
         @Bindable var day = selectedDay()
         NavigationStack(path: $path) {
             VStack {
-                Text(date, style: .date)
-                    .font(.largeTitle)
-                Text(date.asWeekdayString())
-                    .font(.title2)
-                VStack {
+                if day.tasks.isEmpty {
+                    EmptyList
+                } else {
                     TaskListView(day: day)
-                    let CreateTaskButton = Button(action: { createTask(for: day) }) { Label("new task", systemImage: "plus") }
-                    if day.tasks.isEmpty {
-                        HStack {
-                            Spacer()
-                            CreateTaskButton
-                            Spacer()
-                        }
-                        .padding(.bottom, 20)
-                    } else {
-                        HStack {
-                            Spacer()
-                            CreateTaskButton
-                                .padding(.trailing, 4)
-                        }
-                        .padding(.trailing)
-                    }
-                    if !day.tasks.isEmpty {
-                        DaySummaryView(day: day)
-                    }
-                    
-                    SelectDateView(date: $date)
-                        .padding([.leading, .bottom, .trailing], 20)
-                        .padding(.top, 10)
                 }
-                .navigationDestination(for: Task.self) { task in TaskView(task: task) }
+                let CreateTaskButton = Button(action: { createTask(for: day) }) { Label("new task", systemImage: "plus") }
+                if day.tasks.isEmpty {
+                    HStack { Spacer(); CreateTaskButton; Spacer() }.padding(.bottom, 20)
+                } else {
+                    HStack { Spacer(); CreateTaskButton }.padding(.trailing)
+                }
+                if !day.tasks.isEmpty {
+                    DaySummaryView(day: day)
+                }
+                SelectDateView(date: $date)
+                    .padding([.leading, .bottom, .trailing], 20)
             }
         }
         .tabItem {
             Label("Day", systemImage: "1.circle")
+        }
+    }
+    
+    private var EmptyList: some View {
+        VStack {
+            Spacer()
+            Text("no tasks yet")
+                .foregroundStyle(.secondary)
+            Spacer()
         }
     }
 }

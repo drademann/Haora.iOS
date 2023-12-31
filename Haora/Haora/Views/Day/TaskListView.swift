@@ -9,14 +9,6 @@ struct TaskListView: View {
     @State private var showFinishTimePopover = false
     
     var body: some View {
-        if day.tasks.isEmpty {
-            EmptyList
-        } else {
-            TaskList
-        }
-    }
-    
-    private var TaskList: some View {
         List {
             ForEach(sortedTasks) { task in
                 NavigationLink(value: task, label: { TaskListItemView(task: task) })
@@ -28,6 +20,7 @@ struct TaskListView: View {
             FinishedView
                 .listRowSeparator(.hidden)
         }
+        .navigationDestination(for: Task.self) { task in TaskView(task: task) }
         .listStyle(.plain)
         .padding(.bottom)
     }
@@ -61,15 +54,6 @@ struct TaskListView: View {
                     .font(Font.system(size: 13, weight: .semibold, design: .default))
             }
             .padding(.top, 6)
-        }
-    }
-    
-    private var EmptyList: some View {
-        VStack {
-            Spacer()
-            Text("no tasks yet")
-                .foregroundStyle(.secondary)
-            Spacer()
         }
     }
 }

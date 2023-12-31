@@ -6,45 +6,44 @@ struct SelectDateView: View {
     @Binding var date: Date
     
     var body: some View {
-        ZStack {
-            HStack {
-                Button(action: { switchDay(to: .previous) }) {
-                    Label("previous day", systemImage: "chevron.left")
+        VStack {
+            Text(date, style: .date)
+                .padding(.bottom, 4)
+            ZStack {
+                HStack {
+                    Button(action: { date = time.switchDay(of: date, to: .previous) }) {
+                        Label("previous day", systemImage: "chevron.left")
+                    }
+                    Spacer()
+                    Button(action: { date = time.switchDay(of: date, to: .next) }) {
+                        Label("next day", systemImage: "chevron.right")
+                            .labelStyle(TrailingImageLabelStyle())
+                    }
                 }
-                Spacer()
-                Button(action: { switchDay(to: .next) }) {
-                    Label("next day", systemImage: "chevron.right")
-                        .labelStyle(TrailingImageLabelStyle())
+                HStack {
+                    Spacer()
+                    Button(action: { date = time.switchDay(of: date, to: .today) }) {
+                        Text("today")
+                    }
+                    .disabled(Calendar.current.isDateInToday(date))
+                    Spacer()
                 }
             }
-            HStack {
-                Spacer()
-                Button(action: { switchDay(to: .today) }) {
-                    Text("today")
-                }
-                .disabled(Calendar.current.isDateInToday(date))
-                Spacer()
-            }
+            Text(date.asWeekdayString())
+                .padding(.top, 4)
         }
-    }
-}
-
-extension SelectDateView {
-    
-    enum Direction {
-        case previous
-        case today
-        case next
+        .padding([.top, .bottom])
+        .contentShape(Rectangle())
+        .gesture(switchDayGesture)
     }
     
-    private func switchDay(to direction: Direction) {
-        switch (direction) {
-            case .previous:
-                self.date = self.date.previousDay()
-            case .today:
-                self.date = time.today()
-            case .next:
-                self.date = self.date.nextDay()
+    var switchDayGesture: some Gesture {
+        DragGesture().onEnded { value in
+            if value.translation.width < 0 {
+                date = time.switchDay(of: date, to: .next)
+            } else {
+                date = time.switchDay(of: date, to: .previous)
+            }
         }
     }
 }
