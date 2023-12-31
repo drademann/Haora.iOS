@@ -6,6 +6,8 @@ struct TaskListView: View {
     
     @Bindable var day: Day
     
+    @State private var showFinishTimePopover = false
+    
     var body: some View {
         if day.tasks.isEmpty {
             EmptyList
@@ -23,9 +25,43 @@ struct TaskListView: View {
                     }
             }
             .listRowSeparator(.hidden)
+            FinishedView
+                .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
         .padding(.bottom)
+    }
+    
+    private var FinishedView: some View {
+        VStack {
+            Divider()
+            HStack {
+                Text("Finished")
+                    .font(.headline)
+                Spacer()
+                if !day.tasks.isEmpty {
+                    Button(action: { showFinishTimePopover = true }) {
+                        if day.tasks.isEmpty {
+                            Text("no tasks to be finished")
+                        } else if day.finished == nil {
+                            Text("not yet")
+                        } else {
+                            Text(day.finished!.asTimeString())
+                        }
+                    }
+                    .font(.headline)
+                    .popover(isPresented: $showFinishTimePopover, attachmentAnchor: .point(.top), arrowEdge: .bottom) {
+                        FinishTimePopoverView(day: day)
+                            .presentationDetents([.height(200)])
+                            .padding()
+                    }
+                }
+                Image(systemName: "chevron.forward")
+                    .foregroundStyle(.tertiary)
+                    .font(Font.system(size: 13, weight: .semibold, design: .default))
+            }
+            .padding(.top, 6)
+        }
     }
     
     private var EmptyList: some View {

@@ -6,8 +6,6 @@ struct DaySummaryView: View {
     
     @Bindable var day: Day
     
-    @State private var showFinishTimePopover = false
-    
     var body: some View {
         HStack {
             VStack {
@@ -18,7 +16,6 @@ struct DaySummaryView: View {
                 }
                 TotalView
                 BreaksView
-                FinishedView
                 WorkingView
             }
             .padding(.horizontal, 20)
@@ -38,28 +35,6 @@ struct DaySummaryView: View {
             Text("breaks")
             Spacer()
             Text(day.durationBreaks(by: time).asString())
-        }
-    }
-    
-    private var FinishedView: some View {
-        HStack {
-            Text("finished")
-            Spacer()
-            if !day.tasks.isEmpty {
-                Button(action: { showFinishTimePopover = true }) { Text("set").padding(.trailing) }
-                    .popover(isPresented: $showFinishTimePopover, attachmentAnchor: .point(.top), arrowEdge: .bottom) {
-                        FinishTimePopoverView(day: day)
-                            .presentationDetents([.height(200)])
-                            .padding()
-                    }
-            }
-            if day.tasks.isEmpty {
-                Text("no tasks to be finished")
-            } else if day.finished == nil {
-                Text("not yet")
-            } else {
-                Text(day.finished!.asTimeString())
-            }
         }
     }
     
