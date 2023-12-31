@@ -19,34 +19,34 @@ struct DayView: View {
                     .font(.largeTitle)
                 Text(date.asWeekdayString())
                     .font(.title2)
-                
-                TaskListView(day: day)
-                
-                let CreateTaskButton = Button(action: { createTask(for: day) }) { Label("new task", systemImage: "plus") }
-                if day.tasks.isEmpty {
-                    HStack {
-                        Spacer()
-                        CreateTaskButton
-                        Spacer()
+                VStack {
+                    TaskListView(day: day)
+                    let CreateTaskButton = Button(action: { createTask(for: day) }) { Label("new task", systemImage: "plus") }
+                    if day.tasks.isEmpty {
+                        HStack {
+                            Spacer()
+                            CreateTaskButton
+                            Spacer()
+                        }
+                        .padding(.bottom, 20)
+                    } else {
+                        HStack {
+                            Spacer()
+                            CreateTaskButton
+                                .padding(.trailing, 4)
+                        }
+                        .padding(.trailing)
                     }
-                    .padding(.bottom, 20)
-                } else {
-                    HStack {
-                        Spacer()
-                        CreateTaskButton
-                            .padding(.trailing, 4)
+                    if !day.tasks.isEmpty {
+                        DaySummaryView(day: day)
                     }
-                    .padding(.trailing)
+                    
+                    SelectDateView(date: $date)
+                        .padding([.leading, .bottom, .trailing], 20)
+                        .padding(.top, 10)
                 }
-                if !day.tasks.isEmpty {
-                    DaySummaryView(day: day)
-                }
-                
-                SelectDateView(date: $date)
-                    .padding([.leading, .bottom, .trailing], 20)
-                    .padding(.top, 10)
+                .navigationDestination(for: Task.self) { task in TaskView(task: task) }
             }
-            .navigationDestination(for: Task.self) { task in TaskView(task: task) }
         }
         .tabItem {
             Label("Day", systemImage: "1.circle")
