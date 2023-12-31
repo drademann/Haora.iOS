@@ -10,31 +10,32 @@ struct TagListView: View {
     var tags: [Tag]
     
     var body: some View {
-        VStack {
-            List {
-                ForEach(tags) { tag in
-                    HStack {
-                        TagListItemView(tag: tag)
-                            .swipeActions(edge: .leading) {
-                                Button("Edit", action: { tag.isEditing = true })
-                                    .tint(.blue)
+        Form {
+            Section("Tags") {
+                List {
+                    ForEach(tags) { tag in
+                        HStack {
+                            TagListItemView(tag: tag)
+                                .swipeActions(edge: .leading) {
+                                    Button("Edit", action: { tag.isEditing = true })
+                                        .tint(.blue)
+                                }
+                                .swipeActions(edge: .trailing) {
+                                    Button("Delete", role: .destructive, action: { delete(tag) })
+                                }
+                            Spacer()
+                            if task.tags.contains(tag) {
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(.secondary)
                             }
-                            .swipeActions(edge: .trailing) {
-                                Button("Delete", role: .destructive, action: { delete(tag) })
-                            }
-                        Spacer()
-                        if task.tags.contains(tag) {
-                            Image(systemName: "checkmark")
-                                .foregroundColor(.secondary)
                         }
-                    }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        toggle(tag)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            toggle(tag)
+                        }
                     }
                 }
             }
-            .listStyle(.plain)
         }
         .navigationTitle("Tags")
         .navigationBarTitleDisplayMode(.inline)
@@ -43,7 +44,6 @@ struct TagListView: View {
                 Button(action: createTag) { Image(systemName: "plus") }
             }
         }
-        .padding()
     }
 }
 

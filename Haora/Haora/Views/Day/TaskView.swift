@@ -9,42 +9,33 @@ struct TaskView: View {
     @FocusState private var focusedField: FocusedField?
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Starting")
-                Spacer()
-                Button(action: { task.start = time.now() }) { Text("now") }
-                    .padding(.trailing, 8)
-                Spacer()
-                TimePicker(date: $task.start)
+        Form {
+            Section("Time") {
+                HStack {
+                    Text("Starting")
+                    Spacer()
+                    Button(action: { task.start = time.now() }) { Text("now") }
+                        .padding(.trailing, 8)
+                    Spacer()
+                    TimePicker(date: $task.start)
+                }
+                Toggle("is break", isOn: $task.isBreak)
             }
-            HStack {
-                Text("Description")
-                Spacer()
+            Section("Description") {
+                TextField("enter text", text: $task.text, axis: .vertical)
+                    .focused($focusedField, equals: .text)
+                    .lineLimit(5, reservesSpace: true)
             }
-            TextField("enter text", text: $task.text, axis: .vertical)
-                .textFieldStyle(.roundedBorder)
-                .focused($focusedField, equals: .text)
-                .lineLimit(5, reservesSpace: true)
-                .padding(.bottom, 30)
-            HStack {
-                Text("Tags")
-                Spacer()
-                NavigationLink(destination: TagListView(task: task)) { Text("edit") }
-                    .padding(.trailing, 8)
+            Section("Tags") {
+                NavigationLink(destination: TagListView(task: task)) {
+                    Text(asString(task.tags))
+                        .foregroundStyle(.secondary)
+                        .lineSpacing(5)
+                }
             }
-            .padding(.bottom, 4)
-            HStack {
-                Text(asString(task.tags))
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(5)
-                Spacer()
-            }
-            Spacer()
         }
         .navigationTitle("Task")
         .onAppear { focusedField = .text }
-        .padding(20)
     }
 }
 
