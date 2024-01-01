@@ -25,6 +25,8 @@ struct TaskListView: View {
         .padding(.bottom)
     }
     
+    @State private var selectedDate = Date()
+    
     private var FinishedView: some View {
         VStack {
             Divider()

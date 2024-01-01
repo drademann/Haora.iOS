@@ -11,22 +11,29 @@ struct FinishTimePopoverView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("finishing day at")
+                Image(systemName: "stop.circle").font(.system(size: 40)).foregroundStyle(.accent)
+                Text("Finish Work").font(.headline)
                 Spacer()
+            }
+            .padding(.top)
+            HStack {
+                Spacer()
+                Text("at")
                 TimePicker(date: $selectedDate)
             }
             HStack {
-                Button(action: setOpen ) { Text("open") }
+                Button(action: setOpen ) { Text("reset") }
                 Spacer()
                 Button(action: setNow) { Text("now") }
                     .disabled(!day.isToday)
-                Spacer()
-                Button(action: setSelected) { Text("set") }
             }
             .padding([.top, .leading, .trailing])
         }
         .onAppear {
             selectedDate = day.finished ?? day.proposeFinish(by: time)
+        }
+        .onChange(of: selectedDate) {
+            day.finished = selectedDate
         }
     }
 }
