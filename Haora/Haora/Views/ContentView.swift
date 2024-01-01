@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import TipKit
 
 struct ContentView: View {
     
@@ -8,6 +9,12 @@ struct ContentView: View {
             DayView()
             WeekView()
             MonthView()
+        }
+        .task {
+            try? Tips.configure([
+                .displayFrequency(.immediate),
+                .datastoreLocation(.applicationDefault)
+            ])
         }
     }
 }

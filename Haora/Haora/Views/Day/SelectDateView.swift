@@ -1,56 +1,77 @@
 import SwiftUI
+import TipKit
 
 struct SelectDateView: View {
     @Environment(\.time) var time
     
     @Binding var date: Date
     
+    @State private var drag = CGSize.zero
+    
+    private let tip = SwitchTip()
+    
     var body: some View {
-        VStack {
-            Text(date, style: .date)
-                .font(.headline)
-                .padding(.bottom, 4)
-            ZStack {
-                HStack {
-                    Button(action: { date = time.switchDay(of: date, to: .previous) }) {
-                        Label("previous day", systemImage: "chevron.left").padding(.leading)
-                    }
-                    Spacer()
-                    Button(action: { date = time.switchDay(of: date, to: .next) }) {
-                        Label("next day", systemImage: "chevron.right").padding(.trailing)
-                            .labelStyle(TrailingImageLabelStyle())
-                    }
-                }
-                HStack {
-                    Spacer()
-                    Button(action: { date = time.switchDay(of: date, to: .today) }) {
-                        Text("today")
-                    }
-                    .disabled(Calendar.current.isDateInToday(date))
-                    Spacer()
-                }
+        TipView(tip, arrowEdge: .bottom).padding(.bottom, -30)
+        HStack {
+            Image(systemName: "chevron.compact.left").imageScale(.large).padding(.leading)
+            Spacer()
+            VStack {
+                Text(date, style: .date)
+                    .font(.headline)
+                    .padding(.bottom, 4)
+                Text(date.asWeekdayString())
+                    .font(.headline)
+                    .padding(.top, 4)
             }
-            Text(date.asWeekdayString())
-                .font(.headline)
-                .padding(.top, 4)
+            Spacer()
+            Image(systemName: "chevron.compact.right").imageScale(.large).padding(.trailing)
         }
         .padding([.top, .bottom])
         .contentShape(RoundedRectangle(cornerRadius: 10))
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color(red: 0.95, green: 0.95, blue: 0.95))
+                .fill(Color.background)
         )
         .gesture(switchDayGesture)
+        .gesture(todayGesture)
+        .offset(x: drag.width)
+        .animation(.bouncy, value: drag)
     }
     
     var switchDayGesture: some Gesture {
-        DragGesture().onEnded { value in
-            if value.translation.width < 0 {
-                date = time.switchDay(of: date, to: .next)
-            } else {
-                date = time.switchDay(of: date, to: .previous)
+        DragGesture()
+            .onChanged { value in
+                drag = value.translation
             }
-        }
+            .onEnded { value in
+                if value.translation.width < 0 {
+                    self.date = time.switchDay(of: date, to: .next)
+                } else {
+                    self.date = time.switchDay(of: date, to: .previous)
+                }
+                drag = .zero
+            }
+    }
+    
+    var todayGesture: some Gesture {
+        TapGesture(count: 2)
+            .onEnded {
+                self.date = time.switchDay(of: date, to: .today)
+            }
+    }
+}
+
+struct SwitchTip: Tip {
+    var title: Text {
+        Text("Swipe to move")
+    }
+    
+    var message: Text? {
+        Text("To select the previous or the next day, swipe right or left. To get back to today, double-tap.")
+    }
+    
+    var image: Image? {
+        Image(systemName: "hand.tap")
     }
 }
 
