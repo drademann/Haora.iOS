@@ -67,6 +67,7 @@ extension TaskListView {
     private func delete(_ task: Task) {
         guard let indexToDelete = day.tasks.firstIndex(of: task) else { return }
         day.tasks.remove(at: indexToDelete)
+        if day.tasks.isEmpty { day.finished = nil }
     }
 }
 
