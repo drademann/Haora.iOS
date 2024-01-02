@@ -47,7 +47,7 @@ struct TaskListView: View {
                     .font(.headline)
                     .popover(isPresented: $showFinishTimePopover, attachmentAnchor: .point(.top), arrowEdge: .bottom) {
                         FinishTimePopoverView(day: day)
-                            .presentationDetents([.height(200)])
+                            .presentationDetents([.height(300)])
                             .padding()
                     }
                 }
