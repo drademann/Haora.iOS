@@ -13,24 +13,26 @@ struct DayView: View {
     
     var body: some View {
         @Bindable var day = selectedDay()
-        NavigationStack(path: $path) {
-            VStack {
-                if day.tasks.isEmpty {
-                    EmptyList
-                } else {
-                    TaskListView(day: day)
+        TimelineView(.everyMinute) { _ in
+            NavigationStack(path: $path) {
+                VStack {
+                    if day.tasks.isEmpty {
+                        EmptyList
+                    } else {
+                        TaskListView(day: day)
+                    }
+                    let CreateTaskButton = Button(action: { createTask(for: day) }) { Label("new task", systemImage: "plus") }
+                    if day.tasks.isEmpty {
+                        HStack { Spacer(); CreateTaskButton; Spacer() }.padding(.bottom, 20)
+                    } else {
+                        HStack { Spacer(); CreateTaskButton }.padding(.trailing)
+                    }
+                    if !day.tasks.isEmpty {
+                        DaySummaryView(day: day)
+                    }
+                    SelectDateView(date: $date)
+                        .padding()
                 }
-                let CreateTaskButton = Button(action: { createTask(for: day) }) { Label("new task", systemImage: "plus") }
-                if day.tasks.isEmpty {
-                    HStack { Spacer(); CreateTaskButton; Spacer() }.padding(.bottom, 20)
-                } else {
-                    HStack { Spacer(); CreateTaskButton }.padding(.trailing)
-                }
-                if !day.tasks.isEmpty {
-                    DaySummaryView(day: day)
-                }
-                SelectDateView(date: $date)
-                    .padding()
             }
         }
         .tabItem {

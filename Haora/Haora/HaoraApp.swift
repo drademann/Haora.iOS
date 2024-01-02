@@ -16,9 +16,7 @@ struct HaoraApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TimelineView(.everyMinute) { _ in
-                ContentView()
-            }
+            ContentView()
         }
         .modelContainer(sharedModelContainer)
     }
