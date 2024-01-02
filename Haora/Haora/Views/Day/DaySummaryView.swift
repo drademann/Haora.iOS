@@ -26,7 +26,7 @@ struct DaySummaryView: View {
         HStack {
             Text("total")
             Spacer()
-            Text(day.duration(by: time).asString())
+            Text(day.duration(using: time).asString())
         }
     }
     
@@ -34,7 +34,7 @@ struct DaySummaryView: View {
         HStack {
             Text("breaks")
             Spacer()
-            Text(day.durationBreaks(by: time).asString())
+            Text(day.durationBreaks(using: time).asString())
         }
     }
     
@@ -42,7 +42,7 @@ struct DaySummaryView: View {
         HStack {
             Text("working")
             Spacer()
-            Text(day.durationWorking(by: time).asString())
+            Text(day.durationWorking(using: time).asString())
         }
     }
 }

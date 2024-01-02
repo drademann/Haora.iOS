@@ -11,7 +11,7 @@ final class DayDurationTests: XCTestCase {
     func testTotal_givenNoTasks_shouldReturnZero() {
         let day = Day(date: today())
         
-        XCTAssertEqual(day.duration(by: time), 0)
+        XCTAssertEqual(day.duration(using: time), 0)
     }
     
     func testTotal_givenDayIsFinsihed_shouldReturnTotalTime() throws {
@@ -27,7 +27,7 @@ final class DayDurationTests: XCTestCase {
         
         day.finished = Date().at(20, 00)
         
-        let duration = day.duration(by: time)
+        let duration = day.duration(using: time)
         
         XCTAssertEqual(duration, 10 * 60 * 60, "duration should be 10 hours returns as TimeInterval (seconds)")
     }
@@ -43,7 +43,7 @@ final class DayDurationTests: XCTestCase {
         let task2 = Task(start: Date().at(12, 00), text: "Task 2")
         day.tasks.append(task2)
         
-        let duration = day.duration(by: time)
+        let duration = day.duration(using: time)
         
         XCTAssertEqual(duration, 7 * 60 * 60, "duration should be 10:00 to 17:00 = 7 hours as TimeInterval (seconds)")
     }
@@ -57,7 +57,7 @@ final class DayDurationTests: XCTestCase {
         let task1 = Task(start: Date().at(18, 00), text: "Task")
         day.tasks.append(task1)
         
-        let duration = day.duration(by: time)
+        let duration = day.duration(using: time)
         
         XCTAssertEqual(duration, 0, "duration is zero cause first task starts in future")
     }
@@ -65,7 +65,7 @@ final class DayDurationTests: XCTestCase {
     func testTotalPause_givenNoTasks_shouldReturnZero() {
         let day = Day(date: today())
         
-        XCTAssertEqual(day.durationBreaks(by: time), 0)
+        XCTAssertEqual(day.durationBreaks(using: time), 0)
     }
     
     func testTotalPause_givenSinglePause_shouldReturnDuratioOfIt() throws {
@@ -81,7 +81,7 @@ final class DayDurationTests: XCTestCase {
         let task2 = Task(start: Date().at(12, 45), text: "Task 2")
         day.tasks.append(task2)
         
-        let durationPause = day.durationBreaks(by: time)
+        let durationPause = day.durationBreaks(using: time)
         
         XCTAssertEqual(durationPause, 45 * 60, "duration of the pause should be 45 minutes")
     }
@@ -103,7 +103,7 @@ final class DayDurationTests: XCTestCase {
         let task3 = Task(start: Date().at(15, 15), text: "Task 3")
         day.tasks.append(task3)
         
-        let durationPause = day.durationBreaks(by: time)
+        let durationPause = day.durationBreaks(using: time)
         
         XCTAssertEqual(durationPause, 1 * 60 * 60, "total duration of pauses should be 1 hour")
     }
@@ -123,7 +123,7 @@ final class DayDurationTests: XCTestCase {
         let pause2 = Task(start: Date().at(15, 00), text: "Pause 2", isBreak: true)
         day.tasks.append(pause2)
         
-        let durationPause = day.durationBreaks(by: time)
+        let durationPause = day.durationBreaks(using: time)
         
         XCTAssertEqual(durationPause, 2.75 * 60 * 60, "total duration of pauses should be 2 hours and 45 minutes")
     }
@@ -131,7 +131,7 @@ final class DayDurationTests: XCTestCase {
     func testDurationWorking_givenNoTasks_shouldReturnZero() {
         let day = Day(date: today())
         
-        XCTAssertEqual(day.durationWorking(by: time), 0)
+        XCTAssertEqual(day.durationWorking(using: time), 0)
     }
     
     func testDurationWorking_shouldReturnResult_ofTotalMinusBreaks() throws {
@@ -153,7 +153,7 @@ final class DayDurationTests: XCTestCase {
         
         day.finished = Date().at(17, 00)
         
-        let durationWorking = day.durationWorking(by: time)
+        let durationWorking = day.durationWorking(using: time)
         
         XCTAssertEqual(durationWorking, 6 * 60 * 60, "total duration of working time should be 6 hour")
     }
