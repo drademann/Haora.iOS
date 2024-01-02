@@ -32,7 +32,6 @@ struct TaskListView: View {
             Divider()
             HStack {
                 Text("Finished")
-                    .font(.headline)
                 Spacer()
                 if !day.tasks.isEmpty {
                     Button(action: { showFinishTimePopover = true }) {
@@ -44,7 +43,6 @@ struct TaskListView: View {
                             Text(day.finished!.asTimeString())
                         }
                     }
-                    .font(.headline)
                     .popover(isPresented: $showFinishTimePopover, attachmentAnchor: .point(.top), arrowEdge: .bottom) {
                         FinishTimePopoverView(day: day)
                             .presentationDetents([.height(300)])

@@ -12,7 +12,6 @@ struct TaskListItemView: View {
                 VStack(alignment: .leading) {
                     Text(taskText)
                         .foregroundStyle(taskTextForegroundStyle)
-                        .font(.headline)
                     Text(asString(task.tags))
                         .font(.footnote)
                 }
@@ -22,10 +21,8 @@ struct TaskListItemView: View {
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text(start)
-                        .font(.headline)
                         .foregroundStyle(taskTextForegroundStyle)
                     Text(duration)
-                        .font(.headline)
                         .foregroundStyle(taskTextForegroundStyle)
                 }
             }

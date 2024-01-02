@@ -17,10 +17,9 @@ struct SelectDateView: View {
             Spacer()
             VStack {
                 Text(date, style: .date)
-                    .font(.headline)
+                    .font(.system(size: 18))
                     .padding(.bottom, 4)
                 Text(date.asWeekdayString())
-                    .font(.headline)
                     .padding(.top, 4)
             }
             Spacer()
