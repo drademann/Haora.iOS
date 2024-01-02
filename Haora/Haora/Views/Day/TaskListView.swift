@@ -71,7 +71,7 @@ extension TaskListView {
     }
 }
 
-#Preview("a. with tasks") {
+#Preview("with tasks") {
     let preview = previewDayModel()
     return NavigationStack {
         TaskListView(day: preview.day)
@@ -79,7 +79,7 @@ extension TaskListView {
     }
 }
 
-#Preview("b. empty") {
+#Preview("empty") {
     let preview = previewDayModel()
     preview.day.tasks.removeAll()
     return NavigationStack {
