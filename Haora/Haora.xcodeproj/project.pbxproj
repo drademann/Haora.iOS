@@ -21,6 +21,7 @@
 		9D559F932AEADDB100C887D2 /* TaskDurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D559F922AEADDB100C887D2 /* TaskDurationTests.swift */; };
 		9D559F972AEAE93000C887D2 /* TimeIntervalExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D559F962AEAE93000C887D2 /* TimeIntervalExtensionTests.swift */; };
 		9D559F992AEAEB8F00C887D2 /* TimeInterval+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D559F982AEAEB8F00C887D2 /* TimeInterval+.swift */; };
+		9D6FBC2F2B44AFE400137315 /* DayGroupingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6FBC2E2B44AFE400137315 /* DayGroupingTests.swift */; };
 		9D70807D2B3AE76F009D63D0 /* NowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70807C2B3AE76F009D63D0 /* NowTests.swift */; };
 		9D70807F2B3C33FA009D63D0 /* FinishTimePopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70807E2B3C33FA009D63D0 /* FinishTimePopoverView.swift */; };
 		9D7080812B3CDE18009D63D0 /* DayNextTaskTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7080802B3CDE18009D63D0 /* DayNextTaskTimeTests.swift */; };
@@ -81,6 +82,7 @@
 		9D559F922AEADDB100C887D2 /* TaskDurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDurationTests.swift; sourceTree = "<group>"; };
 		9D559F962AEAE93000C887D2 /* TimeIntervalExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtensionTests.swift; sourceTree = "<group>"; };
 		9D559F982AEAEB8F00C887D2 /* TimeInterval+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+.swift"; sourceTree = "<group>"; };
+		9D6FBC2E2B44AFE400137315 /* DayGroupingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayGroupingTests.swift; sourceTree = "<group>"; };
 		9D70807C2B3AE76F009D63D0 /* NowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowTests.swift; sourceTree = "<group>"; };
 		9D70807E2B3C33FA009D63D0 /* FinishTimePopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishTimePopoverView.swift; sourceTree = "<group>"; };
 		9D7080802B3CDE18009D63D0 /* DayNextTaskTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayNextTaskTimeTests.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				9DD8637B2B24A8BC002F0DB8 /* DayDurationTests.swift */,
 				9D7080802B3CDE18009D63D0 /* DayNextTaskTimeTests.swift */,
 				9D1872302B3EBA5100E9CBEA /* DayFinishTimeTests.swift */,
+				9D6FBC2E2B44AFE400137315 /* DayGroupingTests.swift */,
 			);
 			path = Day;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				9D559F972AEAE93000C887D2 /* TimeIntervalExtensionTests.swift in Sources */,
 				9DB4961D2B0E5BC000B18693 /* TagTests.swift in Sources */,
 				9D41332E2B405AC400A5090C /* TimeTests.swift in Sources */,
+				9D6FBC2F2B44AFE400137315 /* DayGroupingTests.swift in Sources */,
 				9D51959F2AE83BF5005CB038 /* TaskNeighbourTests.swift in Sources */,
 				9D1872312B3EBA5100E9CBEA /* DayFinishTimeTests.swift in Sources */,
 				9D70807D2B3AE76F009D63D0 /* NowTests.swift in Sources */,

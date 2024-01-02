@@ -22,6 +22,16 @@ final class TestTime: Time {
 
 final class TimeTests: XCTestCase {
     
+    func testRound_shouldRoundMinutes_toRequestedInterval() {
+        XCTAssertEqual(Time().round(Date().at(10, 00)), Date().at(10, 00))
+        XCTAssertEqual(Time().round(Date().at(10, 02)), Date().at(10, 00))
+        XCTAssertEqual(Time().round(Date().at(10, 04)), Date().at(10, 05))
+        XCTAssertEqual(Time().round(Date().at(10, 05)), Date().at(10, 05))
+        XCTAssertEqual(Time().round(Date().at(10, 06)), Date().at(10, 05))
+        XCTAssertEqual(Time().round(Date().at(10, 08)), Date().at(10, 10))
+        XCTAssertEqual(Time().round(Date().at(10, 11)), Date().at(10, 10))
+    }
+    
     func testNow_shouldProvideCurrentTime_roundedToRequestedInterval() {
         let time = Time()
         

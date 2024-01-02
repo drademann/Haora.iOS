@@ -14,6 +14,10 @@ final class Day {
     }
 }
 
+extension Day: Hashable {
+    
+}
+
 extension Day {
     
     var sortedTasks: [Task] {
@@ -83,5 +87,18 @@ extension Day {
     
     func durationWorking(using time: Time) -> TimeInterval {
         return duration(using: time) - durationBreaks(using: time)
+    }
+    
+    func tagTimes(using time: Time) -> [String:TimeInterval] {
+        var times = Dictionary<String, TimeInterval>()
+        tasks
+            .filter { !$0.isBreak }
+            .forEach { task in
+                let duration = task.duration(to: task.successor(), using: time)
+                task.tags.forEach { tag in
+                    times.updateValue((times[tag.name] ?? 0.0) + duration, forKey: tag.name)
+                }
+            }
+        return times
     }
 }
