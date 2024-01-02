@@ -2,6 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct TaskListItemView: View {
+    @Environment(\.time) var time
     
     var task: Task
     
@@ -41,7 +42,7 @@ extension TaskListItemView {
     }}
     
     private var duration: String { get {
-        return task.duration(to: task.successor()).asString()
+        return task.duration(to: task.successor(), using: time).asString()
     }}
 }
 

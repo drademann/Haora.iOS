@@ -49,13 +49,13 @@ extension Task {
 
 extension Task {
     
-    func duration(to next: Task?, currentDate: Date = Date.now) -> TimeInterval {
+    func duration(to next: Task?, using time: Time) -> TimeInterval {
         if let next = next {
             return duration(to: next.start)
         } else if let finished = day?.finished {
             return duration(to: finished)
         } else {
-            return duration(to: currentDate)
+            return duration(to: time.now())
         }
     }
     

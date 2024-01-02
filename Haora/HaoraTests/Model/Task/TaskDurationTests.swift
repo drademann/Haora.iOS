@@ -5,13 +5,13 @@ import SwiftData
 @MainActor
 final class TaskDurationTests: XCTestCase {
     
-    private let time = TestTime(now: Date.now.at(12, 00))
+    private let time = TestTime(now: Date.now.at(10, 00))
     private func today() -> Date { time.today() }
     
     func testDuration_givenNextTaskIsNil_shouldReturnDurationToNow() {
         let task = Task(start: Date().at(8, 00), text: "Task")
         
-        let duration = task.duration(to: nil, currentDate: Date().at(10, 00))
+        let duration = task.duration(to: nil, using: time)
         
         XCTAssertEqual(duration, 2 * 60 * 60, "duration should be 2 hours")
     }
@@ -19,7 +19,7 @@ final class TaskDurationTests: XCTestCase {
     func testDuration_givenNextTaskIsNil_andTaskStartGreaterNow_shouldReturnZero() {
         let task = Task(start: Date().at(12, 00), text: "Task")
         
-        let duration = task.duration(to: nil, currentDate: Date().at(10, 00))
+        let duration = task.duration(to: nil, using: time)
         
         XCTAssertEqual(duration, 0, "duration should be zero cause starting in future")
     }
@@ -28,7 +28,7 @@ final class TaskDurationTests: XCTestCase {
         let task = Task(start: Date().at(8, 00), text: "Task 1")
         let nextTask = Task(start: Date().at(10, 00), text: "Task 2")
         
-        let duration = task.duration(to: nextTask)
+        let duration = task.duration(to: nextTask, using: time)
         
         XCTAssertEqual(duration, 2 * 60 * 60, "duration should be 2 hours")
     }
@@ -61,7 +61,7 @@ final class TaskDurationTests: XCTestCase {
         let task2 = Task(start: Date().at(12, 00), text: "Task 2")
         day.tasks.append(task2)
         
-        let duration = task2.duration(to: task2.successor())
+        let duration = task2.duration(to: task2.successor(), using: time)
         
         XCTAssertEqual(duration, 5 * 60 * 60, "should return 5 hours, 12:00 to 17:00")
     }
