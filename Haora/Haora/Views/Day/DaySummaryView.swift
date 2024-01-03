@@ -4,21 +4,23 @@ import SwiftData
 struct DaySummaryView: View {
     @Environment(\.time) var time
     
-    @Bindable var day: Day
+    var day: Day
     
     var body: some View {
-        HStack {
-            VStack {
-                HStack {
-                    Text("Summary")
-                        .font(.caption)
-                    Spacer()
+        TimelineView(.everyMinute) { _ in
+            HStack {
+                VStack {
+                    HStack {
+                        Text("Summary")
+                            .font(.caption)
+                        Spacer()
+                    }
+                    TotalView
+                    BreaksView
+                    WorkingView
                 }
-                TotalView
-                BreaksView
-                WorkingView
+                .padding(.horizontal, 20)
             }
-            .padding(.horizontal, 20)
         }
     }
     

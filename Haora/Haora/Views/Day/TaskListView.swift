@@ -9,20 +9,22 @@ struct TaskListView: View {
     @State private var showFinishTimePopover = false
     
     var body: some View {
-        List {
-            ForEach(sortedTasks) { task in
-                NavigationLink(value: task, label: { TaskListItemView(task: task) })
-                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                        Button("Delete", role: .destructive, action: { delete(task) })
-                    }
-            }
-            .listRowSeparator(.hidden)
-            FinishedView
+        TimelineView(.everyMinute) { _ in
+            List {
+                ForEach(sortedTasks) { task in
+                    NavigationLink(value: task, label: { TaskListItemView(task: task) })
+                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                            Button("Delete", role: .destructive, action: { delete(task) })
+                        }
+                }
                 .listRowSeparator(.hidden)
+                FinishedView
+                    .listRowSeparator(.hidden)
+            }
+            .navigationDestination(for: Task.self) { task in TaskView(task: task) }
+            .listStyle(.plain)
+            .padding(.bottom)
         }
-        .navigationDestination(for: Task.self) { task in TaskView(task: task) }
-        .listStyle(.plain)
-        .padding(.bottom)
     }
     
     @State private var selectedDate = Date()
