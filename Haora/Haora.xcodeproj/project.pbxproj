@@ -10,6 +10,7 @@
 		9D1872312B3EBA5100E9CBEA /* DayFinishTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1872302B3EBA5100E9CBEA /* DayFinishTimeTests.swift */; };
 		9D1872332B3F242300E9CBEA /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1872322B3F242300E9CBEA /* TimePicker.swift */; };
 		9D300E842B0B5920002D7836 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D300E832B0B5920002D7836 /* Tag.swift */; };
+		9D3C38502B4701A200304E9A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C384F2B4701A200304E9A /* Localizable.xcstrings */; };
 		9D41332E2B405AC400A5090C /* TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41332D2B405AC400A5090C /* TimeTests.swift */; };
 		9D4133302B405B3500A5090C /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41332F2B405B3500A5090C /* Time.swift */; };
 		9D4133342B41E53C00A5090C /* Date+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4133332B41E53C00A5090C /* Date+RawRepresentable.swift */; };
@@ -19,7 +20,6 @@
 		9D51959F2AE83BF5005CB038 /* TaskNeighbourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51959E2AE83BF5005CB038 /* TaskNeighbourTests.swift */; };
 		9D5195A22AE843BF005CB038 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5195A12AE843BF005CB038 /* DateExtensionTests.swift */; };
 		9D559F932AEADDB100C887D2 /* TaskDurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D559F922AEADDB100C887D2 /* TaskDurationTests.swift */; };
-		9D559F972AEAE93000C887D2 /* TimeIntervalExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D559F962AEAE93000C887D2 /* TimeIntervalExtensionTests.swift */; };
 		9D559F992AEAEB8F00C887D2 /* TimeInterval+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D559F982AEAEB8F00C887D2 /* TimeInterval+.swift */; };
 		9D6FBC2F2B44AFE400137315 /* DayGroupingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6FBC2E2B44AFE400137315 /* DayGroupingTests.swift */; };
 		9D70807D2B3AE76F009D63D0 /* NowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70807C2B3AE76F009D63D0 /* NowTests.swift */; };
@@ -71,6 +71,7 @@
 		9D1872302B3EBA5100E9CBEA /* DayFinishTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFinishTimeTests.swift; sourceTree = "<group>"; };
 		9D1872322B3F242300E9CBEA /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		9D300E832B0B5920002D7836 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		9D3C384F2B4701A200304E9A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9D41332D2B405AC400A5090C /* TimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTests.swift; sourceTree = "<group>"; };
 		9D41332F2B405B3500A5090C /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		9D4133332B41E53C00A5090C /* Date+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+RawRepresentable.swift"; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		9D51959E2AE83BF5005CB038 /* TaskNeighbourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNeighbourTests.swift; sourceTree = "<group>"; };
 		9D5195A12AE843BF005CB038 /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 		9D559F922AEADDB100C887D2 /* TaskDurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDurationTests.swift; sourceTree = "<group>"; };
-		9D559F962AEAE93000C887D2 /* TimeIntervalExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtensionTests.swift; sourceTree = "<group>"; };
 		9D559F982AEAEB8F00C887D2 /* TimeInterval+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+.swift"; sourceTree = "<group>"; };
 		9D6FBC2E2B44AFE400137315 /* DayGroupingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayGroupingTests.swift; sourceTree = "<group>"; };
 		9D70807C2B3AE76F009D63D0 /* NowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowTests.swift; sourceTree = "<group>"; };
@@ -167,7 +167,6 @@
 			children = (
 				9D70807C2B3AE76F009D63D0 /* NowTests.swift */,
 				9D5195A12AE843BF005CB038 /* DateExtensionTests.swift */,
-				9D559F962AEAE93000C887D2 /* TimeIntervalExtensionTests.swift */,
 				9D41332D2B405AC400A5090C /* TimeTests.swift */,
 			);
 			path = Support;
@@ -303,6 +302,7 @@
 				9D41646E2AC9A29F00E3504D /* Model */,
 				9DAB462B2AE1879B00BE30AC /* Support */,
 				9DFFAC472ABB6E7B0038559C /* Assets.xcassets */,
+				9D3C384F2B4701A200304E9A /* Localizable.xcstrings */,
 				9DFFAC492ABB6E7B0038559C /* Haora.entitlements */,
 				9DFFAC4D2ABB6E7B0038559C /* Info.plist */,
 				9DFFAC4A2ABB6E7B0038559C /* Preview Content */,
@@ -425,6 +425,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 9DFFAC352ABB6E7A0038559C;
 			productRefGroup = 9DFFAC3F2ABB6E7A0038559C /* Products */;
@@ -445,6 +446,7 @@
 			files = (
 				9DFFAC4C2ABB6E7B0038559C /* Preview Assets.xcassets in Resources */,
 				9DFFAC482ABB6E7B0038559C /* Assets.xcassets in Resources */,
+				9D3C38502B4701A200304E9A /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +503,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD8637C2B24A8BC002F0DB8 /* DayDurationTests.swift in Sources */,
-				9D559F972AEAE93000C887D2 /* TimeIntervalExtensionTests.swift in Sources */,
 				9DB4961D2B0E5BC000B18693 /* TagTests.swift in Sources */,
 				9D41332E2B405AC400A5090C /* TimeTests.swift in Sources */,
 				9D6FBC2F2B44AFE400137315 /* DayGroupingTests.swift in Sources */,

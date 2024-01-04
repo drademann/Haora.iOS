@@ -20,14 +20,21 @@ class Time {
     }
     
     func round(_ date: Date) -> Date {
-        let dateMinutes = Calendar.current.component(.minute, from: date)
-        guard let closestMinute = Dictionary(grouping: availableMinutes(), by: { abs($0 - dateMinutes) })
-            .sorted(by: { $0.key < $1.key })
-            .first?.value.first else {
-            fatalError("no nearest minute found for \(date)")
+        var components = Calendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: date)
+        guard let hour = components.hour else { fatalError("couldn't get hour from \(date)") }
+        guard let minute = components.minute else { fatalError("couldn't get minute from \(date)") }
+        if minute == 58 || minute == 59 {
+            components.minute = 0
+            components.hour = hour + 1
         }
-        var components = Calendar.current.dateComponents([.day, .month, .year, .hour], from: date)
-        components.minute = closestMinute
+        else {
+            guard let closestMinute = Dictionary(grouping: availableMinutes(), by: { abs($0 - minute) })
+                .sorted(by: { $0.key < $1.key })
+                .first?.value.first else {
+                fatalError("no nearest minute found for \(date)")
+            }
+            components.minute = closestMinute
+        }
         guard let rounded = Calendar.current.date(from: components) else { fatalError("unable to construct date from \(components)") }
         return rounded
     }
