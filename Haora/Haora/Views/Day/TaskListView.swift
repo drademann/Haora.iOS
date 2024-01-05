@@ -40,7 +40,7 @@ struct TaskListView: View {
                         if day.tasks.isEmpty {
                             Text("no tasks to be finished")
                         } else if day.finished == nil {
-                            Text("not yet")
+                            Text("open")
                         } else {
                             Text(day.finished!.asTimeString())
                         }

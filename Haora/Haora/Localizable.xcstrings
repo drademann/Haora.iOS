@@ -207,22 +207,22 @@
         }
       }
     },
-    "not yet" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "noch nicht"
-          }
-        }
-      }
-    },
     "now" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "jetzt"
+          }
+        }
+      }
+    },
+    "open" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "offen"
           }
         }
       }
