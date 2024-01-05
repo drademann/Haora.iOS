@@ -89,6 +89,12 @@ extension Day {
         return duration(using: time) - durationBreaks(using: time)
     }
     
+    func tags() -> [Tag] {
+        return Array(tasks.reduce(into: Set<Tag>()) { set, task in
+            set = set.union(task.tags)
+        })
+    }
+    
     func tagTimes(using time: Time) -> [String:TimeInterval] {
         var times = Dictionary<String, TimeInterval>()
         tasks

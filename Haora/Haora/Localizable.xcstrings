@@ -267,12 +267,12 @@
         }
       }
     },
-    "Swipe to move" : {
+    "Swipe" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wischen zum wechseln der Tage"
+            "value" : "Wischen"
           }
         }
       }
@@ -293,6 +293,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Schlüsselwörter"
+          }
+        }
+      }
+    },
+    "Tap" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippen"
+          }
+        }
+      }
+    },
+    "Tap summary to open details with durations per tag." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antippen zum Anzeigen der Zeiten je Schlüsselwort."
           }
         }
       }

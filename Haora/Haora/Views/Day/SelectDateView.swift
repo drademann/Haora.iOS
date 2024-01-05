@@ -8,10 +8,10 @@ struct SelectDateView: View {
     
     @State private var drag = CGSize.zero
     
-    private let tip = SwitchTip()
+    private let switchTip = SwitchTip()
     
     var body: some View {
-        TipView(tip, arrowEdge: .bottom).padding(.bottom, -30)
+        TipView(switchTip, arrowEdge: .bottom).padding(.bottom, -30)
         HStack {
             Image(systemName: "chevron.compact.left").imageScale(.large).padding(.leading)
             Spacer()
@@ -62,7 +62,7 @@ struct SelectDateView: View {
 
 struct SwitchTip: Tip {
     var title: Text {
-        Text("Swipe to move")
+        Text("Swipe")
     }
     
     var message: Text? {

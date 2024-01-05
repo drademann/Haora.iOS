@@ -11,6 +11,7 @@ struct ContentView: View {
             MonthView()
         }
         .task {
+            //try? Tips.resetDatastore()
             try? Tips.configure([
                 .displayFrequency(.immediate),
                 .datastoreLocation(.applicationDefault)
