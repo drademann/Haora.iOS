@@ -34,7 +34,7 @@ extension TaskListItemView {
     
     private var taskText: String {
         if task.isBreak && task.text.isEmpty {
-            "Break"
+            String(localized: "Break")
         } else {
             task.text
         }
