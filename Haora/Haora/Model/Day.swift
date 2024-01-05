@@ -14,10 +14,6 @@ final class Day {
     }
 }
 
-extension Day: Hashable {
-    
-}
-
 extension Day {
     
     var sortedTasks: [Task] {
