@@ -14,4 +14,8 @@ extension Date {
     func asWeekdayString() -> String {
         return formatted(FormatStyle().weekday(.wide))
     }
+    
+    func asWeekdayShortString() -> String {
+        return formatted(FormatStyle().weekday(.abbreviated))
+    }
 }

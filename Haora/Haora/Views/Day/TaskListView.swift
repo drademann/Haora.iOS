@@ -10,24 +10,28 @@ struct TaskListView: View {
     
     var body: some View {
         TimelineView(.everyMinute) { _ in
-            List {
-                ForEach(sortedTasks) { task in
-                    NavigationLink(value: task, label: { TaskListItemView(task: task) })
-                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                            Button("Delete", role: .destructive, action: { delete(task) })
-                        }
-                }
-                .listRowSeparator(.hidden)
-                FinishedView
+            ZStack {
+                List {
+                    ForEach(sortedTasks) { task in
+                        NavigationLink(value: task, label: { TaskListItemView(task: task) })
+                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                Button("Delete", role: .destructive, action: { delete(task) })
+                            }
+                    }
                     .listRowSeparator(.hidden)
+                    FinishedView
+                        .listRowSeparator(.hidden)
+                }
+                .navigationDestination(for: Task.self) { task in TaskView(task: task) }
+                .listStyle(.plain)
+                .padding(.bottom)
+                Text(day.date.asWeekdayShortString())
+                    .font(.system(size: 256, weight: .bold, design: .rounded))
+                    .opacity(0.02)
+                    .padding(.top, 50)
             }
-            .navigationDestination(for: Task.self) { task in TaskView(task: task) }
-            .listStyle(.plain)
-            .padding(.bottom)
         }
     }
-    
-    @State private var selectedDate = Date()
     
     private var FinishedView: some View {
         VStack {
@@ -73,17 +77,8 @@ extension TaskListView {
     }
 }
 
-#Preview("with tasks") {
+#Preview {
     let preview = previewDayModel()
-    return NavigationStack {
-        TaskListView(day: preview.day)
-            .modelContainer(preview.container)
-    }
-}
-
-#Preview("empty") {
-    let preview = previewDayModel()
-    preview.day.tasks.removeAll()
     return NavigationStack {
         TaskListView(day: preview.day)
             .modelContainer(preview.container)

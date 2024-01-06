@@ -16,7 +16,7 @@ struct DayView: View {
         NavigationStack(path: $path) {
             VStack {
                 if day.tasks.isEmpty {
-                    EmptyList
+                    EmptyList(day: day)
                 } else {
                     TaskListView(day: day)
                 }
@@ -38,12 +38,17 @@ struct DayView: View {
         }
     }
     
-    private var EmptyList: some View {
-        VStack {
-            Spacer()
-            Text("no tasks yet")
-                .foregroundStyle(.secondary)
-            Spacer()
+    private func EmptyList(day: Day) -> some View {
+        ZStack {
+            VStack {
+                Spacer()
+                Text("no tasks yet")
+                    .foregroundStyle(.secondary)
+                Spacer()
+            }
+            Text(day.date.asWeekdayShortString())
+                .font(.system(size: 256, weight: .bold, design: .rounded))
+                .opacity(0.02)
         }
     }
 }
