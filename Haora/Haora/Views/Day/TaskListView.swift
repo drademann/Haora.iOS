@@ -38,6 +38,7 @@ struct TaskListView: View {
             Divider()
             HStack {
                 Text("Finished")
+                    .font(.headline)
                 Spacer()
                 if !day.tasks.isEmpty {
                     Button(action: { showFinishTimePopover = true }) {

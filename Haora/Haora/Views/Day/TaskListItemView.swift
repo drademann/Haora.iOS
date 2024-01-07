@@ -11,6 +11,7 @@ struct TaskListItemView: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(taskText)
+                        .font(.headline)
                         .foregroundStyle(taskTextForegroundStyle)
                     Text(asString(task.tags))
                         .font(.footnote)
