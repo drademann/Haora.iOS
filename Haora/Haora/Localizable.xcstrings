@@ -1,9 +1,15 @@
 {
-  "sourceLanguage" : "en",
+  "sourceLanguage" : "de",
   "strings" : {
     "" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : ""
@@ -18,12 +24,24 @@
             "state" : "translated",
             "value" : ""
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
         }
       }
     },
     "#%@" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : ""
@@ -41,8 +59,8 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@%2$lld"
+            "state" : "translated",
+            "value" : ""
           }
         }
       }
@@ -50,6 +68,12 @@
     "%lld" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : ""
@@ -64,6 +88,12 @@
             "state" : "translated",
             "value" : "um"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "at"
+          }
         }
       }
     },
@@ -73,6 +103,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pause"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Break"
           }
         }
       }
@@ -84,6 +120,12 @@
             "state" : "translated",
             "value" : "Pausenzeit"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "breaks"
+          }
         }
       }
     },
@@ -93,6 +135,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tag"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Day"
           }
         }
       }
@@ -104,6 +152,12 @@
             "state" : "translated",
             "value" : "Löschen"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
         }
       }
     },
@@ -113,6 +167,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beschreibung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
           }
         }
       }
@@ -124,6 +184,12 @@
             "state" : "translated",
             "value" : "Bearbeiten"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
         }
       }
     },
@@ -133,6 +199,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Texteingabe"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "enter text"
           }
         }
       }
@@ -144,6 +216,12 @@
             "state" : "translated",
             "value" : "Feierabend"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finish Work"
+          }
         }
       }
     },
@@ -153,6 +231,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Feierabend"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finished"
           }
         }
       }
@@ -164,6 +248,12 @@
             "state" : "translated",
             "value" : "Pause"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "is break"
+          }
         }
       }
     },
@@ -173,6 +263,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Monat"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Month"
           }
         }
       }
@@ -184,6 +280,12 @@
             "state" : "translated",
             "value" : "Monatsansicht"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "month view"
+          }
         }
       }
     },
@@ -193,6 +295,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Neue Aufgabe"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "new task"
           }
         }
       }
@@ -204,6 +312,12 @@
             "state" : "translated",
             "value" : "keine Aufgabe zum abschließen gefunden"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "no tasks to be finished"
+          }
         }
       }
     },
@@ -213,6 +327,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "keine Aufgaben gefunden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "no tasks yet"
           }
         }
       }
@@ -224,6 +344,12 @@
             "state" : "translated",
             "value" : "jetzt"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "now"
+          }
         }
       }
     },
@@ -233,6 +359,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "offen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "opem"
           }
         }
       }
@@ -244,6 +376,12 @@
             "state" : "translated",
             "value" : "zurücksetzen"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "reset"
+          }
         }
       }
     },
@@ -253,6 +391,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beginn"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starting"
           }
         }
       }
@@ -264,6 +408,12 @@
             "state" : "translated",
             "value" : "Zusammenfassung"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Summary"
+          }
         }
       }
     },
@@ -273,6 +423,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wischen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe"
           }
         }
       }
@@ -284,6 +440,12 @@
             "state" : "translated",
             "value" : "Schlüsselwort"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tag name"
+          }
         }
       }
     },
@@ -293,6 +455,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Schlüsselwörter"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tags"
           }
         }
       }
@@ -304,6 +472,12 @@
             "state" : "translated",
             "value" : "Tippen"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap"
+          }
         }
       }
     },
@@ -313,6 +487,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Antippen zum Anzeigen der Zeiten je Schlüsselwort."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap summary to open details with durations per tag."
           }
         }
       }
@@ -324,6 +504,12 @@
             "state" : "translated",
             "value" : "Aufgabe"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Task"
+          }
         }
       }
     },
@@ -333,6 +519,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zeit"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time"
           }
         }
       }
@@ -344,6 +536,12 @@
             "state" : "translated",
             "value" : "Zum Auswählen des vorherigen oder nächsten Tages nach rechts oder links wischen. Um direkt zum heutigen Datum zu kommen doppelt antippen."
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To select the previous or the next day, swipe right or left. To get back to today, double-tap."
+          }
         }
       }
     },
@@ -353,6 +551,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Insgesamt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "total"
           }
         }
       }
@@ -364,6 +568,12 @@
             "state" : "translated",
             "value" : "Woche"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Week"
+          }
         }
       }
     },
@@ -374,6 +584,12 @@
             "state" : "translated",
             "value" : "Wochenansicht"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "week view"
+          }
         }
       }
     },
@@ -383,6 +599,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arbeitszeit"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "working"
           }
         }
       }

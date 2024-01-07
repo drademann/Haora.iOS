@@ -20,16 +20,9 @@ struct ContentView: View {
     }
 }
 
-#Preview("with tasks (GB)") {
+#Preview("with tasks") {
     ContentView()
         .modelContainer(previewDayModel().container)
-        .environment(\.locale, Locale(identifier: "en_GB"))
-}
-
-#Preview("with tasks (DE)") {
-    ContentView()
-        .modelContainer(previewDayModel().container)
-        .environment(\.locale, Locale(identifier: "de_DE"))
 }
 
 #Preview("no tasks") {
