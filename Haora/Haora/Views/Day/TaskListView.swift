@@ -26,7 +26,7 @@ struct TaskListView: View {
                 .listStyle(.plain)
                 .padding(.bottom)
                 Text(day.date.asWeekdayShortString())
-                    .font(.system(size: 256, weight: .bold, design: .rounded))
+                    .font(.system(size: 180, weight: .bold, design: .rounded))
                     .opacity(0.02)
                     .padding(.top, 50)
             }

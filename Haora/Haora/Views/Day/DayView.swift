@@ -48,7 +48,7 @@ struct DayView: View {
                 Spacer()
             }
             Text(day.date.asWeekdayShortString())
-                .font(.system(size: 256, weight: .bold, design: .rounded))
+                .font(.system(size: 180, weight: .bold, design: .rounded))
                 .opacity(0.02)
         }
     }
