@@ -15,17 +15,13 @@ struct SelectDateView: View {
         HStack {
             Image(systemName: "chevron.compact.left").imageScale(.large).padding(.leading)
             Spacer()
-            VStack {
-                Text(date, style: .date)
-                    .font(.system(size: 18))
-                    .padding(.bottom, 4)
-                Text(date.asWeekdayString())
-                    .padding(.top, 4)
-            }
+            Text(date.asWeekdayString())
+            Text(date, style: .date)
             Spacer()
             Image(systemName: "chevron.compact.right").imageScale(.large).padding(.trailing)
         }
-        .padding([.top, .bottom])
+        .font(.title2)
+        .padding([.top, .bottom], 30)
         .contentShape(RoundedRectangle(cornerRadius: 10))
         .background(
             RoundedRectangle(cornerRadius: 10)

@@ -28,7 +28,6 @@ struct DaySummaryView: View {
                         DetailsView
                     }
                 }
-                .padding(.horizontal, 20)
             }
             .contentShape(Rectangle())
             .onTapGesture {

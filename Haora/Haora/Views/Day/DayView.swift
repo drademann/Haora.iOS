@@ -22,12 +22,13 @@ struct DayView: View {
                 }
                 let CreateTaskButton = Button(action: { createTask(for: day) }) { Label("new task", systemImage: "plus") }
                 if day.tasks.isEmpty {
-                    HStack { Spacer(); CreateTaskButton; Spacer() }.padding(.bottom, 20)
+                    CreateTaskButton.padding(.bottom, 20)
                 } else {
-                    HStack { Spacer(); CreateTaskButton }.padding(.trailing)
+                    HStack { Spacer(); CreateTaskButton }.padding(.trailing, 20)
                 }
                 if !day.tasks.isEmpty {
                     DaySummaryView(day: day)
+                        .padding(.horizontal, 20)
                 }
                 SelectDateView(date: $date)
                     .padding()
