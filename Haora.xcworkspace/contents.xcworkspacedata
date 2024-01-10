@@ -4,4 +4,10 @@
    <FileRef
       location = "group:Haora/Haora.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
+      location = "group:COPYING">
+   </FileRef>
 </Workspace>
