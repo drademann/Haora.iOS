@@ -14,6 +14,10 @@ struct TaskListView: View {
                 List {
                     ForEach(sortedTasks) { task in
                         NavigationLink(value: task, label: { TaskListItemView(task: task) })
+                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                Button("Toggle break", action: { toggleIsBreak(task) })
+                                    .tint(.blue)
+                            }
                             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                 Button("Delete", role: .destructive, action: { delete(task) })
                             }
@@ -70,6 +74,10 @@ extension TaskListView {
     private var sortedTasks: [Task] { get {
         return day.tasks.sorted { $0.start < $1.start }
     }}
+    
+    private func toggleIsBreak(_ task: Task) {
+        task.isBreak.toggle()
+    }
     
     private func delete(_ task: Task) {
         guard let indexToDelete = day.tasks.firstIndex(of: task) else { return }
